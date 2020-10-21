@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital", "Hospital\Hospital.csproj", "{4084CFBC-9661-455C-A73B-34CDE0314ED8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital.BLL", "Hospital.BLL\Hospital.BLL.csproj", "{16977090-8C0B-4D58-94B3-0EDE5844A661}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital.DAL", "Hospital.DAL\Hospital.DAL.csproj", "{5D5D126F-47BD-42C2-A776-F7EBEF143408}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4084CFBC-9661-455C-A73B-34CDE0314ED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4084CFBC-9661-455C-A73B-34CDE0314ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4084CFBC-9661-455C-A73B-34CDE0314ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4084CFBC-9661-455C-A73B-34CDE0314ED8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16977090-8C0B-4D58-94B3-0EDE5844A661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16977090-8C0B-4D58-94B3-0EDE5844A661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16977090-8C0B-4D58-94B3-0EDE5844A661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16977090-8C0B-4D58-94B3-0EDE5844A661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D5D126F-47BD-42C2-A776-F7EBEF143408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D5D126F-47BD-42C2-A776-F7EBEF143408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D5D126F-47BD-42C2-A776-F7EBEF143408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D5D126F-47BD-42C2-A776-F7EBEF143408}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
