@@ -22,22 +22,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f001115d-a84b-4d24-b273-1eea334fe726" name="Default Changelist" comment="added Service">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/Controllers/ServiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/Controllers/ServiceController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.pdb" afterDir="false" />
-    </list>
+    <list default="true" id="f001115d-a84b-4d24-b273-1eea334fe726" name="Default Changelist" comment="First" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C37662-579A-499A-A4DE-B3C85349280D/14E/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
@@ -130,6 +128,7 @@
       <workItem from="1603285068184" duration="7131000" />
       <workItem from="1603305839832" duration="1022000" />
       <workItem from="1603306899389" duration="378000" />
+      <workItem from="1603308409440" duration="634000" />
     </task>
     <task id="LOCAL-00001" summary="add service table">
       <created>1603306514228</created>
@@ -152,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603306927438</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First">
+      <created>1603308438451</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603308438451</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +182,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="add service table" />
     <MESSAGE value="added Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Service" />
+    <MESSAGE value="First" />
+    <option name="LAST_COMMIT_MESSAGE" value="First" />
   </component>
   <component name="WindowStateProjectService">
     <state width="426" height="464" key="DebuggerActiveHint" timestamp="1603286458665">
@@ -267,9 +274,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="96" key="Rider.ProjectTemplateDialog.Size/0.0.1366.728@0.0.1366.728" timestamp="1603182895226" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1603306963153">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1603308577309">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603306963153" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603308577309" />
   </component>
 </project>
