@@ -36,6 +36,10 @@ namespace Hospital
             });
             
             services.AddAutoMapper(typeof(MapperProfile));
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAnyCorsPolicy", policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +49,8 @@ namespace Hospital
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
+            app.UseCors("AllowAnyCorsPolicy");
             app.UseHttpsRedirection();
 
             app.UseRouting();

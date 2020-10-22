@@ -9,8 +9,12 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="AppointmentController.cs" t="Include" />
+          <e p="BioController.cs" t="Include" />
+          <e p="BlogController.cs" t="Include" />
           <e p="DepartmentController.cs" t="Include" />
           <e p="DoctorController.cs" t="Include" />
+          <e p="ProductController.cs" t="Include" />
           <e p="ServiceController.cs" t="Include" />
         </e>
         <e p="Hospital.csproj" t="IncludeRecursive" />
@@ -30,6 +34,7 @@
       <e p="Hospital.BLL" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DTO" t="Include">
+          <e p="AppointmentDto.cs" t="Include" />
           <e p="DoctorDto.cs" t="Include" />
         </e>
         <e p="Hospital.BLL.csproj" t="IncludeRecursive" />
@@ -48,9 +53,14 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="DataContext.cs" t="Include" />
         <e p="Entities" t="Include">
+          <e p="Appointment.cs" t="Include" />
           <e p="BaseEntity.cs" t="Include" />
+          <e p="Bio.cs" t="Include" />
+          <e p="Blog.cs" t="Include" />
+          <e p="Comment.cs" t="Include" />
           <e p="Department.cs" t="Include" />
           <e p="Doctor.cs" t="Include" />
+          <e p="Product.cs" t="Include" />
           <e p="Service.cs" t="Include" />
         </e>
         <e p="Hospital.DAL.csproj" t="IncludeRecursive" />
@@ -59,6 +69,14 @@
           <e p="20201021130554_AddDoctorsandDepartmentTables.Designer.cs" t="Include" />
           <e p="20201021143959_AddService.cs" t="Include" />
           <e p="20201021143959_AddService.Designer.cs" t="Include" />
+          <e p="20201022085410_AddBlogandCommentTables.cs" t="Include" />
+          <e p="20201022085410_AddBlogandCommentTables.Designer.cs" t="Include" />
+          <e p="20201022104448_AddProductTabele.cs" t="Include" />
+          <e p="20201022104448_AddProductTabele.Designer.cs" t="Include" />
+          <e p="20201022123912_Bio.cs" t="Include" />
+          <e p="20201022123912_Bio.Designer.cs" t="Include" />
+          <e p="20201022140444_AddAppointmentTableRelationwithDepartment.cs" t="Include" />
+          <e p="20201022140444_AddAppointmentTableRelationwithDepartment.Designer.cs" t="Include" />
           <e p="DataContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

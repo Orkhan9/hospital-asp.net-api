@@ -42,7 +42,7 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET api/<DoctorController>/5
         [HttpGet("{id}")]
-        public ActionResult<Doctor> Get(int id)
+        public ActionResult<DoctorDto> Get(int id)
         {
             Doctor doctor = _context.Doctors.Include(d=>d.Department).FirstOrDefault(p => p.Id == id);
             if (doctor == null) return NotFound();

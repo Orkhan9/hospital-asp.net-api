@@ -13,6 +13,11 @@ namespace Hospital.DAL
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Bio> Bios { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
         
     }
 }

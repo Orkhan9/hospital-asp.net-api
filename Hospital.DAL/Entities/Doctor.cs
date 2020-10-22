@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Hospital.DAL.Entities
 {
@@ -12,9 +13,8 @@ namespace Hospital.DAL.Entities
         public string Description { get; set; }
         [Required]
         public string Facebook { get; set; }
-        [Required]
         public int DepartmentId { get; set; }
-        public Department Department { get; set; }
+        public Department Department { get; set;}
         
     }
 }
