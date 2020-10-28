@@ -18,6 +18,7 @@ namespace Hospital.DAL
         public DbSet<Product> Products { get; set; }
         public DbSet<Bio> Bios { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<User> Users { get; set; }
         
     }
 }
