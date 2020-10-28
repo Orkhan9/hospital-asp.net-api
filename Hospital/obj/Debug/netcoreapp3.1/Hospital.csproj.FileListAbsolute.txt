@@ -136,3 +136,4 @@ C:\Users\user\Desktop\finalProject\finalproject-back\Hospital\obj\Debug\netcorea
 C:\Users\user\Desktop\finalProject\finalproject-back\Hospital\obj\Debug\netcoreapp3.1\Hospital.dll
 C:\Users\user\Desktop\finalProject\finalproject-back\Hospital\obj\Debug\netcoreapp3.1\Hospital.pdb
 C:\Users\user\Desktop\finalProject\finalproject-back\Hospital\obj\Debug\netcoreapp3.1\Hospital.genruntimeconfig.cache
+C:\Users\user\Desktop\finalProject\finalproject-back\Hospital\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

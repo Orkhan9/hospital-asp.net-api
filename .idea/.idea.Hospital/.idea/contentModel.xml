@@ -10,6 +10,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="AppointmentController.cs" t="Include" />
+          <e p="AuthController.cs" t="Include" />
           <e p="BioController.cs" t="Include" />
           <e p="BlogController.cs" t="Include" />
           <e p="DepartmentController.cs" t="Include" />
@@ -42,6 +43,9 @@
           <e p="DoctorDto.cs" t="Include" />
           <e p="UserForLoginDto.cs" t="Include" />
           <e p="UserForRegisterDto.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="Extensions.cs" t="Include" />
         </e>
         <e p="Hospital.BLL.csproj" t="IncludeRecursive" />
         <e p="Mapper" t="Include">
@@ -80,6 +84,8 @@
           <e p="20201021130554_AddDoctorsandDepartmentTables.Designer.cs" t="Include" />
           <e p="20201021143959_AddService.cs" t="Include" />
           <e p="20201021143959_AddService.Designer.cs" t="Include" />
+          <e p="20201028133055_addUserTable.cs" t="Include" />
+          <e p="20201028133055_addUserTable.Designer.cs" t="Include" />
           <e p="DataContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

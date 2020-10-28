@@ -34,6 +34,10 @@
         "AutoMapper.Extensions.Microsoft.DependencyInjection": {
           "target": "Package",
           "version": "[8.1.0, )"
+        },
+        "Microsoft.AspNetCore.Http": {
+          "target": "Package",
+          "version": "[2.2.2, )"
         }
       },
       "imports": [

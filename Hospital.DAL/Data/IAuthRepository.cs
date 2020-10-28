@@ -1,9 +1,12 @@
-﻿namespace Hospital.DAL
+﻿using System.Threading.Tasks;
+using Hospital.DAL.Entities;
+
+namespace Hospital.DAL
 {
     public interface IAuthRepository
     {
-        // Task<User> Register(User user, string password);
-        // Task<User> Login(string userName, string password);
-        // Task<bool> UserExists(string userName); 
+        Task<User> Register(User user, string password);
+        Task<User> Login(string userName, string password);
+        Task<bool> UserExists(string userName); 
     }
 }
