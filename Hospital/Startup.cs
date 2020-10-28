@@ -34,7 +34,17 @@ namespace Hospital
             {
                 option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),x=>x.MigrationsAssembly("Hospital.DAL"));
             });
-            
+            // services.AddScoped<IAuthRepository, AuthRepository>();
+            // services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
+            //     AddJwtBearer(opt =>
+            //         opt.TokenValidationParameters = new TokenValidationParameters
+            //         {
+            //             ValidateIssuerSigningKey = true,
+            //             IssuerSigningKey=
+            //                 new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+            //             ValidateIssuer=false,
+            //             ValidateAudience=false
+            //         });
             services.AddAutoMapper(typeof(MapperProfile));
             services.AddCors(options =>
             {
@@ -56,6 +66,7 @@ namespace Hospital
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
