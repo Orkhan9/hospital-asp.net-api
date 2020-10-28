@@ -44,7 +44,8 @@ namespace Hospital.Controllers
         [HttpGet("{id}")]
         public ActionResult<AppointmentDto> Get(int id)
         {
-            Appointment appointment = _context.Appointments.Include(d=>d.Department).FirstOrDefault(p => p.Id == id);
+            Appointment appointment = _context.Appointments.Include(d=>d.Department)
+                .FirstOrDefault(p => p.Id == id);
             if (appointment == null) return NotFound();
             var mapperappointment = _mapper.Map<Appointment, AppointmentDto>(appointment);
             
@@ -78,7 +79,8 @@ namespace Hospital.Controllers
         public async Task<ActionResult<Appointment>> Update(int id, [FromBody] Appointment appointment)
         {
             if (id != appointment.Id) return BadRequest();
-            Appointment dbappointment = _context.Appointments.Include(d=>d.Department).FirstOrDefault(p => p.Id == id);
+            Appointment dbappointment = _context.Appointments.Include(d=>d.Department)
+                .FirstOrDefault(p => p.Id == id);
             if (dbappointment == null) return NotFound();
 
             dbappointment.Name = appointment.Name;

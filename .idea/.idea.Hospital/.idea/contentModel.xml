@@ -14,6 +14,7 @@
           <e p="BlogController.cs" t="Include" />
           <e p="DepartmentController.cs" t="Include" />
           <e p="DoctorController.cs" t="Include" />
+          <e p="FileUpload.cs" t="Include" />
           <e p="ProductController.cs" t="Include" />
           <e p="ServiceController.cs" t="Include" />
         </e>
@@ -30,6 +31,11 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="wwwroot" t="Include">
+          <e p="image" t="Include">
+            <e p="file" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Hospital.BLL" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
