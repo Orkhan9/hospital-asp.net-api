@@ -242,6 +242,27 @@ namespace Hospital.DAL.Migrations
                     b.ToTable("Services");
                 });
 
+            modelBuilder.Entity("Hospital.DAL.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("PasswordHash")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .HasColumnType("varbinary(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("Hospital.DAL.Entities.Appointment", b =>
                 {
                     b.HasOne("Hospital.DAL.Entities.Department", "Department")
