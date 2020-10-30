@@ -1,0 +1,44 @@
+<changelist name="Uncommitted_changes_before_Update_at_10_30_2020_1_57_PM_[Default_Changelist]" date="1604051834095" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_1_57_PM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/30/2020 1:57 PM [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="Hospital.DAL/obj/Debug/netcoreapp3.1/Hospital.DAL.csproj.CoreCompileInputs.cache" />
+    <option name="AFTER_PATH" value="Hospital.DAL/obj/Debug/netcoreapp3.1/Hospital.DAL.csproj.CoreCompileInputs.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_1_57_PM_[Default_Changelist]/Hospital.DAL.csproj.CoreCompileInputs.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Hospital.DAL/obj/Debug/netcoreapp3.1/Hospital.DAL.csprojAssemblyReference.cache" />
+    <option name="AFTER_PATH" value="Hospital.DAL/obj/Debug/netcoreapp3.1/Hospital.DAL.csprojAssemblyReference.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_1_57_PM_[Default_Changelist]/Hospital.DAL.csprojAssemblyReference.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Hospital.BLL/obj/Debug/netcoreapp3.1/Hospital.BLL.csprojAssemblyReference.cache" />
+    <option name="AFTER_PATH" value="Hospital.BLL/obj/Debug/netcoreapp3.1/Hospital.BLL.csprojAssemblyReference.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_1_57_PM_[Default_Changelist]/Hospital.BLL.csprojAssemblyReference.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Hospital/obj/Debug/netcoreapp3.1/Hospital.csprojAssemblyReference.cache" />
+    <option name="AFTER_PATH" value="Hospital/obj/Debug/netcoreapp3.1/Hospital.csprojAssemblyReference.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_1_57_PM_[Default_Changelist]/Hospital.csprojAssemblyReference.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Hospital/bin/Debug/netcoreapp3.1/Hospital.BLL.dll" />
+    <option name="AFTER_PATH" value="Hospital/bin/Debug/netcoreapp3.1/Hospital.BLL.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_1_57_PM_[Default_Changelist]/Hospital.BLL.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Hospital/bin/Debug/netcoreapp3.1/Hospital.DAL.dll" />
+    <option name="AFTER_PATH" value="Hospital/bin/Debug/netcoreapp3.1/Hospital.DAL.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_1_57_PM_[Default_Changelist]/Hospital.DAL.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Hospital/bin/Debug/netcoreapp3.1/Hospital.dll" />
+    <option name="AFTER_PATH" value="Hospital/bin/Debug/netcoreapp3.1/Hospital.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_1_57_PM_[Default_Changelist]/Hospital.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Hospital/bin/Debug/netcoreapp3.1/Hospital.pdb" />
+    <option name="AFTER_PATH" value="Hospital/bin/Debug/netcoreapp3.1/Hospital.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_1_57_PM_[Default_Changelist]/Hospital.pdb" />
+  </binary>
+</changelist>
