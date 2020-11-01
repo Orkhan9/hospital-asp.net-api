@@ -16,6 +16,6 @@ namespace Hospital.BLL.DTO
         public DateTime Date { get; set; }
         [Required]
         public string Message { get; set; }
-        public string Department { get; set; }
+        public string Doctor { get; set; }
     }
 }

@@ -11,6 +11,18 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Http.Features/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -1538,6 +1550,19 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/2.2.0": {
+      "sha512": "ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -5792,25 +5817,26 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Microsoft.AspNetCore.Http.Features >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 5.0.0-rc.2.20475.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0-rc.2.20475.6",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.0-rc.2.20475.6"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj",
       "projectName": "Hospital.DAL",
-      "projectPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.DAL\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5834,6 +5860,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.0-rc.2.20475.6, )"

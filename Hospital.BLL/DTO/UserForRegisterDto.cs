@@ -9,5 +9,7 @@ namespace Hospital.BLL.DTO
 
         [StringLength(8,MinimumLength =3,ErrorMessage ="8den kicik 3den boyuk olmalidir")]
         public string Password { get; set; }
+
+        public int RoleId  { get; set; }
     }
 }

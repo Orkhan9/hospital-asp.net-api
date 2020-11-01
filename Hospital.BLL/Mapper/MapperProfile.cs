@@ -9,12 +9,17 @@ namespace Hospital.BLL.Mapper
         public MapperProfile()
         {
             CreateMap<Doctor, DoctorDto>()
-                .ForMember(x => x.Department, o => o.MapFrom(x => x.Department.Name));
-            
-            CreateMap<Appointment, AppointmentDto>()
-                .ForMember(x => x.Department, o => o.MapFrom(x => x.Department.Name));
+                .ForMember(x => x.Department
+                    , o =>
+                        o.MapFrom(x => x.Department.Name));
 
+            CreateMap<Appointment, AppointmentDto>()
+                .ForMember(x => x.Doctor
+                    , o =>
+                        o.MapFrom(x => x.Doctor.Name));
             
+            
+
         }
     }
 }

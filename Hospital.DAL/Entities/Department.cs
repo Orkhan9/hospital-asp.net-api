@@ -10,6 +10,5 @@ namespace Hospital.DAL.Entities
         [Required]
         public string Description { get; set; }
         public ICollection<Doctor> Doctors { get; set; }
-        public ICollection<Appointment> Appointments { get; set; }
     }
 }

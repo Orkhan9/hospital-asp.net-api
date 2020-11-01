@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Hospital.DAL.Entities;
+using Microsoft.AspNetCore.Http;
 
 namespace Hospital.BLL.DTO
 {
@@ -13,7 +15,9 @@ namespace Hospital.BLL.DTO
         public string Description { get; set; }
         [Required]
         public string Facebook { get; set; }
-        [Required]
+        public int DepartmentId { get; set; }
+
         public string Department { get; set; }
+        
     }
 }

@@ -28,6 +28,7 @@ namespace Hospital.Controllers
         {
             //eyer yuxarda apicontroller yazmisansa modelstate yoxlama
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
+            userForRegisterDto.RoleId = userForRegisterDto.RoleId;
             if (await _repo.UserExists(userForRegisterDto.Username))
             {
                 return BadRequest("user already exists");
@@ -36,20 +37,22 @@ namespace Hospital.Controllers
             {
                 Name = userForRegisterDto.Username
             };
-            var createdUser = _repo.Register(newUser, userForRegisterDto.Password);
+            var createdUser = _repo.Register(newUser, userForRegisterDto.Password,userForRegisterDto.RoleId);
            // return Ok("Okaydir");
             return StatusCode(201);
         }
+        
         [HttpPost("login")]
         public async Task<IActionResult>Login(UserForLoginDto userForLoginDto)
         {
-            var userFromRepo =await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
+            var userFromRepo =await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password,userForLoginDto.Role);
             if (userFromRepo == null)
                 return Unauthorized();
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier,userFromRepo.Id.ToString()),
-                new Claim(ClaimTypes.Name,userFromRepo.Name)
+                new Claim(ClaimTypes.Name,userFromRepo.Name),
+                new Claim("role",userFromRepo.Role.Name)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config
                 .GetSection("Appsettings:Token").Value));

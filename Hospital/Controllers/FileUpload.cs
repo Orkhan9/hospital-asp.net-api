@@ -12,19 +12,33 @@ namespace Hospital.Controllers
     public class FileUpload : ControllerBase
     {
         [HttpPost]
-        public async Task<IActionResult> Upload([FromForm]IFormFile file)
+        public async Task<IActionResult> Upload(IFormFile file)
         {
             try
             {
-                string path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/image",file.Name);
-                FileStream stream=new FileStream(path,FileMode.Create);
-                await file.CopyToAsync(stream);
-                return Ok("okey");
+                if (file.Length>0)
+                {
+                    string newpath = Guid.NewGuid() + file.FileName;
+                    using (FileStream filestream=System.IO.File.Create((newpath)))
+                    {
+                        await file.CopyToAsync(filestream);
+                        filestream.Flush();
+                       
+                    }
+                    
+                }
+                // string newpath = Guid.NewGuid() + file.Name+file.ContentType;
+                // string path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/images",newpath);
+                // FileStream stream=new FileStream(path,FileMode.Create);
+                // await file.CopyToAsync(stream);
+                // return Ok("okey");
             }
             catch (Exception e)
             {
                 return Ok(e.Message);
             }
+            return Ok("lorem");
+
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Hospital.DAL.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DepartmentId")
+                    b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -50,7 +50,7 @@ namespace Hospital.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentId");
+                    b.HasIndex("DoctorId");
 
                     b.ToTable("Appointments");
                 });
@@ -184,6 +184,9 @@ namespace Hospital.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PhotoUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Profession")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -216,6 +219,21 @@ namespace Hospital.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Hospital.DAL.Entities.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.Service", b =>
@@ -258,20 +276,25 @@ namespace Hospital.DAL.Migrations
                     b.Property<byte[]>("PasswordSalt")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
 
                     b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.Appointment", b =>
                 {
-                    b.HasOne("Hospital.DAL.Entities.Department", "Department")
+                    b.HasOne("Hospital.DAL.Entities.Doctor", "Doctor")
                         .WithMany("Appointments")
-                        .HasForeignKey("DepartmentId")
+                        .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Department");
+                    b.Navigation("Doctor");
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.Comment", b =>
@@ -296,6 +319,17 @@ namespace Hospital.DAL.Migrations
                     b.Navigation("Department");
                 });
 
+            modelBuilder.Entity("Hospital.DAL.Entities.User", b =>
+                {
+                    b.HasOne("Hospital.DAL.Entities.Role", "Role")
+                        .WithMany("Users")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+                });
+
             modelBuilder.Entity("Hospital.DAL.Entities.Blog", b =>
                 {
                     b.Navigation("Comments");
@@ -303,9 +337,17 @@ namespace Hospital.DAL.Migrations
 
             modelBuilder.Entity("Hospital.DAL.Entities.Department", b =>
                 {
-                    b.Navigation("Appointments");
-
                     b.Navigation("Doctors");
+                });
+
+            modelBuilder.Entity("Hospital.DAL.Entities.Doctor", b =>
+                {
+                    b.Navigation("Appointments");
+                });
+
+            modelBuilder.Entity("Hospital.DAL.Entities.Role", b =>
+                {
+                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

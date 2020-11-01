@@ -1471,6 +1471,7 @@
       },
       "Hospital.DAL/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.EntityFrameworkCore": "5.0.0-rc.2.20475.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0-rc.2.20475.6"
         },

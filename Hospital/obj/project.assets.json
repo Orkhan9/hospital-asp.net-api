@@ -1657,6 +1657,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.EntityFrameworkCore": "5.0.0-rc.2.20475.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0-rc.2.20475.6"
         },
@@ -6118,19 +6119,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital\\Hospital.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital\\Hospital.csproj",
       "projectName": "Hospital",
-      "projectPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital\\Hospital.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital\\Hospital.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6143,8 +6144,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.BLL\\Hospital.BLL.csproj": {
-              "projectPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.BLL\\Hospital.BLL.csproj"
+            "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.BLL\\Hospital.BLL.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.BLL\\Hospital.BLL.csproj"
             }
           }
         }

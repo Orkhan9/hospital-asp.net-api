@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.BLL\\Hospital.BLL.csproj": {}
+    "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.BLL\\Hospital.BLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.BLL\\Hospital.BLL.csproj": {
+    "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.BLL\\Hospital.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.BLL\\Hospital.BLL.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.BLL\\Hospital.BLL.csproj",
         "projectName": "Hospital.BLL",
-        "projectPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.BLL\\Hospital.BLL.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.BLL\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.BLL\\Hospital.BLL.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj": {
-                "projectPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj"
+              "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj"
               }
             }
           }
@@ -70,17 +70,17 @@
         }
       }
     },
-    "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj": {
+    "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj",
         "projectName": "Hospital.DAL",
-        "projectPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.DAL\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -104,6 +104,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.0-rc.2.20475.6, )"

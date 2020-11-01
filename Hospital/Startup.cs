@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -62,6 +63,7 @@ namespace Hospital
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseStaticFiles();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

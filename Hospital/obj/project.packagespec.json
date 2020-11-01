@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital\\Hospital.csproj",
+    "projectUniqueName": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital\\Hospital.csproj",
     "projectName": "Hospital",
-    "projectPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital\\Hospital.csproj",
-    "outputPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital\\obj\\",
+    "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital\\Hospital.csproj",
+    "outputPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"
@@ -16,8 +16,8 @@
     "frameworks": {
       "netcoreapp3.1": {
         "projectReferences": {
-          "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.BLL\\Hospital.BLL.csproj": {
-            "projectPath": "C:\\Users\\user\\Desktop\\finalProject\\finalproject-back\\Hospital.BLL\\Hospital.BLL.csproj"
+          "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.BLL\\Hospital.BLL.csproj": {
+            "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.BLL\\Hospital.BLL.csproj"
           }
         }
       }

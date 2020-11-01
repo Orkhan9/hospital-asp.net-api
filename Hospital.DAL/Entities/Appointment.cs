@@ -16,7 +16,7 @@ namespace Hospital.DAL.Entities
         public DateTime Date { get; set; }
         [Required]
         public string Message { get; set; }
-        public int DepartmentId { get; set; }
-        public Department Department { get; set; }
+        public int DoctorId { get; set; }
+        public Doctor Doctor { get; set; }
     }
 }

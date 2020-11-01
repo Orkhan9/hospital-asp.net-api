@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Hospital.BLL.DTO;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,10 +20,12 @@ namespace Hospital.Controllers
     {
         private readonly DataContext _context;
         private readonly IMapper _mapper;
-        public DoctorController(DataContext context,IMapper mapper)
+        private IWebHostEnvironment _env;
+        public DoctorController(DataContext context,IMapper mapper,IWebHostEnvironment env)
         {
             _context=context;
             _mapper = mapper;
+            _env = env;
         }
         /// <summary>
         /// Get All Doctors
@@ -33,6 +38,19 @@ namespace Hospital.Controllers
             List<Doctor> doctors = _context.Doctors.Include(d => d.Department).ToList();
             var mapperdoctors = _mapper.Map<IEnumerable<Doctor>,IEnumerable<DoctorDto>>(doctors);
             return Ok(mapperdoctors);
+        }
+        
+        /// <summary>
+        /// Get Doctors by Department
+        /// </summary>
+        /// <returns></returns>
+        // GET: api/<DoctorController>
+        [HttpGet("GetDoctorByDepartment/{id}")]
+        public ActionResult<IEnumerable<Doctor>> GetDoctorByDepartment(int id)
+        {
+            List<Doctor> doctors = _context.Doctors.Where(x=>x.DepartmentId==id).ToList();
+            
+            return Ok(doctors);
         }
 
         /// <summary>
@@ -60,11 +78,24 @@ namespace Hospital.Controllers
         [HttpPost]
         public async Task<ActionResult> Create([FromBody] Doctor doctor)
         {
+            Doctor newdoctor = new Doctor
+            {
+                Name = doctor.Name,
+                Description = doctor.Description,
+                DepartmentId = doctor.DepartmentId,
+                Facebook = doctor.Facebook,
+                Profession = doctor.Profession
+            };
+            string path = Guid.NewGuid()+"/wwwroot/images/" + doctor.Photo.FileName;
+            FileStream stream=new FileStream(path,FileMode.Create);
+            await doctor.Photo.CopyToAsync(stream);
+            newdoctor.PhotoUrl = doctor.Photo.FileName;
+            // newdoctor.PhotoUrl=doctorDto.Photo
             if (!ModelState.IsValid) return BadRequest();
-            
-            await _context.AddAsync(doctor);
+            // string path = doctor.PhotoUrl;
+            await _context.AddAsync(newdoctor);
             await _context.SaveChangesAsync();
-            return Ok(doctor);
+            return Ok(newdoctor);
         }
         
         /// <summary>

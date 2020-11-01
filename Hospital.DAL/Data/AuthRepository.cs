@@ -11,9 +11,9 @@ namespace Hospital.DAL
         {
             _dataContext = dataContext;
         }
-        public async Task<User> Login(string userName, string password)
+        public async Task<User> Login(string userName, string password,string role)
         {
-            var user = await _dataContext.Users.FirstOrDefaultAsync(u => u.Name == userName);
+            var user = await _dataContext.Users.Include(u=>u.Role).FirstOrDefaultAsync(u => u.Name == userName);
             if (user == null) return null;
             if (!VerifyPasswordHash(password,user.PasswordHash,user.PasswordSalt))
             {
@@ -39,12 +39,13 @@ namespace Hospital.DAL
             return true;
         }
     
-        public async Task<User> Register(User user, string password)
+        public async Task<User> Register(User user, string password,int roleId)
         {
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
+            user.RoleId = roleId;
             await _dataContext.Users.AddAsync(user);
             await _dataContext.SaveChangesAsync();
             return user;

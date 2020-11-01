@@ -26,11 +26,11 @@ namespace Hospital.Controllers
         /// Get All Appointments
         /// </summary>
         /// <returns></returns>
-        // GET: api/<AppointmentController>
+        //GET: api/<AppointmentController>
         [HttpGet]
         public ActionResult<IEnumerable<AppointmentDto>> Get()
         {
-            List<Appointment> appointments = _context.Appointments.Include(d => d.Department).ToList();
+            List<Appointment> appointments = _context.Appointments.Include(d => d.Doctor).ToList();
             var mapperappointments = _mapper.Map<IEnumerable<Appointment>,IEnumerable<AppointmentDto>>(appointments);
             return Ok(mapperappointments);
         }
@@ -40,11 +40,11 @@ namespace Hospital.Controllers
         /// </summary>
         /// <param name="id">for appointment</param>
         /// <returns></returns>
-        // GET api/<AppointmentController>/5
+        //GET api/<AppointmentController>/5
         [HttpGet("{id}")]
         public ActionResult<AppointmentDto> Get(int id)
         {
-            Appointment appointment = _context.Appointments.Include(d=>d.Department)
+            Appointment appointment = _context.Appointments.Include(d=>d.Doctor)
                 .FirstOrDefault(p => p.Id == id);
             if (appointment == null) return NotFound();
             var mapperappointment = _mapper.Map<Appointment, AppointmentDto>(appointment);
@@ -62,7 +62,7 @@ namespace Hospital.Controllers
         public async Task<ActionResult> Create([FromBody] Appointment appointment)
         {
             if (!ModelState.IsValid) return BadRequest();
-            //appointment.Date = DateTime.Parse(lorem);
+           
             await _context.AddAsync(appointment);
             await _context.SaveChangesAsync();
             return Ok(appointment);
@@ -79,14 +79,14 @@ namespace Hospital.Controllers
         public async Task<ActionResult<Appointment>> Update(int id, [FromBody] Appointment appointment)
         {
             if (id != appointment.Id) return BadRequest();
-            Appointment dbappointment = _context.Appointments.Include(d=>d.Department)
+            Appointment dbappointment = _context.Appointments.Include(d=>d.Doctor)
                 .FirstOrDefault(p => p.Id == id);
             if (dbappointment == null) return NotFound();
 
             dbappointment.Name = appointment.Name;
             dbappointment.Email = appointment.Email;
             dbappointment.Phone = appointment.Phone;
-            dbappointment.DepartmentId = appointment.DepartmentId;
+            dbappointment.DoctorId = appointment.DoctorId;
             dbappointment.Message = appointment.Message;
             await _context.SaveChangesAsync();
             return Ok(dbappointment);
