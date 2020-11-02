@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Hospital.DAL.Entities;
 
 namespace Hospital.BLL.DTO
 {
-    public class BlogReturnDto
+    public class BlogReturnDto:BaseEntity
     {
         public string Title { get; set; }
         public string Topic { get; set; }

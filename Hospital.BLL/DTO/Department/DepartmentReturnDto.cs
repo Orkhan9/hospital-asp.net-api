@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Hospital.DAL.Entities;
 
 namespace Hospital.BLL.DTO
 {
-    public class DepartmentReturnDto
+    public class DepartmentReturnDto:BaseEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }
