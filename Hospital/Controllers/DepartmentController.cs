@@ -15,9 +15,11 @@ namespace Hospital.Controllers
     public class DepartmentController : ControllerBase
     {
         private readonly DataContext _context;
-        public DepartmentController(DataContext context)
+        private readonly IMapper _mapper;
+        public DepartmentController(DataContext context,IMapper mapper)
         {
             _context=context;
+            _mapper = mapper;
         }
         
         
@@ -27,9 +29,11 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET: api/<DepartmentController>
         [HttpGet]
-        public ActionResult<IEnumerable<Department>> Get()
+        public ActionResult<IEnumerable<DepartmentReturnDto>> Get()
         {
-            return Ok(_context.Departments.ToList());
+            var departments = _context.Departments.Include(x => x.Doctors).ToList();
+            var mapperdepartments = _mapper.Map<IEnumerable<Department>, IEnumerable<DepartmentReturnDto>>(departments);
+            return Ok(mapperdepartments);
         }
         
         /// <summary>
@@ -39,12 +43,13 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET api/<DepartmentController>/5
         [HttpGet("{id}")]
-        public ActionResult<Department> Get(int id)
+        public ActionResult<DepartmentReturnDto> Get(int id)
         {
-            Department department = _context.Departments.FirstOrDefault(p => p.Id == id);
+            Department department = _context.Departments.Include(x=>x.Doctors).FirstOrDefault(p => p.Id == id);
             if (department == null) return NotFound();
+            var mapperdepartment = _mapper.Map<Department, DepartmentReturnDto>(department);
             
-            return Ok(department);
+            return Ok(mapperdepartment);
         }
         
         /// <summary>
@@ -54,10 +59,13 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // POST api/<DepartmentController>
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] Department department)
+        public async Task<ActionResult> Create([FromBody] DepartmentCreateDto departmentCreateDto)
         {
-            if (!ModelState.IsValid) return BadRequest();
-            
+            Department department = new Department
+            {
+                Name = departmentCreateDto.Name,
+                Description = departmentCreateDto.Description
+            };
             await _context.AddAsync(department);
             await _context.SaveChangesAsync();
             return Ok(department);
@@ -71,14 +79,14 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<DepartmentController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Department>> Update(int id, [FromBody] Department department)
+        public async Task<ActionResult<Department>> Update(int id, [FromBody] DepartmentUpdateDto departmentUpdateDto)
         {
-            if (id != department.Id) return BadRequest();
+            if (id != departmentUpdateDto.Id) return BadRequest();
             Department dbdepartment = _context.Departments.FirstOrDefault(p => p.Id == id);
             if (dbdepartment == null) return NotFound();
 
-            dbdepartment.Name = department.Name;
-            dbdepartment.Description = dbdepartment.Description;
+            dbdepartment.Name = departmentUpdateDto.Name;
+            dbdepartment.Description = departmentUpdateDto.Description;
             await _context.SaveChangesAsync();
             return Ok(dbdepartment);
         }

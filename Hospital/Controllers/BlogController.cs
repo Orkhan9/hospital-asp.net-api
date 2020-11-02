@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mime;
 using System.Threading.Tasks;
+using AutoMapper;
+using Hospital.BLL.DTO;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hospital.Controllers
 {
@@ -14,9 +17,11 @@ namespace Hospital.Controllers
     public class BlogController : ControllerBase
     {
         private readonly DataContext _context;
-        public BlogController(DataContext context)
+        private readonly IMapper _mapper;
+        public BlogController(DataContext context,IMapper mapper)
         {
             _context=context;
+            _mapper = mapper;
         }
         
         
@@ -28,7 +33,9 @@ namespace Hospital.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Blog>> Get()
         {
-            return Ok(_context.Blogs.ToList());
+            var blogs= _context.Blogs.Include(x => x.Comments).ToList();
+            var mapperblogs = _mapper.Map<IEnumerable<Blog>,IEnumerable<BlogReturnDto>>(blogs);
+            return Ok(mapperblogs);
         }
         
         /// <summary>
@@ -40,10 +47,11 @@ namespace Hospital.Controllers
         [HttpGet("{id}")]
         public ActionResult<Blog> Get(int id)
         {
-            Blog blog = _context.Blogs.FirstOrDefault(p => p.Id == id);
+            Blog blog = _context.Blogs.Include(x=>x.Comments).FirstOrDefault(p => p.Id == id);
             if (blog == null) return NotFound();
+            var mapperblog = _mapper.Map<Blog,BlogReturnDto>(blog);
             
-            return Ok(blog);
+            return Ok(mapperblog);
         }
         
         /// <summary>
@@ -53,10 +61,14 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // POST api/<BlogController>
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] Blog blog)
+        public async Task<ActionResult> Create([FromBody] BlogCreateDto blogCreateDto)
         {
-            if (!ModelState.IsValid) return BadRequest();
-            blog.PublishTime = DateTime.Now;
+            
+            Blog blog=new Blog();
+            blog.Title = blogCreateDto.Title;
+            blog.Topic = blogCreateDto.Topic;
+            blog.Description = blogCreateDto.Description;
+            blog.PhotoUrl = blogCreateDto.PhotoUrl;
             await _context.AddAsync(blog);
             await _context.SaveChangesAsync();
             return Ok(blog);
@@ -70,18 +82,17 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<BlogController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Blog>> Update(int id, [FromBody] Blog blog)
+        public async Task<ActionResult<Blog>> Update(int id, [FromBody] BlogUpdateDto blogUpdateDto)
         {
-            if (id != blog.Id) return BadRequest();
+            
+            if (id != blogUpdateDto.Id) return BadRequest();
             Blog dbblog = _context.Blogs.FirstOrDefault(p => p.Id == id);
             if (dbblog == null) return NotFound();
 
-            dbblog.Title = blog.Title;
-            dbblog.Topic = blog.Topic;
-            dbblog.Description = blog.Description;
-            dbblog.PhotoUrl = blog.PhotoUrl;
-            dbblog.PublishTime = blog.PublishTime;
-            dbblog.Comments = blog.Comments;
+            dbblog.Title = blogUpdateDto.Title;
+            dbblog.Topic = blogUpdateDto.Topic;
+            dbblog.Description = blogUpdateDto.Description;
+            dbblog.PhotoUrl = blogUpdateDto.PhotoUrl;
             await _context.SaveChangesAsync();
             return Ok(dbblog);
         }

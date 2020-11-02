@@ -1,22 +1,26 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Http;
 
-namespace Hospital.DAL.Entities
+namespace Hospital.BLL.DTO
 {
-    public class Doctor:BaseEntity
+    public class DoctorCreateDto
     {
-        public string PhotoUrl { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string Profession { get; set; }
+        [Required]
         public string Description { get; set; }
+        [Required]
         public string Facebook { get; set; }
-        [NotMapped]
+        [Required]
+        public string PhotoUrl { get; set; }
+        [Required]
         public IFormFile Photo { get; set; }
+        [Required]
         public int DepartmentId { get; set; }
-        public Department Department { get; set;}
-        public ICollection<Appointment> Appointments { get; set; }
-        
     }
 }

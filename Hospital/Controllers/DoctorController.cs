@@ -76,23 +76,22 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // POST api/<DoctorController>
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] Doctor doctor)
+        public async Task<ActionResult> Create([FromBody] DoctorCreateDto doctorCreateDto)
         {
             Doctor newdoctor = new Doctor
             {
-                Name = doctor.Name,
-                Description = doctor.Description,
-                DepartmentId = doctor.DepartmentId,
-                Facebook = doctor.Facebook,
-                Profession = doctor.Profession
+                Name = doctorCreateDto.Name,
+                Description = doctorCreateDto.Description,
+                Facebook = doctorCreateDto.Facebook,
+                DepartmentId = doctorCreateDto.DepartmentId,
+                Profession = doctorCreateDto.Profession
             };
-            string path = Guid.NewGuid()+"/wwwroot/images/" + doctor.Photo.FileName;
+            string path = Guid.NewGuid()+"/wwwroot/images/" + doctorCreateDto.Photo.FileName;
             FileStream stream=new FileStream(path,FileMode.Create);
-            await doctor.Photo.CopyToAsync(stream);
-            newdoctor.PhotoUrl = doctor.Photo.FileName;
-            // newdoctor.PhotoUrl=doctorDto.Photo
-            if (!ModelState.IsValid) return BadRequest();
-            // string path = doctor.PhotoUrl;
+            await doctorCreateDto.Photo.CopyToAsync(stream);
+            newdoctor.PhotoUrl = doctorCreateDto.Photo.FileName;
+            // newdoctor.PhotoUrl=doctorCreateDto.Photo
+            // string path = doctorCreateDto.PhotoUrl;
             await _context.AddAsync(newdoctor);
             await _context.SaveChangesAsync();
             return Ok(newdoctor);
@@ -106,17 +105,16 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<DoctorController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Doctor>> Update(int id, [FromBody] Doctor doctor)
+        public async Task<ActionResult<Doctor>> Update(int id, [FromBody] DoctorUpdateDto doctorUpdateDto)
         {
-            if (id != doctor.Id) return BadRequest();
+            if (id != doctorUpdateDto.Id) return BadRequest();
             Doctor dbDoctor = _context.Doctors.Include(d=>d.Department).FirstOrDefault(p => p.Id == id);
             if (dbDoctor == null) return NotFound();
 
-            dbDoctor.Name = doctor.Name;
-            dbDoctor.Description = doctor.Description;
-            dbDoctor.Facebook = doctor.Facebook;
-            dbDoctor.DepartmentId = doctor.DepartmentId;
-            dbDoctor.Profession = doctor.Profession;
+            dbDoctor.Name = doctorUpdateDto.Name;
+            dbDoctor.Description = doctorUpdateDto.Description;
+            dbDoctor.Facebook = doctorUpdateDto.Facebook;
+            dbDoctor.Profession = doctorUpdateDto.Profession;
             await _context.SaveChangesAsync();
             return Ok(dbDoctor);
         }

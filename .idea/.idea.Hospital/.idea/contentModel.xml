@@ -53,7 +53,21 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="DTO" t="Include">
           <e p="AppointmentDto.cs" t="Include" />
-          <e p="DoctorDto.cs" t="Include" />
+          <e p="Blog" t="Include">
+            <e p="BlogCreateDto.cs" t="Include" />
+            <e p="BlogReturnDto.cs" t="Include" />
+            <e p="BlogUpdateDto.cs" t="Include" />
+          </e>
+          <e p="Department" t="Include">
+            <e p="DepartmentCreateDto.cs" t="Include" />
+            <e p="DepartmentReturnDto.cs" t="Include" />
+            <e p="DepartmentUpdateDto.cs" t="Include" />
+          </e>
+          <e p="Doctor" t="Include">
+            <e p="DoctorCreateDto.cs" t="Include" />
+            <e p="DoctorReturnDto.cs" t="Include" />
+            <e p="DoctorUpdateDto.cs" t="Include" />
+          </e>
           <e p="UserForLoginDto.cs" t="Include" />
           <e p="UserForRegisterDto.cs" t="Include" />
         </e>
