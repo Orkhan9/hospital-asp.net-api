@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Hospital.BLL.DTO.Product;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -53,10 +54,15 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // POST api/<ProductController>
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] Product product)
+        public async Task<ActionResult> Create([FromBody] ProductCreateDto productCreateDto)
         {
-            if (!ModelState.IsValid) return BadRequest();
-            product.PhotoUrl = productImageUrl + product.PhotoUrl;
+            Product product = new Product
+            {
+                Name = productCreateDto.Name,
+                Price = productCreateDto.Price,
+                PhotoUrl = productCreateDto.PhotoUrl
+            };
+            // product.PhotoUrl = productImageUrl + productCreateDto.PhotoUrl;
             await _context.AddAsync(product);
             await _context.SaveChangesAsync();
             return Ok(product);
@@ -70,15 +76,15 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<ProductController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Product>> Update(int id, [FromBody] Product product)
+        public async Task<ActionResult<Product>> Update(int id, [FromBody] ProductUpdateDto productUpdateDto)
         {
-            if (id != product.Id) return BadRequest();
+            if (id != productUpdateDto.Id) return BadRequest();
             Product dbproduct = _context.Products.FirstOrDefault(p => p.Id == id);
             if (dbproduct == null) return NotFound();
 
-            dbproduct.Name = product.Name;
-            dbproduct.Price = product.Price;
-            dbproduct.PhotoUrl = productImageUrl+product.PhotoUrl;
+            dbproduct.Name = productUpdateDto.Name;
+            dbproduct.Price = productUpdateDto.Price;
+            dbproduct.PhotoUrl = productImageUrl+productUpdateDto.PhotoUrl;
            
             await _context.SaveChangesAsync();
             return Ok(dbproduct);

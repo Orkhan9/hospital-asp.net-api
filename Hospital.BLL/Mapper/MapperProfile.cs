@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using AutoMapper;
 using Hospital.BLL.DTO;
+using Hospital.BLL.DTO.Appointment;
 using Hospital.DAL.Entities;
 
 namespace Hospital.BLL.Mapper
@@ -9,12 +10,12 @@ namespace Hospital.BLL.Mapper
     {
         public MapperProfile()
         {
-            CreateMap<Doctor, DoctorDto>()
+            CreateMap<Doctor, DoctorReturnDto>()
                 .ForMember(x => x.Department
                     , o =>
                         o.MapFrom(x => x.Department.Name));
 
-            CreateMap<Appointment, AppointmentDto>()
+            CreateMap<Appointment, AppointmentReturnDto>()
                 .ForMember(x => x.Doctor
                     , o =>
                         o.MapFrom(x => x.Doctor.Name));

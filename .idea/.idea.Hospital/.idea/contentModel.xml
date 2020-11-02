@@ -52,7 +52,12 @@
       <e p="Hospital.BLL" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DTO" t="Include">
-          <e p="AppointmentDto.cs" t="Include" />
+          <e p="Appointment" t="Include">
+            <e p="AppointmentCreateDto.cs" t="Include" />
+            <e p="AppointmentReturnDto.cs" t="Include" />
+            <e p="AppointmentUpdateDto.cs" t="Include" />
+          </e>
+          <e p="BioUpdateDto.cs" t="Include" />
           <e p="Blog" t="Include">
             <e p="BlogCreateDto.cs" t="Include" />
             <e p="BlogReturnDto.cs" t="Include" />
@@ -67,6 +72,14 @@
             <e p="DoctorCreateDto.cs" t="Include" />
             <e p="DoctorReturnDto.cs" t="Include" />
             <e p="DoctorUpdateDto.cs" t="Include" />
+          </e>
+          <e p="Product" t="Include">
+            <e p="ProductCreateDto.cs" t="Include" />
+            <e p="ProductUpdateDto.cs" t="Include" />
+          </e>
+          <e p="Service" t="Include">
+            <e p="ServiceCreateDto.cs" t="Include" />
+            <e p="ServiceUpdateDto.cs" t="Include" />
           </e>
           <e p="UserForLoginDto.cs" t="Include" />
           <e p="UserForRegisterDto.cs" t="Include" />

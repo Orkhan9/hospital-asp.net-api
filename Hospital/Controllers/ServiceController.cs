@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Hospital.BLL.DTO.Service;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -51,9 +52,14 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // POST api/<ServiceController>
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] Service service)
+        public async Task<ActionResult> Create([FromBody] ServiceCreateDto serviceCreateDto)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            Service service = new Service
+            {
+                Name = serviceCreateDto.Name,
+                Description = serviceCreateDto.Description,
+                ShortDesc = serviceCreateDto.ShortDesc
+            };
             
             await _context.AddAsync(service);
             await _context.SaveChangesAsync();
@@ -68,14 +74,15 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<ServiceController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Department>> Update(int id, [FromBody] Service service)
+        public async Task<ActionResult<Department>> Update(int id, [FromBody] ServiceUpdateDto serviceUpdateDto)
         {
-            if (id != service.Id) return BadRequest();
+            if (id != serviceUpdateDto.Id) return BadRequest();
             Service dbservice = _context.Services.FirstOrDefault(p => p.Id == id);
             if (dbservice == null) return NotFound();
 
-            dbservice.Name = service.Name;
-            dbservice.Description = service.Description;
+            dbservice.Name = serviceUpdateDto.Name;
+            dbservice.Description = serviceUpdateDto.Description;
+            dbservice.ShortDesc = serviceUpdateDto.ShortDesc;
             await _context.SaveChangesAsync();
             return Ok(dbservice);
         }

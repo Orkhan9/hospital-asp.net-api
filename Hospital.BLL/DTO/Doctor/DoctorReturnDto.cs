@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Hospital.DAL.Entities;
-using Microsoft.AspNetCore.Http;
 
 namespace Hospital.BLL.DTO
 {
-    public class DoctorDto:BaseEntity
+    public class DoctorReturnDto:BaseEntity
     {
         [Required]
         public string Name { get; set; }
@@ -18,6 +16,5 @@ namespace Hospital.BLL.DTO
         public int DepartmentId { get; set; }
 
         public string Department { get; set; }
-        
     }
 }

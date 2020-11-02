@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using Hospital.DAL.Entities;
 
-namespace Hospital.BLL.DTO
+namespace Hospital.BLL.DTO.Appointment
 {
-    public class AppointmentDto:BaseEntity
+    public class AppointmentUpdateDto:BaseEntity
     {
         [Required]
         public string Name { get; set; }
@@ -16,6 +16,7 @@ namespace Hospital.BLL.DTO
         public DateTime Date { get; set; }
         [Required]
         public string Message { get; set; }
-        public string Doctor { get; set; }
+        [Required]
+        public int DoctorId { get; set; }
     }
 }

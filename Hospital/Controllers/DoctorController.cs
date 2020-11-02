@@ -33,10 +33,10 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET: api/<DoctorController>
         [HttpGet]
-        public ActionResult<IEnumerable<DoctorDto>> Get()
+        public ActionResult<IEnumerable<DoctorReturnDto>> Get()
         {
             List<Doctor> doctors = _context.Doctors.Include(d => d.Department).ToList();
-            var mapperdoctors = _mapper.Map<IEnumerable<Doctor>,IEnumerable<DoctorDto>>(doctors);
+            var mapperdoctors = _mapper.Map<IEnumerable<Doctor>,IEnumerable<DoctorReturnDto>>(doctors);
             return Ok(mapperdoctors);
         }
         
@@ -60,11 +60,11 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET api/<DoctorController>/5
         [HttpGet("{id}")]
-        public ActionResult<DoctorDto> Get(int id)
+        public ActionResult<DoctorReturnDto> Get(int id)
         {
             Doctor doctor = _context.Doctors.Include(d=>d.Department).FirstOrDefault(p => p.Id == id);
             if (doctor == null) return NotFound();
-            var mapperdoctor = _mapper.Map<Doctor, DoctorDto>(doctor);
+            var mapperdoctor = _mapper.Map<Doctor, DoctorReturnDto>(doctor);
             
             return Ok(mapperdoctor);
         }

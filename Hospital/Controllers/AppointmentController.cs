@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Hospital.BLL.DTO;
+using Hospital.BLL.DTO.Appointment;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -28,10 +29,10 @@ namespace Hospital.Controllers
         /// <returns></returns>
         //GET: api/<AppointmentController>
         [HttpGet]
-        public ActionResult<IEnumerable<AppointmentDto>> Get()
+        public ActionResult<IEnumerable<AppointmentReturnDto>> Get()
         {
             List<Appointment> appointments = _context.Appointments.Include(d => d.Doctor).ToList();
-            var mapperappointments = _mapper.Map<IEnumerable<Appointment>,IEnumerable<AppointmentDto>>(appointments);
+            var mapperappointments = _mapper.Map<IEnumerable<Appointment>,IEnumerable<AppointmentReturnDto>>(appointments);
             return Ok(mapperappointments);
         }
 
@@ -42,12 +43,12 @@ namespace Hospital.Controllers
         /// <returns></returns>
         //GET api/<AppointmentController>/5
         [HttpGet("{id}")]
-        public ActionResult<AppointmentDto> Get(int id)
+        public ActionResult<AppointmentReturnDto> Get(int id)
         {
             Appointment appointment = _context.Appointments.Include(d=>d.Doctor)
                 .FirstOrDefault(p => p.Id == id);
             if (appointment == null) return NotFound();
-            var mapperappointment = _mapper.Map<Appointment, AppointmentDto>(appointment);
+            var mapperappointment = _mapper.Map<Appointment, AppointmentReturnDto>(appointment);
             
             return Ok(mapperappointment);
         }
@@ -59,9 +60,17 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // POST api/<AppointmentController>
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] Appointment appointment)
+        public async Task<ActionResult> Create([FromBody] AppointmentCreateDto appointmentCreateDto)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            Appointment appointment = new Appointment
+            {
+                Name = appointmentCreateDto.Name,
+                Email = appointmentCreateDto.Email,
+                Phone = appointmentCreateDto.Phone,
+                Date = appointmentCreateDto.Date,
+                Message = appointmentCreateDto.Message,
+                DoctorId = appointmentCreateDto.DoctorId
+            };
            
             await _context.AddAsync(appointment);
             await _context.SaveChangesAsync();
@@ -76,18 +85,19 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<AppointmentController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Appointment>> Update(int id, [FromBody] Appointment appointment)
+        public async Task<ActionResult<Appointment>> Update(int id, [FromBody] AppointmentUpdateDto appointmentUpdateDto)
         {
-            if (id != appointment.Id) return BadRequest();
+            if (id != appointmentUpdateDto.Id) return BadRequest();
             Appointment dbappointment = _context.Appointments.Include(d=>d.Doctor)
                 .FirstOrDefault(p => p.Id == id);
             if (dbappointment == null) return NotFound();
 
-            dbappointment.Name = appointment.Name;
-            dbappointment.Email = appointment.Email;
-            dbappointment.Phone = appointment.Phone;
-            dbappointment.DoctorId = appointment.DoctorId;
-            dbappointment.Message = appointment.Message;
+            dbappointment.Name = appointmentUpdateDto.Name;
+            dbappointment.Email = appointmentUpdateDto.Email;
+            dbappointment.Phone = appointmentUpdateDto.Phone;
+            dbappointment.Date = appointmentUpdateDto.Date;
+            dbappointment.Message = appointmentUpdateDto.Message;
+            dbappointment.DoctorId = appointmentUpdateDto.DoctorId;
             await _context.SaveChangesAsync();
             return Ok(dbappointment);
         }

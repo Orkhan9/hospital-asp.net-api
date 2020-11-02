@@ -1,11 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Hospital.DAL.Entities
+namespace Hospital.BLL.DTO.Service
 {
-    public class Service:BaseEntity
+    public class ServiceCreateDto
     {
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string Description { get; set; }
+        [Required]
         public string ShortDesc { get; set; }
     }
 }

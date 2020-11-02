@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Hospital.BLL.DTO;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -25,17 +26,17 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<BioController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Department>> Update(int id, [FromBody] Bio bio)
+        public async Task<ActionResult<Department>> Update(int id, [FromBody] BioUpdateDto bioUpdateDto)
         {
-            if (id != bio.Id) return BadRequest();
+            if (id != bioUpdateDto.Id) return BadRequest();
             Bio dbbio = _context.Bios.FirstOrDefault(p => p.Id == id);
             if (dbbio == null) return NotFound();
 
-            dbbio.Logo = bio.Logo;
-            dbbio.Phone = bio.Phone;
-            dbbio.Email = bio.Email;
-            dbbio.Facebook = bio.Facebook;
-            dbbio.Adress = bio.Adress;
+            dbbio.Logo = bioUpdateDto.Logo;
+            dbbio.Phone = bioUpdateDto.Phone;
+            dbbio.Email = bioUpdateDto.Email;
+            dbbio.Facebook = bioUpdateDto.Facebook;
+            dbbio.Address = bioUpdateDto.Address;
             await _context.SaveChangesAsync();
             return Ok(dbbio);
         }
