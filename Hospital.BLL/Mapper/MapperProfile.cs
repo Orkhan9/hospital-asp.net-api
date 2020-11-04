@@ -2,6 +2,7 @@
 using AutoMapper;
 using Hospital.BLL.DTO;
 using Hospital.BLL.DTO.Appointment;
+using Hospital.BLL.DTO.Comment;
 using Hospital.DAL.Entities;
 
 namespace Hospital.BLL.Mapper
@@ -30,6 +31,11 @@ namespace Hospital.BLL.Mapper
                 .ForMember(x => x.Doctors
                     , o =>
                         o.MapFrom(x => x.Doctors.Select(x => x.Name)));
+            
+            CreateMap<Comment, CommentReturnDto>()
+                .ForMember(x => x.Blog
+                    , o =>
+                        o.MapFrom(x => x.Blog.Title));
         }
     }
 }

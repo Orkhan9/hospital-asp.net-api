@@ -39,10 +39,11 @@ namespace Hospital.DAL
             return true;
         }
     
-        public async Task<User> Register(User user, string password,int roleId)
+        public async Task<User> Register(User user,string email, string password,int roleId)
         {
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            user.Email = email;
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
             user.RoleId = roleId;

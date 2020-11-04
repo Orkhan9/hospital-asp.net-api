@@ -5,7 +5,7 @@ namespace Hospital.DAL
 {
     public interface IAuthRepository
     {
-        Task<User> Register(User user, string password,int roleId);
+        Task<User> Register(User user, string password,string email,int roleId);
         Task<User> Login(string userName, string password,string role);
         Task<bool> UserExists(string userName); 
     }

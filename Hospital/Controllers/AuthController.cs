@@ -28,7 +28,6 @@ namespace Hospital.Controllers
         {
             //eyer yuxarda apicontroller yazmisansa modelstate yoxlama
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
-            userForRegisterDto.RoleId = userForRegisterDto.RoleId;
             if (await _repo.UserExists(userForRegisterDto.Username))
             {
                 return BadRequest("user already exists");
@@ -36,9 +35,11 @@ namespace Hospital.Controllers
             var newUser = new User
             {
                 Name = userForRegisterDto.Username
+                
+                
             };
-            var createdUser = _repo.Register(newUser, userForRegisterDto.Password,userForRegisterDto.RoleId);
-           // return Ok("Okaydir");
+            var createdUser = _repo.Register(newUser,userForRegisterDto.Email, userForRegisterDto.Password,userForRegisterDto.RoleId);
+           //return Ok(createdUser);
             return StatusCode(201);
         }
         
