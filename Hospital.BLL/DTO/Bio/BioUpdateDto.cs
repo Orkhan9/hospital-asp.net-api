@@ -5,7 +5,7 @@ namespace Hospital.BLL.DTO
 {
     public class BioUpdateDto:BaseEntity
     {
-        [Required]
+        
         public string Logo { get; set; }
         [Required]
         public string Phone { get; set; }
