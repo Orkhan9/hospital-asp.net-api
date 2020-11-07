@@ -17,6 +17,17 @@ namespace Hospital.Controllers
             _context=context;
         }
         
+        /// <summary>
+        /// Get Bio
+        /// </summary>
+        /// <returns></returns>
+        //GET: api/<BioController>
+        [HttpGet]
+        public ActionResult<BioReturnDto> Get()
+        {
+            Bio bio = _context.Bios.FirstOrDefault();
+            return Ok(bio);
+        }
         
         /// <summary>
         /// Update Bio
@@ -26,7 +37,7 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<BioController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Department>> Update(int id, [FromBody] BioUpdateDto bioUpdateDto)
+        public async Task<ActionResult<Bio>> Update(int id, [FromBody] BioUpdateDto bioUpdateDto)
         {
             if (id != bioUpdateDto.Id) return BadRequest();
             Bio dbbio = _context.Bios.FirstOrDefault(p => p.Id == id);

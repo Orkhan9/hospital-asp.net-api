@@ -12,8 +12,6 @@ namespace Hospital.DAL.Entities
         public string Profession { get; set; }
         public string Description { get; set; }
         public string Facebook { get; set; }
-        [NotMapped]
-        public IFormFile Photo { get; set; }
         public int DepartmentId { get; set; }
         public Department Department { get; set;}
         public ICollection<Appointment> Appointments { get; set; }

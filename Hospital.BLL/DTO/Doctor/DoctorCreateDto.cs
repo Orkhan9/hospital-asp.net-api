@@ -16,9 +16,8 @@ namespace Hospital.BLL.DTO
         public string Description { get; set; }
         [Required]
         public string Facebook { get; set; }
-        [Required]
+       
         public string PhotoUrl { get; set; }
-        [Required]
         public IFormFile Photo { get; set; }
         [Required]
         public int DepartmentId { get; set; }

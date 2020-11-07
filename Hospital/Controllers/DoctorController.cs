@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mime;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 using AutoMapper;
 using Hospital.BLL.DTO;
@@ -86,12 +88,16 @@ namespace Hospital.Controllers
                 DepartmentId = doctorCreateDto.DepartmentId,
                 Profession = doctorCreateDto.Profession
             };
-            string path = Guid.NewGuid()+"/wwwroot/images/" + doctorCreateDto.Photo.FileName;
+            
+            
+            
+            string path = Guid.NewGuid()+"/wwwroot/images/" + doctorCreateDto.PhotoUrl;
             FileStream stream=new FileStream(path,FileMode.Create);
-            await doctorCreateDto.Photo.CopyToAsync(stream);
-            newdoctor.PhotoUrl = doctorCreateDto.Photo.FileName;
-            // newdoctor.PhotoUrl=doctorCreateDto.Photo
-            // string path = doctorCreateDto.PhotoUrl;
+            // await doctorCreateDto.PhotoUrl.CopyToAsync(stream);
+            
+            newdoctor.PhotoUrl = doctorCreateDto.PhotoUrl;
+            
+                        
             await _context.AddAsync(newdoctor);
             await _context.SaveChangesAsync();
             return Ok(newdoctor);

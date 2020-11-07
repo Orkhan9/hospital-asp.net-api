@@ -23,10 +23,11 @@ namespace Hospital.Controllers
             _repo = repo;
             _config = config;
         }
+        
         [HttpPost("register")]
         public async Task<IActionResult>Register(UserForRegisterDto userForRegisterDto )
         {
-            //eyer yuxarda apicontroller yazmisansa modelstate yoxlama
+            
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
             if (await _repo.UserExists(userForRegisterDto.Username))
             {
