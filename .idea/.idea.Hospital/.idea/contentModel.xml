@@ -12,6 +12,7 @@
           <e p="AboutController.cs" t="Include" />
           <e p="AppointmentController.cs" t="Include" />
           <e p="AuthController.cs" t="Include" />
+          <e p="BasketController.cs" t="Include" />
           <e p="BioController.cs" t="Include" />
           <e p="BlogController.cs" t="Include" />
           <e p="CommentController.cs" t="Include" />
@@ -115,19 +116,25 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Data" t="Include">
           <e p="AuthRepository.cs" t="Include" />
+          <e p="BasketService.cs" t="Include" />
           <e p="DataContext.cs" t="Include" />
           <e p="IAuthRepository.cs" t="Include" />
+          <e p="IBasketService.cs" t="Include" />
         </e>
         <e p="Entities" t="Include">
           <e p="About.cs" t="Include" />
           <e p="Appointment.cs" t="Include" />
           <e p="BaseEntity.cs" t="Include" />
+          <e p="BasketItem.cs" t="Include" />
           <e p="Bio.cs" t="Include" />
           <e p="Blog.cs" t="Include" />
           <e p="Comment.cs" t="Include" />
+          <e p="CustomerBasket.cs" t="Include" />
           <e p="Department.cs" t="Include" />
           <e p="Doctor.cs" t="Include" />
           <e p="Product.cs" t="Include" />
+          <e p="ProductBrand.cs" t="Include" />
+          <e p="ProductType.cs" t="Include" />
           <e p="Role.cs" t="Include" />
           <e p="Service.cs" t="Include" />
           <e p="User.cs" t="Include" />
@@ -152,6 +159,10 @@
           <e p="20201105144358_AddDoctorTablePhotoUrlColumn.Designer.cs" t="Include" />
           <e p="20201107142426_AboutTable.cs" t="Include" />
           <e p="20201107142426_AboutTable.Designer.cs" t="Include" />
+          <e p="20201109115439_DeletedProductTable.cs" t="Include" />
+          <e p="20201109115439_DeletedProductTable.Designer.cs" t="Include" />
+          <e p="20201109120207_AddAllProductTables.cs" t="Include" />
+          <e p="20201109120207_AddAllProductTables.Designer.cs" t="Include" />
           <e p="DataContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

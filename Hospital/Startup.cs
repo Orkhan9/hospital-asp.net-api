@@ -22,6 +22,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using StackExchange.Redis;
 
 namespace Hospital
 {
@@ -42,6 +43,7 @@ namespace Hospital
             {
                 option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),x=>x.MigrationsAssembly("Hospital.DAL"));
             });
+             services.AddScoped<IBasketService, BasketService>();
              services.AddScoped<IAuthRepository, AuthRepository>();
              services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
                  AddJwtBearer(opt =>
@@ -53,6 +55,12 @@ namespace Hospital
                          ValidateIssuer=false,
                         ValidateAudience=false
                      });
+             services.AddSingleton<IConnectionMultiplexer>(config =>
+             {
+                 var configuration = ConfigurationOptions.Parse(Configuration.GetConnectionString("Redis"),
+                     true);
+                 return ConnectionMultiplexer.Connect(configuration);
+             });
             services.AddAutoMapper(typeof(MapperProfile));
             services.AddCors(options =>
             {

@@ -44,6 +44,10 @@
           "suppressParent": "All",
           "target": "Package",
           "version": "[5.0.0-rc.2.20475.6, )"
+        },
+        "StackExchange.Redis": {
+          "target": "Package",
+          "version": "[2.1.58, )"
         }
       },
       "imports": [

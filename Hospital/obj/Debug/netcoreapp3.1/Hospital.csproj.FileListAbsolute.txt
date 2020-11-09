@@ -138,3 +138,11 @@ C:\Users\user\Desktop\finalProject\finalproject-back\Hospital\obj\Debug\netcorea
 C:\Users\user\Desktop\finalProject\finalproject-back\Hospital\obj\Debug\netcoreapp3.1\Hospital.genruntimeconfig.cache
 C:\Users\user\Desktop\finalProject\finalproject-back\Hospital\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\Pipelines.Sockets.Unofficial.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\StackExchange.Redis.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll

@@ -60,7 +60,7 @@ namespace Hospital.Controllers
             {
                 Name = productCreateDto.Name,
                 Price = productCreateDto.Price,
-                PhotoUrl = productCreateDto.PhotoUrl
+                // PhotoUrl = productCreateDto.PhotoUrl
             };
             // product.PhotoUrl = productImageUrl + productCreateDto.PhotoUrl;
             await _context.AddAsync(product);
@@ -84,7 +84,7 @@ namespace Hospital.Controllers
 
             dbproduct.Name = productUpdateDto.Name;
             dbproduct.Price = productUpdateDto.Price;
-            dbproduct.PhotoUrl = productImageUrl+productUpdateDto.PhotoUrl;
+            // dbproduct.PhotoUrl = productImageUrl+productUpdateDto.PhotoUrl;
            
             await _context.SaveChangesAsync();
             return Ok(dbproduct);
