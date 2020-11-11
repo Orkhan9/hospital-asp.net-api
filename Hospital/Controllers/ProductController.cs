@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Hospital.BLL.DTO.Product;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hospital.Controllers
 {
@@ -15,9 +17,11 @@ namespace Hospital.Controllers
     {
         private string productImageUrl = "assets/images/shop/";
         private readonly DataContext _context;
-        public ProductController(DataContext context)
+        private IMapper _mapper;
+        public ProductController(DataContext context,IMapper mapper)
         {
             _context=context;
+            _mapper = mapper;
         }
         
         
@@ -27,9 +31,13 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET: api/<ProductController>
         [HttpGet]
-        public ActionResult<IEnumerable<Product>> Get()
+        public ActionResult<IEnumerable<ProductReturnDto>> Get()
         {
-            return Ok(_context.Products.ToList());
+            var products = _context.Products
+                .Include(t => t.ProductType)
+                .Include(b=>b.ProductBrand).ToList();
+            var mapperProducts = _mapper.Map<IEnumerable<ProductReturnDto>>(products);
+            return Ok(mapperProducts);
         }
         
         /// <summary>
@@ -39,12 +47,15 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
-        public ActionResult<Blog> Get(int id)
+        public ActionResult<ProductReturnDto> Get(int id)
         {
-            Product product = _context.Products.FirstOrDefault(p => p.Id == id);
+           var product = _context.Products
+               .Include(t=>t.ProductType)
+               .Include(b=>b.ProductBrand).FirstOrDefault(p => p.Id == id);
             if (product == null) return NotFound();
+            var mapperProduct = _mapper.Map<ProductReturnDto>(product);
             
-            return Ok(product);
+            return Ok(mapperProduct);
         }
         
         /// <summary>

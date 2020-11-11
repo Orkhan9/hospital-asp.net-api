@@ -86,6 +86,7 @@
           </e>
           <e p="Product" t="Include">
             <e p="ProductCreateDto.cs" t="Include" />
+            <e p="ProductReturnDto.cs" t="Include" />
             <e p="ProductUpdateDto.cs" t="Include" />
           </e>
           <e p="Service" t="Include">
