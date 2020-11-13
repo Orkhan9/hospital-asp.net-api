@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hospital.DAL.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201109120207_AddAllProductTables")]
-    partial class AddAllProductTables
+    [Migration("20201113073512_AddrelationUserAndCommentTable")]
+    partial class AddrelationUserAndCommentTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -141,9 +141,14 @@ namespace Hospital.DAL.Migrations
                     b.Property<DateTime>("PublishTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("BlogId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Comments");
                 });
@@ -236,7 +241,7 @@ namespace Hospital.DAL.Migrations
                         {
                             Id = 1,
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                            Name = "Angular Speedster Board 2000",
+                            Name = "Syringia",
                             PictureUrl = "images/products/sb-ang1.png",
                             Price = 200m,
                             ProductBrandId = 1,
@@ -246,7 +251,7 @@ namespace Hospital.DAL.Migrations
                         {
                             Id = 2,
                             Description = "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-                            Name = "Green Angular Board 3000",
+                            Name = "Box Aid",
                             PictureUrl = "images/products/sb-ang2.png",
                             Price = 150m,
                             ProductBrandId = 1,
@@ -256,7 +261,7 @@ namespace Hospital.DAL.Migrations
                         {
                             Id = 3,
                             Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-                            Name = "Core Board Speed Rush 3",
+                            Name = "Doctor Tablet",
                             PictureUrl = "images/products/sb-core1.png",
                             Price = 180m,
                             ProductBrandId = 2,
@@ -266,7 +271,7 @@ namespace Hospital.DAL.Migrations
                         {
                             Id = 4,
                             Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-                            Name = "Net Core Super Board",
+                            Name = "Natural tablets",
                             PictureUrl = "images/products/sb-core2.png",
                             Price = 300m,
                             ProductBrandId = 2,
@@ -276,7 +281,7 @@ namespace Hospital.DAL.Migrations
                         {
                             Id = 5,
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                            Name = "React Board Super Whizzy Fast",
+                            Name = "Green tea",
                             PictureUrl = "images/products/sb-react1.png",
                             Price = 250m,
                             ProductBrandId = 4,
@@ -286,7 +291,7 @@ namespace Hospital.DAL.Migrations
                         {
                             Id = 6,
                             Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-                            Name = "Typescript Entry Board",
+                            Name = "Pampers",
                             PictureUrl = "images/products/sb-ts1.png",
                             Price = 120m,
                             ProductBrandId = 5,
@@ -512,7 +517,15 @@ namespace Hospital.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Hospital.DAL.Entities.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Blog");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.Doctor", b =>
@@ -574,6 +587,11 @@ namespace Hospital.DAL.Migrations
             modelBuilder.Entity("Hospital.DAL.Entities.Role", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("Hospital.DAL.Entities.User", b =>
+                {
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

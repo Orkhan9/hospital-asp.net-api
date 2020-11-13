@@ -1,4 +1,7 @@
-﻿namespace Hospital.DAL.Entities
+﻿using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+
+namespace Hospital.DAL.Entities
 {
     public class User
     {
@@ -9,5 +12,6 @@
         public byte[] PasswordSalt { get; set; }
         public Role Role { get; set; }
         public int RoleId  { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }

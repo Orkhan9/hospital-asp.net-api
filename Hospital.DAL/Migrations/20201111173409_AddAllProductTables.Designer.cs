@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hospital.DAL.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201109115439_DeletedProductTable")]
-    partial class DeletedProductTable
+    [Migration("20201111173409_AddAllProductTables")]
+    partial class AddAllProductTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -198,6 +198,236 @@ namespace Hospital.DAL.Migrations
                     b.ToTable("Doctors");
                 });
 
+            modelBuilder.Entity("Hospital.DAL.Entities.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductBrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductTypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductBrandId");
+
+                    b.HasIndex("ProductTypeId");
+
+                    b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                            Name = "Syringia",
+                            PictureUrl = "images/products/sb-ang1.png",
+                            Price = 200m,
+                            ProductBrandId = 1,
+                            ProductTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+                            Name = "Box Aid",
+                            PictureUrl = "images/products/sb-ang2.png",
+                            Price = 150m,
+                            ProductBrandId = 1,
+                            ProductTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+                            Name = "Doctor Tablet",
+                            PictureUrl = "images/products/sb-core1.png",
+                            Price = 180m,
+                            ProductBrandId = 2,
+                            ProductTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+                            Name = "Natural tablets",
+                            PictureUrl = "images/products/sb-core2.png",
+                            Price = 300m,
+                            ProductBrandId = 2,
+                            ProductTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                            Name = "Green tea",
+                            PictureUrl = "images/products/sb-react1.png",
+                            Price = 250m,
+                            ProductBrandId = 4,
+                            ProductTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+                            Name = "Pampers",
+                            PictureUrl = "images/products/sb-ts1.png",
+                            Price = 120m,
+                            ProductBrandId = 5,
+                            ProductTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                            Name = "Core Blue Hat",
+                            PictureUrl = "images/products/hat-core1.png",
+                            Price = 10m,
+                            ProductBrandId = 2,
+                            ProductTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+                            Name = "Green React Woolen Hat",
+                            PictureUrl = "images/products/hat-react1.png",
+                            Price = 8m,
+                            ProductBrandId = 4,
+                            ProductTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                            Name = "Purple React Woolen Hat",
+                            PictureUrl = "images/products/hat-react2.png",
+                            Price = 15m,
+                            ProductBrandId = 4,
+                            ProductTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+                            Name = "Green Code Gloves",
+                            PictureUrl = "images/products/glove-code2.png",
+                            Price = 15m,
+                            ProductBrandId = 3,
+                            ProductTypeId = 4
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
+                            Name = "Purple React Gloves",
+                            PictureUrl = "images/products/glove-react1.png",
+                            Price = 16m,
+                            ProductBrandId = 4,
+                            ProductTypeId = 4
+                        });
+                });
+
+            modelBuilder.Entity("Hospital.DAL.Entities.ProductBrand", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductBrands");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Angular"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "NetCore"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "VS Code"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "React"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Typescript"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Redis"
+                        });
+                });
+
+            modelBuilder.Entity("Hospital.DAL.Entities.ProductType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Boards"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Hats"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Boots"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Gloves"
+                        });
+                });
+
             modelBuilder.Entity("Hospital.DAL.Entities.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -294,6 +524,25 @@ namespace Hospital.DAL.Migrations
                         .IsRequired();
 
                     b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("Hospital.DAL.Entities.Product", b =>
+                {
+                    b.HasOne("Hospital.DAL.Entities.ProductBrand", "ProductBrand")
+                        .WithMany()
+                        .HasForeignKey("ProductBrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Hospital.DAL.Entities.ProductType", "ProductType")
+                        .WithMany()
+                        .HasForeignKey("ProductTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProductBrand");
+
+                    b.Navigation("ProductType");
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.User", b =>

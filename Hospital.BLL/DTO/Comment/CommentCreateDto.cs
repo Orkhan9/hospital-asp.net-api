@@ -11,5 +11,6 @@ namespace Hospital.BLL.DTO.Comment
         public DateTime PublishTime { get; set; }
         [Required]
         public int BlogId { get; set; }
+        public int UserId { get; set; }
     }
 }

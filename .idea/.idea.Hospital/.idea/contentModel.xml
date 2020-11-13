@@ -18,7 +18,7 @@
           <e p="CommentController.cs" t="Include" />
           <e p="DepartmentController.cs" t="Include" />
           <e p="DoctorController.cs" t="Include" />
-          <e p="FileUpload.cs" t="Include" />
+          <e p="FileUploadController.cs" t="Include" />
           <e p="ProductController.cs" t="Include" />
           <e p="RoleController.cs" t="Include" />
           <e p="ServiceController.cs" t="Include" />
@@ -160,10 +160,10 @@
           <e p="20201105144358_AddDoctorTablePhotoUrlColumn.Designer.cs" t="Include" />
           <e p="20201107142426_AboutTable.cs" t="Include" />
           <e p="20201107142426_AboutTable.Designer.cs" t="Include" />
-          <e p="20201109115439_DeletedProductTable.cs" t="Include" />
-          <e p="20201109115439_DeletedProductTable.Designer.cs" t="Include" />
-          <e p="20201109120207_AddAllProductTables.cs" t="Include" />
-          <e p="20201109120207_AddAllProductTables.Designer.cs" t="Include" />
+          <e p="20201111173409_AddAllProductTables.cs" t="Include" />
+          <e p="20201111173409_AddAllProductTables.Designer.cs" t="Include" />
+          <e p="20201113073512_AddrelationUserAndCommentTable.cs" t="Include" />
+          <e p="20201113073512_AddrelationUserAndCommentTable.Designer.cs" t="Include" />
           <e p="DataContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

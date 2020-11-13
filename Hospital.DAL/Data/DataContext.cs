@@ -52,7 +52,7 @@ namespace Hospital.DAL
                 new Product
                 {
                     Id = 1,
-                    Name = "Angular Speedster Board 2000",
+                    Name = "Syringia",
                     Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 200,
                     PictureUrl = "images/products/sb-ang1.png",
@@ -62,7 +62,7 @@ namespace Hospital.DAL
                 new Product
                 {
                     Id = 2,
-                    Name = "Green Angular Board 3000",
+                    Name = "Box Aid",
                     Description = "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
                     Price = 150,
                     PictureUrl = "images/products/sb-ang2.png",
@@ -72,7 +72,7 @@ namespace Hospital.DAL
                 new Product
                 {
                     Id = 3,
-                    Name = "Core Board Speed Rush 3",
+                    Name = "Doctor Tablet",
                     Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
                     Price = 180,
                     PictureUrl = "images/products/sb-core1.png",
@@ -82,7 +82,7 @@ namespace Hospital.DAL
                 new Product
                 {
                     Id = 4,
-                    Name = "Net Core Super Board",
+                    Name = "Natural tablets",
                     Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
                     Price = 300,
                     PictureUrl = "images/products/sb-core2.png",
@@ -92,7 +92,7 @@ namespace Hospital.DAL
                 new Product
                 {
                     Id = 5,
-                    Name = "React Board Super Whizzy Fast",
+                    Name = "Green tea",
                     Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 250,
                     PictureUrl = "images/products/sb-react1.png",
@@ -102,7 +102,7 @@ namespace Hospital.DAL
                 new Product
                 {
                     Id = 6,
-                    Name = "Typescript Entry Board",
+                    Name = "Pampers",
                     Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
                     Price = 120,
                     PictureUrl = "images/products/sb-ts1.png",

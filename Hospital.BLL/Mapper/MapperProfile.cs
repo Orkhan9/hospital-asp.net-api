@@ -36,7 +36,10 @@ namespace Hospital.BLL.Mapper
             CreateMap<Comment, CommentReturnDto>()
                 .ForMember(x => x.Blog
                     , o =>
-                        o.MapFrom(x => x.Blog.Title));
+                        o.MapFrom(x => x.Blog.Title))
+                .ForMember(x => x.User
+                    , o =>
+                        o.MapFrom(x => x.User.Name));;
             
             CreateMap<Product,ProductReturnDto>()
                 .ForMember(x => x.ProductType
