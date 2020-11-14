@@ -136,6 +136,7 @@
           <e p="Product.cs" t="Include" />
           <e p="ProductBrand.cs" t="Include" />
           <e p="ProductType.cs" t="Include" />
+          <e p="ReplyToComment.cs" t="Include" />
           <e p="Role.cs" t="Include" />
           <e p="Service.cs" t="Include" />
           <e p="User.cs" t="Include" />

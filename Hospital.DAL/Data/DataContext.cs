@@ -15,6 +15,7 @@ namespace Hospital.DAL
         public DbSet<Service> Services { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<ReplyToComment> ReplyToComments { get; set; }
         public DbSet<Bio> Bios { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<About> Abouts { get; set; }

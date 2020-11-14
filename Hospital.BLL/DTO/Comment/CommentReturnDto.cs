@@ -8,6 +8,8 @@ namespace Hospital.BLL.DTO.Comment
         public string Context { get; set; }
         public DateTime PublishTime { get; set; }
         public string Blog { get; set; }
+        public int BlogId { get; set; }
         public string User { get; set; }
+        public int UserId { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -12,6 +13,7 @@ namespace Hospital.DAL.Entities
         public Blog Blog { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
+        public ICollection<ReplyToComment> ReplyToComments { get; set; }
         public Comment()
         {
             PublishTime=DateTime.Now;
