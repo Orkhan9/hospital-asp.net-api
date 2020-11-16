@@ -16,30 +16,29 @@ namespace Hospital.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthRepository _repo;
+        private readonly IAuthRepository _authRepository;
         private readonly IConfiguration _config;
-        public AuthController(IAuthRepository repo,IConfiguration config)
+        public AuthController(IAuthRepository authRepository,IConfiguration config)
         {
-            _repo = repo;
+            _authRepository = authRepository;
             _config = config;
         }
         
         [HttpPost("register")]
         public async Task<IActionResult>Register(UserForRegisterDto userForRegisterDto )
         {
-            
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
-            if (await _repo.UserExists(userForRegisterDto.Username))
+            if (await _authRepository.UserExists(userForRegisterDto.Username))
             {
                 return BadRequest("user already exists");
             }
             var newUser = new User
             {
-                Name = userForRegisterDto.Username
-                
-                
+                Name = userForRegisterDto.Username,
+                Email = userForRegisterDto.Email,
+                RoleId = userForRegisterDto.RoleId
             };
-            var createdUser = _repo.Register(newUser,userForRegisterDto.Email, userForRegisterDto.Password,userForRegisterDto.RoleId);
+            var createdUser = _authRepository.Register(newUser, userForRegisterDto.Password);
            //return Ok(createdUser);
             return StatusCode(201);
         }
@@ -47,7 +46,7 @@ namespace Hospital.Controllers
         [HttpPost("login")]
         public async Task<IActionResult>Login(UserForLoginDto userForLoginDto)
         {
-            var userFromRepo =await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password,userForLoginDto.Role);
+            var userFromRepo =await _authRepository.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password,userForLoginDto.Role);
             if (userFromRepo == null)
                 return Unauthorized();
             var claims = new[]
