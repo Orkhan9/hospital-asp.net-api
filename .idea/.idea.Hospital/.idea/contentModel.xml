@@ -100,6 +100,9 @@
         </e>
         <e p="Helpers" t="Include">
           <e p="Extensions.cs" t="Include" />
+          <e p="PagedList.cs" t="Include" />
+          <e p="PaginationHeader.cs" t="Include" />
+          <e p="ProductParams.cs" t="Include" />
         </e>
         <e p="Hospital.BLL.csproj" t="IncludeRecursive" />
         <e p="Mapper" t="Include">
@@ -111,6 +114,10 @@
               <e p="Hospital.BLL.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Pagination" t="Include">
+          <e p="IProductRepository.cs" t="Include" />
+          <e p="ProductRepository.cs" t="Include" />
         </e>
       </e>
       <e p="Hospital.DAL" t="IncludeRecursive">

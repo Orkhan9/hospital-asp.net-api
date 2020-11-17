@@ -146,3 +146,5 @@ C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\Sy
 C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
 C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll

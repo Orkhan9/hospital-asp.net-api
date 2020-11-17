@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Hospital.BLL.DTO.Product;
+using Hospital.BLL.Helpers;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -16,11 +17,11 @@ namespace Hospital.Controllers
     public class ProductController : ControllerBase
     {
         private string productImageUrl = "assets/images/shop/";
-        private readonly DataContext _context;
+        private readonly IProductRepository _productRepository;
         private IMapper _mapper;
-        public ProductController(DataContext context,IMapper mapper)
+        public ProductController(IProductRepository productRepository,IMapper mapper)
         {
-            _context=context;
+            _productRepository=productRepository;
             _mapper = mapper;
         }
         
@@ -31,12 +32,12 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET: api/<ProductController>
         [HttpGet]
-        public ActionResult<IEnumerable<ProductReturnDto>> Get()
+        public async Task<ActionResult<IEnumerable<ProductReturnDto>>> Get([FromQuery] ProductParams productParams)
         {
-            var products = _context.Products
-                .Include(t => t.ProductType)
-                .Include(b=>b.ProductBrand).ToList();
-            var mapperProducts = _mapper.Map<IEnumerable<ProductReturnDto>>(products);
+            var dbproducts = await _productRepository.GetProductAsync(productParams);
+            var mapperProducts = _mapper.Map<IEnumerable<ProductReturnDto>>(dbproducts);
+            Response.AddPagination(dbproducts.CurrentPage,dbproducts.PageSize
+                ,dbproducts.TotalCount,dbproducts.TotalPage);
             return Ok(mapperProducts);
         }
         
@@ -47,11 +48,9 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
-        public ActionResult<ProductReturnDto> Get(int id)
+        public async Task<ActionResult<ProductReturnDto>> Get(int id)
         {
-           var product = _context.Products
-               .Include(t=>t.ProductType)
-               .Include(b=>b.ProductBrand).FirstOrDefault(p => p.Id == id);
+            var product = await _productRepository.GetProductByIdAsync(id);
             if (product == null) return NotFound();
             var mapperProduct = _mapper.Map<ProductReturnDto>(product);
             
@@ -67,15 +66,8 @@ namespace Hospital.Controllers
         [HttpPost]
         public async Task<ActionResult> Create([FromBody] ProductCreateDto productCreateDto)
         {
-            Product product = new Product
-            {
-                Name = productCreateDto.Name,
-                Price = productCreateDto.Price,
-                // PhotoUrl = productCreateDto.PhotoUrl
-            };
-            // product.PhotoUrl = productImageUrl + productCreateDto.PhotoUrl;
-            await _context.AddAsync(product);
-            await _context.SaveChangesAsync();
+            var product = _mapper.Map<Product>(productCreateDto);
+            await _productRepository.CreateProductAsync(product);
             return Ok(product);
         }
         
@@ -90,15 +82,11 @@ namespace Hospital.Controllers
         public async Task<ActionResult<Product>> Update(int id, [FromBody] ProductUpdateDto productUpdateDto)
         {
             if (id != productUpdateDto.Id) return BadRequest();
-            Product dbproduct = _context.Products.FirstOrDefault(p => p.Id == id);
-            if (dbproduct == null) return NotFound();
-
-            dbproduct.Name = productUpdateDto.Name;
-            dbproduct.Price = productUpdateDto.Price;
-            // dbproduct.PhotoUrl = productImageUrl+productUpdateDto.PhotoUrl;
+            var mapperproduct = _mapper.Map<Product>(productUpdateDto);
+            Product product=await _productRepository.UpdateProductAsync(mapperproduct);
+            if (product == null) return BadRequest();
            
-            await _context.SaveChangesAsync();
-            return Ok(dbproduct);
+            return Ok(product);
         }
         
         /// <summary>
@@ -110,10 +98,8 @@ namespace Hospital.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            Product dbproduct = _context.Products.FirstOrDefault(p => p.Id == id);
-            if (dbproduct == null) return NotFound();
-            _context.Products.Remove(dbproduct);
-            await _context.SaveChangesAsync();
+            Product product = await _productRepository.DeleteProductAsync(id);
+            if (product == null) return NotFound();
             return Ok();
         }
         

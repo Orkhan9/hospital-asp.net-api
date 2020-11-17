@@ -48,6 +48,10 @@ namespace Hospital.BLL.Mapper
                 .ForMember(x => x.ProductBrand
                     , o =>
                         o.MapFrom(x => x.ProductBrand.Name));
+
+            CreateMap<ProductCreateDto, Product>();
+            
+            CreateMap<ProductUpdateDto, Product>();
         }
     }
 }

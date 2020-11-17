@@ -9,6 +9,10 @@ namespace Hospital.BLL.DTO.Product
         [Required]
         public decimal Price { get; set; }
         [Required]
-        public string PhotoUrl { get; set; }
+        public string Description { get; set; }
+
+        public int ProductBrandId { get; set; }
+        public int ProductTypeId { get; set; }
+        public string PictureUrl { get; set; }
     }
 }

@@ -44,6 +44,7 @@ namespace Hospital
                 option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),x=>x.MigrationsAssembly("Hospital.DAL"));
             });
              services.AddScoped<IBasketService, BasketService>();
+             services.AddScoped<IProductRepository, ProductRepository>();
              services.AddScoped<IAuthRepository, AuthRepository>();
              services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
                  AddJwtBearer(opt =>
