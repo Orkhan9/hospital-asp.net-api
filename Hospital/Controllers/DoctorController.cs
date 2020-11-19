@@ -29,6 +29,7 @@ namespace Hospital.Controllers
             _mapper = mapper;
             _env = env;
         }
+        
         /// <summary>
         /// Get All Doctors
         /// </summary>

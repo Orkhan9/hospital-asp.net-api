@@ -21,6 +21,7 @@
           <e p="FileUploadController.cs" t="Include" />
           <e p="ProductController.cs" t="Include" />
           <e p="RoleController.cs" t="Include" />
+          <e p="SearchController.cs" t="Include" />
           <e p="ServiceController.cs" t="Include" />
         </e>
         <e p="Hospital.csproj" t="IncludeRecursive" />
