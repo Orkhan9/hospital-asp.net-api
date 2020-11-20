@@ -22,6 +22,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
 
 namespace Hospital
@@ -62,6 +63,8 @@ namespace Hospital
                      true);
                  return ConnectionMultiplexer.Connect(configuration);
              });
+             services.AddSwaggerGen(opt =>
+                 opt.SwaggerDoc("v1", new OpenApiInfo{Title = "Hospital",Version = "v1"}));
             services.AddAutoMapper(typeof(MapperProfile));
             services.AddCors(options =>
             {
@@ -100,6 +103,10 @@ namespace Hospital
 
             app.UseAuthorization();
             app.UseAuthentication();
+            
+            app.UseSwagger();
+            app.UseSwaggerUI(opt => opt.SwaggerEndpoint("/swagger/v1/swagger.json",
+                "Hospital API v1"));
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }

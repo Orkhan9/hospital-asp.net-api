@@ -148,3 +148,8 @@ C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\Sy
 C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\MediatR.dll
 C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\obj\Debug\netcoreapp3.1\Hospital.MvcApplicationPartsAssemblyInfo.cs
