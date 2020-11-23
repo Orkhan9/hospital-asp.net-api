@@ -8,6 +8,8 @@ namespace Hospital.DAL.Entities
     public class Doctor:BaseEntity
     {
         public string PhotoUrl { get; set; }
+        [NotMapped]
+        public IFormFile Photo { get; set; }
         public string Name { get; set; }
         public string Profession { get; set; }
         public string Description { get; set; }

@@ -7,10 +7,12 @@ using System.Reflection.Metadata;
 using System.Threading.Tasks;
 using AutoMapper;
 using Hospital.BLL.DTO;
+using Hospital.BLL.Helpers;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hospital.Controllers
@@ -79,7 +81,7 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // POST api/<DoctorController>
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] DoctorCreateDto doctorCreateDto)
+        public async Task<ActionResult> Create([FromForm] DoctorCreateDto doctorCreateDto)
         {
             Doctor newdoctor = new Doctor
             {
@@ -89,16 +91,10 @@ namespace Hospital.Controllers
                 DepartmentId = doctorCreateDto.DepartmentId,
                 Profession = doctorCreateDto.Profession
             };
-            
-            
-            
-            string path = Guid.NewGuid()+"/wwwroot/images/" + doctorCreateDto.PhotoUrl;
-            FileStream stream=new FileStream(path,FileMode.Create);
-            // await doctorCreateDto.PhotoUrl.CopyToAsync(stream);
-            
-            newdoctor.PhotoUrl = doctorCreateDto.PhotoUrl;
-            
-                        
+
+            string folderName = Path.Combine("images", "doctors");
+            string fileName = await doctorCreateDto.Photo.SaveImg(_env.WebRootPath, folderName);
+            newdoctor.PhotoUrl = fileName;
             await _context.AddAsync(newdoctor);
             await _context.SaveChangesAsync();
             return Ok(newdoctor);
@@ -112,7 +108,7 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<DoctorController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Doctor>> Update(int id, [FromBody] DoctorUpdateDto doctorUpdateDto)
+        public async Task<ActionResult<Doctor>> Update(int id, [FromForm] DoctorUpdateDto doctorUpdateDto)
         {
             if (id != doctorUpdateDto.Id) return BadRequest();
             Doctor dbDoctor = _context.Doctors.Include(d=>d.Department).FirstOrDefault(p => p.Id == id);
@@ -122,6 +118,16 @@ namespace Hospital.Controllers
             dbDoctor.Description = doctorUpdateDto.Description;
             dbDoctor.Facebook = doctorUpdateDto.Facebook;
             dbDoctor.Profession = doctorUpdateDto.Profession;
+            dbDoctor.DepartmentId = doctorUpdateDto.DepartmentId;
+            
+            string folderName = Path.Combine("images", "doctors");
+            if (doctorUpdateDto.Photo!=null)
+            {
+                ImageExtension.DeleteImage(_env.WebRootPath,folderName,dbDoctor.PhotoUrl);
+                string fileName = await doctorUpdateDto.Photo.SaveImg(_env.WebRootPath, folderName);
+                dbDoctor.PhotoUrl = fileName;
+            }
+            
             await _context.SaveChangesAsync();
             return Ok(dbDoctor);
         }
@@ -137,9 +143,15 @@ namespace Hospital.Controllers
         {
             Doctor dbDoctor = _context.Doctors.FirstOrDefault(p => p.Id == id);
             if (dbDoctor == null) return NotFound();
+            
+            string folderName = Path.Combine("images", "doctors");
+            
             _context.Doctors.Remove(dbDoctor);
+            ImageExtension.DeleteImage(_env.WebRootPath,folderName,dbDoctor.PhotoUrl);
             await _context.SaveChangesAsync();
             return Ok();
         }
+        
+        
     }
 }

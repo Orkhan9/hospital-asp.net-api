@@ -1,10 +1,15 @@
-﻿namespace Hospital.DAL.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
+
+namespace Hospital.DAL.Entities
 {
     public class Product:BaseEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }
         public string PictureUrl { get; set; }
+        [NotMapped]
+        public IFormFile Photo { get; set; }
         public decimal Price { get; set; }
         public int ProductTypeId { get; set; }
         public ProductType ProductType { get; set; }

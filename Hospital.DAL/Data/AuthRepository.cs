@@ -7,6 +7,7 @@ namespace Hospital.DAL
     public class AuthRepository:IAuthRepository
     { 
         private readonly DataContext _dataContext;
+        
         public AuthRepository(DataContext dataContext)
         {
             _dataContext = dataContext;

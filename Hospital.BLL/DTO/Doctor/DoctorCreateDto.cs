@@ -16,10 +16,10 @@ namespace Hospital.BLL.DTO
         public string Description { get; set; }
         [Required]
         public string Facebook { get; set; }
-       
-        public string PhotoUrl { get; set; }
-        public IFormFile Photo { get; set; }
+        
         [Required]
         public int DepartmentId { get; set; }
+        [Required]
+        public IFormFile Photo { get; set; }
     }
 }

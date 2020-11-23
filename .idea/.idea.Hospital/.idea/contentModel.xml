@@ -18,7 +18,6 @@
           <e p="CommentController.cs" t="Include" />
           <e p="DepartmentController.cs" t="Include" />
           <e p="DoctorController.cs" t="Include" />
-          <e p="FileUploadController.cs" t="Include" />
           <e p="ProductController.cs" t="Include" />
           <e p="RoleController.cs" t="Include" />
           <e p="SearchController.cs" t="Include" />
@@ -38,15 +37,82 @@
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="wwwroot" t="Include">
-          <e p="image" t="Include" />
           <e p="images" t="Include">
-            <e p="7ce31805-884d-4793-baad-823ac50ff8bffile.jpeg" t="Include" />
-            <e p="a3e5fcf2-f0f6-4423-82b5-16347838cd2cfile.jpeg" t="Include" />
-            <e p="e40cb141-c31e-4205-8e4a-e0e4c8fda996file.jpeg" t="Include" />
-            <e p="file" t="Include" />
-            <e p="file.jpeg" t="Include" />
-            <e p="i1.jpeg" t="Include" />
-            <e p="i56.jpeg" t="Include" />
+            <e p="About" t="Include">
+              <e p="01_about.jpg" t="Include" />
+              <e p="01_signature-about.png" t="Include" />
+              <e p="02_about.jpg" t="Include" />
+              <e p="02_about.png" t="Include" />
+            </e>
+            <e p="Appointment" t="Include">
+              <e p="01_appointment.jpg" t="Include" />
+            </e>
+            <e p="Blog" t="Include">
+              <e p="01_blog.jpg" t="Include" />
+              <e p="02_blog.jpg" t="Include" />
+              <e p="03_blog.jpg" t="Include" />
+            </e>
+            <e p="breadcrumb-header" t="Include">
+              <e p="01_breadcrumb-header.jpg" t="Include" />
+              <e p="02_breadcrumb-header.jpg" t="Include" />
+              <e p="03_breadcrumb-header.jpg" t="Include" />
+            </e>
+            <e p="departments-details" t="Include">
+              <e p="01_departments-details.jpg" t="Include" />
+            </e>
+            <e p="doctors" t="Include">
+              <e p="01_doctors.jpg" t="Include" />
+              <e p="02_doctors.jpg" t="Include" />
+              <e p="03_doctors.jpg" t="Include" />
+            </e>
+            <e p="faqs" t="Include">
+              <e p="01_faqs.jpg" t="Include" />
+            </e>
+            <e p="gallery" t="Include">
+              <e p="01_gallery.jpg" t="Include" />
+              <e p="02_gallery.jpg" t="Include" />
+              <e p="03_gallery.jpg" t="Include" />
+              <e p="04_gallery.jpg" t="Include" />
+              <e p="05_gallery.jpg" t="Include" />
+              <e p="06_gallery.jpg" t="Include" />
+            </e>
+            <e p="get-now-packages" t="Include">
+              <e p="01_get-now-packages.jpg" t="Include" />
+            </e>
+            <e p="header" t="Include">
+              <e p="01_header.jpg" t="Include" />
+              <e p="02_header.jpg" t="Include" />
+              <e p="03_header.jpg" t="Include" />
+            </e>
+            <e p="logo" t="Include">
+              <e p="01_logo.png" t="Include" />
+              <e p="02_logo.png" t="Include" />
+              <e p="03_logo.png" t="Include" />
+              <e p="04_logo.png" t="Include" />
+            </e>
+            <e p="provide" t="Include">
+              <e p="01_provide.jpg" t="Include" />
+            </e>
+            <e p="services-details" t="Include">
+              <e p="01_services-details.jpg" t="Include" />
+            </e>
+            <e p="shop" t="Include">
+              <e p="01_shop.jpg" t="Include" />
+              <e p="02_shop.jpg" t="Include" />
+              <e p="03_shop.jpg" t="Include" />
+            </e>
+            <e p="statistic" t="Include">
+              <e p="01_statistic.jpg" t="Include" />
+            </e>
+            <e p="testimonials" t="Include">
+              <e p="01_testimonials-bg.jpg" t="Include" />
+              <e p="01_testimonials.jpg" t="Include" />
+              <e p="02_testimonials.jpg" t="Include" />
+              <e p="03_testimonials.jpg" t="Include" />
+              <e p="04_testimonials.jpg" t="Include" />
+              <e p="05_testimonials.jpg" t="Include" />
+              <e p="06_testimonials.jpg" t="Include" />
+            </e>
           </e>
         </e>
       </e>
@@ -101,6 +167,7 @@
         </e>
         <e p="Helpers" t="Include">
           <e p="Extensions.cs" t="Include" />
+          <e p="ImageExtension.cs" t="Include" />
           <e p="PagedList.cs" t="Include" />
           <e p="PaginationHeader.cs" t="Include" />
           <e p="ProductParams.cs" t="Include" />

@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
 
 namespace Hospital.BLL.DTO.Product
 {
@@ -13,6 +15,7 @@ namespace Hospital.BLL.DTO.Product
 
         public int ProductBrandId { get; set; }
         public int ProductTypeId { get; set; }
-        public string PictureUrl { get; set; }
+        [NotMapped]
+        public IFormFile Photo { get; set; }
     }
 }

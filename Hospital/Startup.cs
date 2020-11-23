@@ -44,6 +44,10 @@ namespace Hospital
             {
                 option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),x=>x.MigrationsAssembly("Hospital.DAL"));
             });
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
              services.AddScoped<IBasketService, BasketService>();
              services.AddScoped<IProductRepository, ProductRepository>();
              services.AddScoped<IAuthRepository, AuthRepository>();
@@ -103,7 +107,7 @@ namespace Hospital
 
             app.UseAuthorization();
             app.UseAuthentication();
-            
+            app.UseStaticFiles();
             app.UseSwagger();
             app.UseSwaggerUI(opt => opt.SwaggerEndpoint("/swagger/v1/swagger.json",
                 "Hospital API v1"));

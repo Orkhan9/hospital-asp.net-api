@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
 
 namespace Hospital.DAL.Entities
 {
@@ -10,6 +12,8 @@ namespace Hospital.DAL.Entities
         public string Topic { get; set; }
         public string Description { get; set; }
         public string PhotoUrl { get; set; }
+        [NotMapped]
+        public IFormFile Photo { get; set; }
         public DateTime PublishTime { get; set; }
         public ICollection<Comment> Comments { get; set; }
         

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Mime;
 using System.Threading.Tasks;
 using AutoMapper;
 using Hospital.BLL.DTO;
+using Hospital.BLL.Helpers;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,10 +21,13 @@ namespace Hospital.Controllers
     {
         private readonly DataContext _context;
         private readonly IMapper _mapper;
-        public BlogController(DataContext context,IMapper mapper)
+        private readonly IWebHostEnvironment _env;
+        public BlogController(DataContext context,IMapper mapper,
+            IWebHostEnvironment env)
         {
             _context=context;
             _mapper = mapper;
+            _env = env;
         }
         
         
@@ -68,7 +74,11 @@ namespace Hospital.Controllers
             blog.Title = blogCreateDto.Title;
             blog.Topic = blogCreateDto.Topic;
             blog.Description = blogCreateDto.Description;
-            blog.PhotoUrl = blogCreateDto.PhotoUrl;
+            
+            string folderName = Path.Combine("images", "blog");
+            string fileName = await blogCreateDto.Photo.SaveImg(_env.WebRootPath, folderName);
+            blog.PhotoUrl = fileName;
+            
             await _context.AddAsync(blog);
             await _context.SaveChangesAsync();
             return Ok(blog);

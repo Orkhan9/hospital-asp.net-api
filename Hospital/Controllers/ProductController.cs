@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -7,6 +8,7 @@ using Hospital.BLL.DTO.Product;
 using Hospital.BLL.Helpers;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,13 +18,16 @@ namespace Hospital.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private string productImageUrl = "assets/images/shop/";
         private readonly IProductRepository _productRepository;
         private IMapper _mapper;
-        public ProductController(IProductRepository productRepository,IMapper mapper)
+        private readonly IWebHostEnvironment _env;
+        public ProductController(IProductRepository productRepository,
+            IMapper mapper,
+            IWebHostEnvironment env)
         {
             _productRepository=productRepository;
             _mapper = mapper;
+            _env = env;
         }
         
         
@@ -64,9 +69,13 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // POST api/<ProductController>
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] ProductCreateDto productCreateDto)
+        public async Task<ActionResult> Create([FromForm] ProductCreateDto productCreateDto)
         {
             var product = _mapper.Map<Product>(productCreateDto);
+            
+            string folderName = Path.Combine("images", "shop");
+            string fileName = await productCreateDto.Photo.SaveImg(_env.WebRootPath, folderName);
+            product.PictureUrl = fileName;
             await _productRepository.CreateProductAsync(product);
             return Ok(product);
         }
@@ -79,7 +88,7 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<ProductController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Product>> Update(int id, [FromBody] ProductUpdateDto productUpdateDto)
+        public async Task<ActionResult<Product>> Update(int id, [FromForm] ProductUpdateDto productUpdateDto)
         {
             if (id != productUpdateDto.Id) return BadRequest();
             var mapperproduct = _mapper.Map<Product>(productUpdateDto);

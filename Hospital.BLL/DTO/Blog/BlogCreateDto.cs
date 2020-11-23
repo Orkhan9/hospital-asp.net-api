@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Hospital.DAL.Entities;
+using Microsoft.AspNetCore.Http;
 
 namespace Hospital.BLL.DTO
 {
@@ -17,7 +18,7 @@ namespace Hospital.BLL.DTO
         public string Description { get; set; }
         [Required]
         
-        public string PhotoUrl { get; set; }
+        public IFormFile Photo { get; set; }
         [Required]
         public DateTime PublishTime { get; set; }
 

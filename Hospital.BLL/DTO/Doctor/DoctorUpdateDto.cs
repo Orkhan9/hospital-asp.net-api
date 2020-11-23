@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Http;
 
@@ -15,8 +16,9 @@ namespace Hospital.BLL.DTO
         [Required]
         public string Facebook { get; set; }
         [Required]
-        public string PhotoUrl { get; set; }
-      
+        public int DepartmentId { get; set; }
+        
+        [NotMapped]
         public IFormFile Photo { get; set; }
     }
 }

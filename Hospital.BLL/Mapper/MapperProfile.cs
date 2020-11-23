@@ -10,12 +10,18 @@ namespace Hospital.BLL.Mapper
 {
     public class MapperProfile:Profile
     {
+        private static string BaseUrlDoctor = "http://localhost:5000/images/doctors/";
+        private static string BaseUrlBlog = "http://localhost:5000/images/blog/";
+        private static string BaseUrlProduct = "http://localhost:5000/images/shop/";
         public MapperProfile()
         {
             CreateMap<Doctor, DoctorReturnDto>()
                 .ForMember(x => x.Department
                     , o =>
-                        o.MapFrom(x => x.Department.Name));
+                        o.MapFrom(x => x.Department.Name))
+                .ForMember(x => x.PhotoUrl
+                    , o =>
+                        o.MapFrom(x => BaseUrlDoctor+x.PhotoUrl));
 
             CreateMap<Appointment, AppointmentReturnDto>()
                 .ForMember(x => x.Doctor
@@ -26,7 +32,10 @@ namespace Hospital.BLL.Mapper
             CreateMap<Blog, BlogReturnDto>()
                 .ForMember(x => x.Comments
                     , o =>
-                        o.MapFrom(x => x.Comments.Select(x => x.Context)));
+                        o.MapFrom(x => x.Comments.Select(x => x.Context)))
+                .ForMember(x => x.PhotoUrl
+                    , o =>
+                        o.MapFrom(x => BaseUrlBlog+x.PhotoUrl));
             
             CreateMap<Department, DepartmentReturnDto>()
                 .ForMember(x => x.Doctors
@@ -47,7 +56,10 @@ namespace Hospital.BLL.Mapper
                         o.MapFrom(x => x.ProductType.Name))
                 .ForMember(x => x.ProductBrand
                     , o =>
-                        o.MapFrom(x => x.ProductBrand.Name));
+                        o.MapFrom(x => x.ProductBrand.Name))
+                .ForMember(x => x.PictureUrl
+                    , o =>
+                        o.MapFrom(x => BaseUrlProduct + x.PictureUrl));
 
             CreateMap<ProductCreateDto, Product>();
             
