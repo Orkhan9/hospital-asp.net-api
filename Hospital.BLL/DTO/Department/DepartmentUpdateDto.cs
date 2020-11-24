@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Hospital.DAL.Entities;
 
-namespace Hospital.BLL.DTO
+namespace Hospital.BLL.DTO.Department
 {
     public class DepartmentUpdateDto:BaseEntity
     {

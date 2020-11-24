@@ -1,8 +1,13 @@
-﻿using System.Linq;
+﻿using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Hospital.BLL.DTO;
+using Hospital.BLL.DTO.Bio;
+using Hospital.BLL.Helpers;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hospital.Controllers
@@ -12,9 +17,15 @@ namespace Hospital.Controllers
     public class BioController : ControllerBase
     {
         private readonly DataContext _context;
-        public BioController(DataContext context)
+        private readonly IMapper _mapper;
+        private readonly IWebHostEnvironment _env;
+        public BioController(DataContext context,
+                            IMapper mapper,
+                            IWebHostEnvironment env)
         {
             _context=context;
+            _mapper = mapper;
+            _env = env;
         }
         
         /// <summary>
@@ -26,7 +37,8 @@ namespace Hospital.Controllers
         public ActionResult<BioReturnDto> Get()
         {
             Bio bio = _context.Bios.FirstOrDefault();
-            return Ok(bio);
+            var mapperBio = _mapper.Map<Bio,BioReturnDto>(bio);
+            return Ok(mapperBio);
         }
         
         /// <summary>
@@ -37,22 +49,25 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<BioController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Bio>> Update(int id, [FromBody] BioUpdateDto bioUpdateDto)
+        public async Task<ActionResult<Bio>> Update(int id, [FromForm] BioUpdateDto bioUpdateDto)
         {
             if (id != bioUpdateDto.Id) return BadRequest();
-            Bio dbbio = _context.Bios.FirstOrDefault(p => p.Id == id);
-            if (dbbio == null) return NotFound();
-
-            dbbio.Logo = bioUpdateDto.Logo;
-            dbbio.Phone = bioUpdateDto.Phone;
-            dbbio.Email = bioUpdateDto.Email;
-            dbbio.Facebook = bioUpdateDto.Facebook;
-            dbbio.Address = bioUpdateDto.Address;
+            Bio dbBio = _context.Bios.FirstOrDefault(p => p.Id == id);
+            if (dbBio == null) return NotFound();
+            dbBio.Phone = bioUpdateDto.Phone;
+            dbBio.Email = bioUpdateDto.Email;
+            dbBio.Facebook = bioUpdateDto.Facebook;
+            dbBio.Address = bioUpdateDto.Address;
+            
+            string folderName = Path.Combine("images", "logo");
+            if (bioUpdateDto.Logo!=null)
+            {
+                ImageExtension.DeleteImage(_env.WebRootPath,folderName,dbBio.LogoUrl);
+                string fileName = await bioUpdateDto.Logo.SaveImg(_env.WebRootPath, folderName);
+                dbBio.LogoUrl = fileName;
+            }
             await _context.SaveChangesAsync();
-            return Ok(dbbio);
-        }
-        
-        
-        
+            return Ok(dbBio);
+        }  
     }
 }

@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Mime;
-using System.Reflection.Metadata;
 using System.Threading.Tasks;
 using AutoMapper;
-using Hospital.BLL.DTO;
+using Hospital.BLL.DTO.Doctor;
 using Hospital.BLL.Helpers;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hospital.Controllers
@@ -40,9 +36,9 @@ namespace Hospital.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DoctorReturnDto>> Get()
         {
-            List<Doctor> doctors = _context.Doctors.Include(d => d.Department).ToList();
-            var mapperdoctors = _mapper.Map<IEnumerable<Doctor>,IEnumerable<DoctorReturnDto>>(doctors);
-            return Ok(mapperdoctors);
+            var doctors = _context.Doctors.Include(d => d.Department).ToList();
+            var mapperDoctors = _mapper.Map<IEnumerable<Doctor>,IEnumerable<DoctorReturnDto>>(doctors);
+            return Ok(mapperDoctors);
         }
         
         /// <summary>
@@ -53,7 +49,7 @@ namespace Hospital.Controllers
         [HttpGet("GetDoctorByDepartment/{id}")]
         public ActionResult<IEnumerable<Doctor>> GetDoctorByDepartment(int id)
         {
-            List<Doctor> doctors = _context.Doctors.Where(x=>x.DepartmentId==id).ToList();
+            var doctors = _context.Doctors.Where(x=>x.DepartmentId==id).ToList();
             
             return Ok(doctors);
         }
@@ -67,11 +63,11 @@ namespace Hospital.Controllers
         [HttpGet("{id}")]
         public ActionResult<DoctorReturnDto> Get(int id)
         {
-            Doctor doctor = _context.Doctors.Include(d=>d.Department).FirstOrDefault(p => p.Id == id);
+            var doctor = _context.Doctors.Include(d=>d.Department).FirstOrDefault(p => p.Id == id);
             if (doctor == null) return NotFound();
-            var mapperdoctor = _mapper.Map<Doctor, DoctorReturnDto>(doctor);
+            var mapperDoctor = _mapper.Map<Doctor, DoctorReturnDto>(doctor);
             
-            return Ok(mapperdoctor);
+            return Ok(mapperDoctor);
         }
 
         /// <summary>

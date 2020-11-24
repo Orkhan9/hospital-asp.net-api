@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Mime;
 using System.Threading.Tasks;
 using AutoMapper;
-using Hospital.BLL.DTO;
+using Hospital.BLL.DTO.Blog;
 using Hospital.BLL.Helpers;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
@@ -40,8 +38,8 @@ namespace Hospital.Controllers
         public ActionResult<IEnumerable<Blog>> Get()
         {
             var blogs= _context.Blogs.Include(x => x.Comments).ToList();
-            var mapperblogs = _mapper.Map<IEnumerable<Blog>,IEnumerable<BlogReturnDto>>(blogs);
-            return Ok(mapperblogs);
+            var mapperBlogs = _mapper.Map<IEnumerable<Blog>,IEnumerable<BlogReturnDto>>(blogs);
+            return Ok(mapperBlogs);
         }
         
         /// <summary>
@@ -55,9 +53,9 @@ namespace Hospital.Controllers
         {
             Blog blog = _context.Blogs.Include(x=>x.Comments).FirstOrDefault(p => p.Id == id);
             if (blog == null) return NotFound();
-            var mapperblog = _mapper.Map<Blog,BlogReturnDto>(blog);
+            var mapperBlog = _mapper.Map<Blog,BlogReturnDto>(blog);
             
-            return Ok(mapperblog);
+            return Ok(mapperBlog);
         }
         
         /// <summary>
@@ -67,7 +65,7 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // POST api/<BlogController>
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] BlogCreateDto blogCreateDto)
+        public async Task<ActionResult> Create([FromForm] BlogCreateDto blogCreateDto)
         {
             
             Blog blog=new Blog();
@@ -92,9 +90,8 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // PUT api/<BlogController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Blog>> Update(int id, [FromBody] BlogUpdateDto blogUpdateDto)
+        public async Task<ActionResult<Blog>> Update(int id, [FromForm] BlogUpdateDto blogUpdateDto)
         {
-            
             if (id != blogUpdateDto.Id) return BadRequest();
             Blog dbblog = _context.Blogs.FirstOrDefault(p => p.Id == id);
             if (dbblog == null) return NotFound();
@@ -102,7 +99,14 @@ namespace Hospital.Controllers
             dbblog.Title = blogUpdateDto.Title;
             dbblog.Topic = blogUpdateDto.Topic;
             dbblog.Description = blogUpdateDto.Description;
-            dbblog.PhotoUrl = blogUpdateDto.PhotoUrl;
+            
+            string folderName = Path.Combine("images", "blog");
+            if (blogUpdateDto.Photo!=null)
+            {
+                ImageExtension.DeleteImage(_env.WebRootPath,folderName,dbblog.PhotoUrl);
+                string fileName = await blogUpdateDto.Photo.SaveImg(_env.WebRootPath, folderName);
+                dbblog.PhotoUrl = fileName;
+            }
             await _context.SaveChangesAsync();
             return Ok(dbblog);
         }
@@ -118,7 +122,10 @@ namespace Hospital.Controllers
         {
             Blog dbblog = _context.Blogs.FirstOrDefault(p => p.Id == id);
             if (dbblog == null) return NotFound();
+            
             _context.Blogs.Remove(dbblog);
+            string folderName = Path.Combine("images", "blog");
+            ImageExtension.DeleteImage(_env.WebRootPath,folderName,dbblog.PhotoUrl);
             await _context.SaveChangesAsync();
             return Ok();
         }

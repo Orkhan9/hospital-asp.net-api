@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using Hospital.BLL.DTO;
+using Hospital.BLL.DTO.Department;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -32,8 +32,8 @@ namespace Hospital.Controllers
         public ActionResult<IEnumerable<DepartmentReturnDto>> Get()
         {
             var departments = _context.Departments.Include(x => x.Doctors).ToList();
-            var mapperdepartments = _mapper.Map<IEnumerable<Department>, IEnumerable<DepartmentReturnDto>>(departments);
-            return Ok(mapperdepartments);
+            var mapperDepartments = _mapper.Map<IEnumerable<Department>, IEnumerable<DepartmentReturnDto>>(departments);
+            return Ok(mapperDepartments);
         }
         
         /// <summary>
@@ -47,9 +47,9 @@ namespace Hospital.Controllers
         {
             Department department = _context.Departments.Include(x=>x.Doctors).FirstOrDefault(p => p.Id == id);
             if (department == null) return NotFound();
-            var mapperdepartment = _mapper.Map<Department, DepartmentReturnDto>(department);
+            var mapperDepartment = _mapper.Map<Department, DepartmentReturnDto>(department);
             
-            return Ok(mapperdepartment);
+            return Ok(mapperDepartment);
         }
         
         /// <summary>
@@ -82,13 +82,13 @@ namespace Hospital.Controllers
         public async Task<ActionResult<Department>> Update(int id, [FromBody] DepartmentUpdateDto departmentUpdateDto)
         {
             if (id != departmentUpdateDto.Id) return BadRequest();
-            Department dbdepartment = _context.Departments.FirstOrDefault(p => p.Id == id);
-            if (dbdepartment == null) return NotFound();
+            Department dbDepartment = _context.Departments.FirstOrDefault(p => p.Id == id);
+            if (dbDepartment == null) return NotFound();
 
-            dbdepartment.Name = departmentUpdateDto.Name;
-            dbdepartment.Description = departmentUpdateDto.Description;
+            dbDepartment.Name = departmentUpdateDto.Name;
+            dbDepartment.Description = departmentUpdateDto.Description;
             await _context.SaveChangesAsync();
-            return Ok(dbdepartment);
+            return Ok(dbDepartment);
         }
         
         /// <summary>
@@ -100,9 +100,9 @@ namespace Hospital.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            Department dbdepartment = _context.Departments.FirstOrDefault(p => p.Id == id);
-            if (dbdepartment == null) return NotFound();
-            _context.Departments.Remove(dbdepartment);
+            Department dbDepartment = _context.Departments.FirstOrDefault(p => p.Id == id);
+            if (dbDepartment == null) return NotFound();
+            _context.Departments.Remove(dbDepartment);
             await _context.SaveChangesAsync();
             return Ok();
         }

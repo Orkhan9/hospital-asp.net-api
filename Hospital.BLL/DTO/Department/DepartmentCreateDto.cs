@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Hospital.BLL.DTO
+namespace Hospital.BLL.DTO.Department
 {
     public class DepartmentCreateDto
     {

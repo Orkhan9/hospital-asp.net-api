@@ -1,8 +1,12 @@
 ﻿using System.Linq;
 using AutoMapper;
-using Hospital.BLL.DTO;
+using Hospital.BLL.DTO.About;
 using Hospital.BLL.DTO.Appointment;
+using Hospital.BLL.DTO.Bio;
+using Hospital.BLL.DTO.Blog;
 using Hospital.BLL.DTO.Comment;
+using Hospital.BLL.DTO.Department;
+using Hospital.BLL.DTO.Doctor;
 using Hospital.BLL.DTO.Product;
 using Hospital.DAL.Entities;
 
@@ -13,6 +17,8 @@ namespace Hospital.BLL.Mapper
         private static string BaseUrlDoctor = "http://localhost:5000/images/doctors/";
         private static string BaseUrlBlog = "http://localhost:5000/images/blog/";
         private static string BaseUrlProduct = "http://localhost:5000/images/shop/";
+        private static string BaseUrlLogo = "http://localhost:5000/images/logo/";
+        private static string BaseUrlAbout = "http://localhost:5000/images/about/";
         public MapperProfile()
         {
             CreateMap<Doctor, DoctorReturnDto>()
@@ -64,6 +70,16 @@ namespace Hospital.BLL.Mapper
             CreateMap<ProductCreateDto, Product>();
             
             CreateMap<ProductUpdateDto, Product>();
+            
+            CreateMap<Bio, BioReturnDto>()
+                .ForMember(x => x.LogoUrl
+                    , o =>
+                        o.MapFrom(x => BaseUrlLogo+x.LogoUrl));
+            
+            CreateMap<About, AboutReturnDto>()
+                .ForMember(x => x.PhotoUrl
+                    , o =>
+                        o.MapFrom(x => BaseUrlAbout+x.PhotoUrl));
         }
     }
 }

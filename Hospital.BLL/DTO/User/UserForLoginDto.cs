@@ -1,4 +1,4 @@
-﻿namespace Hospital.BLL.DTO
+﻿namespace Hospital.BLL.DTO.User
 {
     public class UserForLoginDto
     {

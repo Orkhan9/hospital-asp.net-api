@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Http;
 
-namespace Hospital.BLL.DTO
+namespace Hospital.BLL.DTO.Blog
 {
     public class BlogCreateDto
     {
