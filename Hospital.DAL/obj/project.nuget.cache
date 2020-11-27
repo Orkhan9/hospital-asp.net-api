@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eSjTgjSMHAFA3LYxTWji5JecPAtQdOcGnzQ2yaU6QJLVRoiq49Gokl6ak10LCQeIfa7wqWXzE3zmFrYXZ24FzA==",
+  "dgSpecHash": "H8Tm+Uc2SFCOVUeSvXSrd0WrUCmg8+fR0PvhW90qB7hqxJTjxFgV6BtoYSKvbvP4uHJjEZzeVsk1DUfjS39wTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj",
+  "projectFilePath": "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

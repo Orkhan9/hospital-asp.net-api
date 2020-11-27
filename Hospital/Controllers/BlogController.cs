@@ -17,13 +17,14 @@ namespace Hospital.Controllers
     [ApiController]
     public class BlogController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly IBlogRepository _blogRepository;
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
-        public BlogController(DataContext context,IMapper mapper,
-            IWebHostEnvironment env)
+        public BlogController(IMapper mapper,
+            IWebHostEnvironment env,
+            IBlogRepository blogRepository)
         {
-            _context=context;
+            _blogRepository = blogRepository;
             _mapper = mapper;
             _env = env;
         }
@@ -35,10 +36,10 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET: api/<BlogController>
         [HttpGet]
-        public ActionResult<IEnumerable<Blog>> Get()
+        public async Task<IActionResult> Get()
         {
-            var blogs= _context.Blogs.Include(x => x.Comments).ToList();
-            var mapperBlogs = _mapper.Map<IEnumerable<Blog>,IEnumerable<BlogReturnDto>>(blogs);
+            var blogs = await _blogRepository.GetBlogsAsync();
+            var mapperBlogs = _mapper.Map<IEnumerable<BlogReturnDto>>(blogs);
             return Ok(mapperBlogs);
         }
         
@@ -49,11 +50,11 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET api/<BlogController>/5
         [HttpGet("{id}")]
-        public ActionResult<Blog> Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            Blog blog = _context.Blogs.Include(x=>x.Comments).FirstOrDefault(p => p.Id == id);
+            var blog = await _blogRepository.GetBlogByIdAsync(id);
             if (blog == null) return NotFound();
-            var mapperBlog = _mapper.Map<Blog,BlogReturnDto>(blog);
+            var mapperBlog = _mapper.Map<BlogReturnDto>(blog);
             
             return Ok(mapperBlog);
         }
@@ -68,18 +69,13 @@ namespace Hospital.Controllers
         public async Task<ActionResult> Create([FromForm] BlogCreateDto blogCreateDto)
         {
             
-            Blog blog=new Blog();
-            blog.Title = blogCreateDto.Title;
-            blog.Topic = blogCreateDto.Topic;
-            blog.Description = blogCreateDto.Description;
+            var mapperBlog = _mapper.Map<Blog>(blogCreateDto);
             
             string folderName = Path.Combine("images", "blog");
             string fileName = await blogCreateDto.Photo.SaveImg(_env.WebRootPath, folderName);
-            blog.PhotoUrl = fileName;
-            
-            await _context.AddAsync(blog);
-            await _context.SaveChangesAsync();
-            return Ok(blog);
+            mapperBlog.PhotoUrl = fileName;
+            await _blogRepository.CreateBlogAsync(mapperBlog);
+            return Ok(mapperBlog);
         }
         
         /// <summary>
@@ -93,22 +89,11 @@ namespace Hospital.Controllers
         public async Task<ActionResult<Blog>> Update(int id, [FromForm] BlogUpdateDto blogUpdateDto)
         {
             if (id != blogUpdateDto.Id) return BadRequest();
-            Blog dbblog = _context.Blogs.FirstOrDefault(p => p.Id == id);
-            if (dbblog == null) return NotFound();
-
-            dbblog.Title = blogUpdateDto.Title;
-            dbblog.Topic = blogUpdateDto.Topic;
-            dbblog.Description = blogUpdateDto.Description;
-            
-            string folderName = Path.Combine("images", "blog");
-            if (blogUpdateDto.Photo!=null)
-            {
-                ImageExtension.DeleteImage(_env.WebRootPath,folderName,dbblog.PhotoUrl);
-                string fileName = await blogUpdateDto.Photo.SaveImg(_env.WebRootPath, folderName);
-                dbblog.PhotoUrl = fileName;
-            }
-            await _context.SaveChangesAsync();
-            return Ok(dbblog);
+            var mapperBlog = _mapper.Map<Blog>(blogUpdateDto);
+            var blog= await _blogRepository.UpdateBlogAsync(mapperBlog,_env.WebRootPath);
+            if (blog == null) return BadRequest();
+           
+            return Ok(blog);
         }
         
         /// <summary>
@@ -120,15 +105,9 @@ namespace Hospital.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            Blog dbblog = _context.Blogs.FirstOrDefault(p => p.Id == id);
-            if (dbblog == null) return NotFound();
-            
-            _context.Blogs.Remove(dbblog);
-            string folderName = Path.Combine("images", "blog");
-            ImageExtension.DeleteImage(_env.WebRootPath,folderName,dbblog.PhotoUrl);
-            await _context.SaveChangesAsync();
+            Blog blog = await _blogRepository.DeleteBlogAsync(id,_env.WebRootPath);
+            if (blog == null) return NotFound();
             return Ok();
         }
-        
     }
 }

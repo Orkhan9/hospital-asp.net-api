@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj": {}
+    "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj": {
+    "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj",
         "projectName": "Hospital.DAL",
-        "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

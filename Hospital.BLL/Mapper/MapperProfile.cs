@@ -66,10 +66,6 @@ namespace Hospital.BLL.Mapper
                 .ForMember(x => x.PictureUrl
                     , o =>
                         o.MapFrom(x => BaseUrlProduct + x.PictureUrl));
-
-            CreateMap<ProductCreateDto, Product>();
-            
-            CreateMap<ProductUpdateDto, Product>();
             
             CreateMap<Bio, BioReturnDto>()
                 .ForMember(x => x.LogoUrl
@@ -80,6 +76,13 @@ namespace Hospital.BLL.Mapper
                 .ForMember(x => x.PhotoUrl
                     , o =>
                         o.MapFrom(x => BaseUrlAbout+x.PhotoUrl));
+            
+            CreateMap<ProductCreateDto, Product>();
+            CreateMap<ProductUpdateDto, Product>();
+            CreateMap<DoctorCreateDto, Doctor>();
+            CreateMap<DoctorUpdateDto, Doctor>();
+            CreateMap<BlogCreateDto,Blog>();
+            CreateMap<BlogUpdateDto, Blog>();
         }
     }
 }

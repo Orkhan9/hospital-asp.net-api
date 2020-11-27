@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj",
+    "projectUniqueName": "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj",
     "projectName": "Hospital.DAL",
-    "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\Hospital.DAL.csproj",
-    "outputPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.DAL\\obj\\",
+    "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital.DAL\\Hospital.DAL.csproj",
+    "outputPath": "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital.DAL\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"

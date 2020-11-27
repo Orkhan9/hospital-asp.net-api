@@ -34,3 +34,15 @@ C:\Users\user\Desktop\finalProject\finalproject-back\Hospital.DAL\obj\Debug\netc
 C:\Users\user\Desktop\finalProject\finalproject-back\Hospital.DAL\obj\Debug\netcoreapp3.1\Hospital.DAL.dll
 C:\Users\user\Desktop\finalProject\finalproject-back\Hospital.DAL\obj\Debug\netcoreapp3.1\Hospital.DAL.pdb
 C:\Users\user\Desktop\finalProject\finalproject-back\Hospital.DAL\obj\Debug\netcoreapp3.1\Hospital.DAL.genruntimeconfig.cache
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\bin\Debug\netcoreapp3.1\Hospital.DAL.deps.json
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\bin\Debug\netcoreapp3.1\Hospital.DAL.runtimeconfig.json
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\bin\Debug\netcoreapp3.1\Hospital.DAL.runtimeconfig.dev.json
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\bin\Debug\netcoreapp3.1\Hospital.DAL.dll
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\bin\Debug\netcoreapp3.1\Hospital.DAL.pdb
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\obj\Debug\netcoreapp3.1\Hospital.DAL.csprojAssemblyReference.cache
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\obj\Debug\netcoreapp3.1\Hospital.DAL.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\obj\Debug\netcoreapp3.1\Hospital.DAL.AssemblyInfo.cs
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\obj\Debug\netcoreapp3.1\Hospital.DAL.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\obj\Debug\netcoreapp3.1\Hospital.DAL.dll
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\obj\Debug\netcoreapp3.1\Hospital.DAL.pdb
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital.DAL\obj\Debug\netcoreapp3.1\Hospital.DAL.genruntimeconfig.cache

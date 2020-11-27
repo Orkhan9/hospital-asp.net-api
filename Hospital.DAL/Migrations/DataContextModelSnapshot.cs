@@ -38,6 +38,15 @@ namespace Hospital.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Abouts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Susa-Hospital are a professional medical & health care services provider institutions. Suitable for Hospitals Dentists Gynecologists Physiatrists Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                            PhotoUrl = "01_about.png",
+                            Title = "Welcome To Our Susa-Hospital"
+                        });
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.Appointment", b =>
@@ -97,6 +106,17 @@ namespace Hospital.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Bios");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "Baku city,Sabail district",
+                            Email = "javidfd@code.edu.az",
+                            Facebook = "www.facebook.com",
+                            LogoUrl = "01_logo.png",
+                            Phone = "+994555535373"
+                        });
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.Blog", b =>
@@ -124,6 +144,35 @@ namespace Hospital.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Blogs");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Susa Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum....... ",
+                            PhotoUrl = "01_blog.jpg",
+                            PublishTime = new DateTime(2020, 11, 27, 12, 4, 49, 312, DateTimeKind.Local).AddTicks(9982),
+                            Title = "Medical & Dental Support ICU & CCU for Emergancy Services",
+                            Topic = "COVID -19 , Tips"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Xankendi Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.......",
+                            PhotoUrl = "02_blog.jpg",
+                            PublishTime = new DateTime(2020, 11, 27, 12, 4, 49, 313, DateTimeKind.Local).AddTicks(187),
+                            Title = "Patien Forum School patient Experience",
+                            Topic = "Treatment , Tips"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Xocali Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.......",
+                            PhotoUrl = "03_blog.jpg",
+                            PublishTime = new DateTime(2020, 11, 27, 12, 4, 49, 313, DateTimeKind.Local).AddTicks(195),
+                            Title = "How to protect myself & the spread of disease!",
+                            Topic = "Medical , Tips"
+                        });
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.Comment", b =>
@@ -170,6 +219,56 @@ namespace Hospital.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Departments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Şuşa — Azərbaycan Respublikasının Dağlıq Qarabağ bölgəsində, Şuşa şəhər inzibati ərazi dairəsində şəhər.[2]. Şəhərin təməli 1752-ci ildə Qarabağ hökmdarı Pənahəli xan tərəfindən qoyulub və ilk çağlarda şəhəri Şuşa adı ilə yanaşı xanın şərəfinə Pənahabad adlandırırdılar",
+                            Name = "Laboratory Test Department"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Qubadlı şəhəri — Azərbaycanın Qubadlı rayonunun inzibati mərkəzi, Qubadlı şəhər inzibati ərazi dairəsində şəhər 1993-cü ilin 31 avqust tarixində Ermənistan Silahlı Qüvvələri tərəfindən işğal edilmişdir. 2020-ci il 25 oktyabr tarixində Azərbaycan Silahlı Qüvvələri tərəfindən işğaldan azad edilmişdir",
+                            Name = "Dental Treat Department"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Xankəndi — Azərbaycan Respublikasındakı şəhər, 1991-ci il dekabrın 26-da Ermənistan silahlı qüvvələri və Qarabağdakı erməni separatçıları tərəfindən işğalından sonra yaradılan qondarma quruma paytaxtlıq edir.[2] İnzibati cəhətdən Xankəndi şəhər əhatə dairəsinə Xankəndi şəhəri və Kərkicahan şəhər tipli qəsəbəsi daxildir. ",
+                            Name = "Neurology Department"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Şuşa — Azərbaycan Respublikasının Dağlıq Qarabağ bölgəsində, Şuşa şəhər inzibati ərazi dairəsində şəhər.[2]. Şəhərin təməli 1752-ci ildə Qarabağ hökmdarı Pənahəli xan tərəfindən qoyulub və ilk çağlarda şəhəri Şuşa adı ilə yanaşı xanın şərəfinə Pənahabad adlandırırdılar",
+                            Name = "Orthopedic Department"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Qubadlı şəhəri — Azərbaycanın Qubadlı rayonunun inzibati mərkəzi, Qubadlı şəhər inzibati ərazi dairəsində şəhər 1993-cü ilin 31 avqust tarixində Ermənistan Silahlı Qüvvələri tərəfindən işğal edilmişdir. 2020-ci il 25 oktyabr tarixində Azərbaycan Silahlı Qüvvələri tərəfindən işğaldan azad edilmişdir",
+                            Name = "Cardiology Department"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Xankəndi — Azərbaycan Respublikasındakı şəhər, 1991-ci il dekabrın 26-da Ermənistan silahlı qüvvələri və Qarabağdakı erməni separatçıları tərəfindən işğalından sonra yaradılan qondarma quruma paytaxtlıq edir.[2] İnzibati cəhətdən Xankəndi şəhər əhatə dairəsinə Xankəndi şəhəri və Kərkicahan şəhər tipli qəsəbəsi daxildir. ",
+                            Name = "Gynecology Department"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "Şuşa — Azərbaycan Respublikasının Dağlıq Qarabağ bölgəsində, Şuşa şəhər inzibati ərazi dairəsində şəhər.[2]. Şəhərin təməli 1752-ci ildə Qarabağ hökmdarı Pənahəli xan tərəfindən qoyulub və ilk çağlarda şəhəri Şuşa adı ilə yanaşı xanın şərəfinə Pənahabad adlandırırdılar",
+                            Name = "Pulmonology Department"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Qubadlı şəhəri — Azərbaycanın Qubadlı rayonunun inzibati mərkəzi, Qubadlı şəhər inzibati ərazi dairəsində şəhər 1993-cü ilin 31 avqust tarixində Ermənistan Silahlı Qüvvələri tərəfindən işğal edilmişdir. 2020-ci il 25 oktyabr tarixində Azərbaycan Silahlı Qüvvələri tərəfindən işğaldan azad edilmişdir",
+                            Name = "Eye Treat Department"
+                        });
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.Doctor", b =>
@@ -202,6 +301,168 @@ namespace Hospital.DAL.Migrations
                     b.HasIndex("DepartmentId");
 
                     b.ToTable("Doctors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DepartmentId = 1,
+                            Description = "Susa Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr. Javid Dadashov",
+                            PhotoUrl = "01_doctors.jpg",
+                            Profession = "Lab Test"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DepartmentId = 1,
+                            Description = "Xankendi Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr. Misir Esgerov",
+                            PhotoUrl = "02_doctors.jpg",
+                            Profession = "Dental"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DepartmentId = 2,
+                            Description = "Agdam Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr. Hasan Hasanbayli",
+                            PhotoUrl = "03_doctors.jpg",
+                            Profession = "Neurology"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DepartmentId = 2,
+                            Description = "Qubadli Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr.  Zahid Gasimli",
+                            PhotoUrl = "01_doctors.jpg",
+                            Profession = "Orthopedics"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DepartmentId = 3,
+                            Description = "Zengilan Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr.  Hasan Hasanli",
+                            PhotoUrl = "02_doctors.jpg",
+                            Profession = "Cardiology"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DepartmentId = 3,
+                            Description = "Fizuli Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr. Kamil Mammadov",
+                            PhotoUrl = "03_doctors.jpg",
+                            Profession = "Gynecology"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DepartmentId = 4,
+                            Description = "Xocali Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr. Ulvi Majidov",
+                            PhotoUrl = "01_doctors.jpg",
+                            Profession = "Pulmonology"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DepartmentId = 4,
+                            Description = "Kelbecer Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr.  Orkhan Mammadli",
+                            PhotoUrl = "02_doctors.jpg",
+                            Profession = "Eye Treat"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DepartmentId = 5,
+                            Description = "Susa Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr. Javid Dadashov",
+                            PhotoUrl = "01_doctors.jpg",
+                            Profession = "Lab Test"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            DepartmentId = 5,
+                            Description = "Xankendi Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr. Misir Esgerov",
+                            PhotoUrl = "02_doctors.jpg",
+                            Profession = "Dental"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            DepartmentId = 6,
+                            Description = "Agdam Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr. Hasan Hasanbayli",
+                            PhotoUrl = "03_doctors.jpg",
+                            Profession = "Neurology"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            DepartmentId = 6,
+                            Description = "Qubadli Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr.  Zahid Gasimli",
+                            PhotoUrl = "01_doctors.jpg",
+                            Profession = "Orthopedics"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            DepartmentId = 7,
+                            Description = "Zengilan Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr.  Hasan Hasanli",
+                            PhotoUrl = "02_doctors.jpg",
+                            Profession = "Cardiology"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            DepartmentId = 7,
+                            Description = "Fizuli Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr. Kamil Mammadov",
+                            PhotoUrl = "03_doctors.jpg",
+                            Profession = "Gynecology"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            DepartmentId = 8,
+                            Description = "Xocali Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr. Ulvi Majidov",
+                            PhotoUrl = "01_doctors.jpg",
+                            Profession = "Pulmonology"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            DepartmentId = 8,
+                            Description = "Kelbecer Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
+                            Facebook = "www.facebook.com",
+                            Name = "Dr.  Orkhan Mammadli",
+                            PhotoUrl = "02_doctors.jpg",
+                            Profession = "Eye Treat"
+                        });
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.Product", b =>
@@ -243,7 +504,7 @@ namespace Hospital.DAL.Migrations
                             Id = 1,
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Syringia",
-                            PictureUrl = "images/products/sb-ang1.png",
+                            PictureUrl = "01_shop.jpg",
                             Price = 200m,
                             ProductBrandId = 1,
                             ProductTypeId = 1
@@ -253,7 +514,7 @@ namespace Hospital.DAL.Migrations
                             Id = 2,
                             Description = "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
                             Name = "Box Aid",
-                            PictureUrl = "images/products/sb-ang2.png",
+                            PictureUrl = "02_shop.jpg",
                             Price = 150m,
                             ProductBrandId = 1,
                             ProductTypeId = 1
@@ -263,7 +524,7 @@ namespace Hospital.DAL.Migrations
                             Id = 3,
                             Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
                             Name = "Doctor Tablet",
-                            PictureUrl = "images/products/sb-core1.png",
+                            PictureUrl = "03_shop.jpg",
                             Price = 180m,
                             ProductBrandId = 2,
                             ProductTypeId = 1
@@ -273,7 +534,7 @@ namespace Hospital.DAL.Migrations
                             Id = 4,
                             Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
                             Name = "Natural tablets",
-                            PictureUrl = "images/products/sb-core2.png",
+                            PictureUrl = "01_shop.jpg",
                             Price = 300m,
                             ProductBrandId = 2,
                             ProductTypeId = 1
@@ -283,7 +544,7 @@ namespace Hospital.DAL.Migrations
                             Id = 5,
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Green tea",
-                            PictureUrl = "images/products/sb-react1.png",
+                            PictureUrl = "02_shop.jpg",
                             Price = 250m,
                             ProductBrandId = 4,
                             ProductTypeId = 1
@@ -293,7 +554,7 @@ namespace Hospital.DAL.Migrations
                             Id = 6,
                             Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
                             Name = "Pampers",
-                            PictureUrl = "images/products/sb-ts1.png",
+                            PictureUrl = "03_shop.jpg",
                             Price = 120m,
                             ProductBrandId = 5,
                             ProductTypeId = 1
@@ -303,7 +564,7 @@ namespace Hospital.DAL.Migrations
                             Id = 7,
                             Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Core Blue Hat",
-                            PictureUrl = "images/products/hat-core1.png",
+                            PictureUrl = "01_shop.jpg",
                             Price = 10m,
                             ProductBrandId = 2,
                             ProductTypeId = 2
@@ -313,7 +574,7 @@ namespace Hospital.DAL.Migrations
                             Id = 8,
                             Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
                             Name = "Green React Woolen Hat",
-                            PictureUrl = "images/products/hat-react1.png",
+                            PictureUrl = "02_shop.jpg",
                             Price = 8m,
                             ProductBrandId = 4,
                             ProductTypeId = 2
@@ -323,7 +584,7 @@ namespace Hospital.DAL.Migrations
                             Id = 9,
                             Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Purple React Woolen Hat",
-                            PictureUrl = "images/products/hat-react2.png",
+                            PictureUrl = "03_shop.jpg",
                             Price = 15m,
                             ProductBrandId = 4,
                             ProductTypeId = 2
@@ -333,7 +594,7 @@ namespace Hospital.DAL.Migrations
                             Id = 10,
                             Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
                             Name = "Green Code Gloves",
-                            PictureUrl = "images/products/glove-code2.png",
+                            PictureUrl = "01_shop.jpg",
                             Price = 15m,
                             ProductBrandId = 3,
                             ProductTypeId = 4
@@ -343,7 +604,7 @@ namespace Hospital.DAL.Migrations
                             Id = 11,
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
                             Name = "Purple React Gloves",
-                            PictureUrl = "images/products/glove-react1.png",
+                            PictureUrl = "02_shop.jpg",
                             Price = 16m,
                             ProductBrandId = 4,
                             ProductTypeId = 4
@@ -467,6 +728,18 @@ namespace Hospital.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Member"
+                        });
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.Service", b =>
@@ -479,6 +752,9 @@ namespace Hospital.DAL.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("IconClass")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -488,6 +764,72 @@ namespace Hospital.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Services");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.",
+                            IconClass = "item-icon flaticon-doctor",
+                            Name = "Qulified Doctors",
+                            ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.",
+                            IconClass = "item-icon flaticon-emergency-call-1",
+                            Name = "24 Hours Services",
+                            ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.",
+                            IconClass = "item-icon flaticon-blood-donation-1",
+                            Name = "Blood Test",
+                            ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.",
+                            IconClass = "item-icon flaticon-ambulance-3",
+                            Name = "24/7 Ambulance",
+                            ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.",
+                            IconClass = "item-icon flaticon-medical",
+                            Name = "Medical Counselling",
+                            ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.",
+                            IconClass = "item-icon flaticon-treatment",
+                            Name = "Transplant Services",
+                            ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.",
+                            IconClass = "item-icon flaticon-bed",
+                            Name = "Rehabilitation",
+                            ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.",
+                            IconClass = "item-icon flaticon-list",
+                            Name = "Outdoor Checkup",
+                            ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                        });
                 });
 
             modelBuilder.Entity("Hospital.DAL.Entities.User", b =>

@@ -10,7 +10,7 @@ namespace Hospital.DAL
         Task<PagedList<Product>> GetProductAsync(ProductParams productParams);
         Task<Product> GetProductByIdAsync(int id);
         Task<Product> CreateProductAsync(Product product);
-        Task<Product> UpdateProductAsync(Product product);
-        Task<Product> DeleteProductAsync(int id);
+        Task<Product> UpdateProductAsync(Product product,string webRoot);
+        Task<Product> DeleteProductAsync(int id,string webRoot);
     }
 }

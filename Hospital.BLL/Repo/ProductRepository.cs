@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
-using Hospital.BLL.DTO.Product;
 using Hospital.BLL.Helpers;
 using Hospital.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -38,7 +35,7 @@ namespace Hospital.DAL
             return product;
         }
 
-        public async Task<Product> UpdateProductAsync( Product product)
+        public async Task<Product> UpdateProductAsync( Product product,string webRoot)
         {
             var dbProduct =await _context.Products.FirstOrDefaultAsync(x => x.Id == product.Id);
             if (dbProduct == null)
@@ -49,12 +46,10 @@ namespace Hospital.DAL
             string folderName = Path.Combine("images", "shop");
             if (product.Photo!=null)
             {
-                string enviroment = @"C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\wwwroot";
-                ImageExtension.DeleteImage(enviroment,folderName,dbProduct.PictureUrl);
-                string fileName = await product.Photo.SaveImg(enviroment, folderName);
+                ImageExtension.DeleteImage(webRoot,folderName,dbProduct.PictureUrl);
+                string fileName = await product.Photo.SaveImg(webRoot, folderName);
                 dbProduct.PictureUrl = fileName;
             }
-            
             dbProduct.Name = product.Name;
             dbProduct.Price = product.Price;
             dbProduct.Description = product.Description;
@@ -65,7 +60,7 @@ namespace Hospital.DAL
         }
 
 
-        public async Task<Product> DeleteProductAsync(int id)
+        public async Task<Product> DeleteProductAsync(int id,string webRoot)
         {
             var dbProduct = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
             if (dbProduct == null)
@@ -74,12 +69,11 @@ namespace Hospital.DAL
             }
             
             string folderName = Path.Combine("images", "shop");
-            string enviroment = @"C:\Users\User\Desktop\RiderProjects\Hospital\Hospital\wwwroot";
             
             _context.Products.Remove(dbProduct);
-            ImageExtension.DeleteImage(enviroment,folderName,dbProduct.PictureUrl);
-            
+            ImageExtension.DeleteImage(webRoot,folderName,dbProduct.PictureUrl);
             await _context.SaveChangesAsync();
+            
             return dbProduct;
         }
     }

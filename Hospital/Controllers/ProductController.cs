@@ -37,7 +37,7 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET: api/<ProductController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductReturnDto>>> Get([FromQuery] ProductParams productParams)
+        public async Task<IActionResult> Get([FromQuery] ProductParams productParams)
         {
             var dbproducts = await _productRepository.GetProductAsync(productParams);
             var mapperProducts = _mapper.Map<IEnumerable<ProductReturnDto>>(dbproducts);
@@ -72,10 +72,7 @@ namespace Hospital.Controllers
         public async Task<ActionResult> Create([FromForm] ProductCreateDto productCreateDto)
         {
             var product = _mapper.Map<Product>(productCreateDto);
-            
             string folderName = Path.Combine("images", "shop");
-            string fileName = await productCreateDto.Photo.SaveImg(_env.WebRootPath, folderName);
-            product.PictureUrl = fileName;
             await _productRepository.CreateProductAsync(product);
             return Ok(product);
         }
@@ -92,7 +89,7 @@ namespace Hospital.Controllers
         {
             if (id != productUpdateDto.Id) return BadRequest();
             var mapperproduct = _mapper.Map<Product>(productUpdateDto);
-            Product product=await _productRepository.UpdateProductAsync(mapperproduct);
+            Product product=await _productRepository.UpdateProductAsync(mapperproduct,_env.WebRootPath);
             if (product == null) return BadRequest();
            
             return Ok(product);
@@ -107,10 +104,9 @@ namespace Hospital.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            Product product = await _productRepository.DeleteProductAsync(id);
+            Product product = await _productRepository.DeleteProductAsync(id,_env.WebRootPath);
             if (product == null) return NotFound();
             return Ok();
         }
-        
     }
 }

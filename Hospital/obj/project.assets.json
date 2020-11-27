@@ -6335,11 +6335,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital\\Hospital.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital\\Hospital.csproj",
       "projectName": "Hospital",
-      "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital\\Hospital.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital\\Hospital.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6355,8 +6355,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.BLL\\Hospital.BLL.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\Hospital\\Hospital.BLL\\Hospital.BLL.csproj"
+            "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital.BLL\\Hospital.BLL.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\RiderProjects\\finalproject-back\\Hospital.BLL\\Hospital.BLL.csproj"
             }
           }
         }
