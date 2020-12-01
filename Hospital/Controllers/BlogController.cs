@@ -68,7 +68,6 @@ namespace Hospital.Controllers
         [HttpPost]
         public async Task<ActionResult> Create([FromForm] BlogCreateDto blogCreateDto)
         {
-            
             var mapperBlog = _mapper.Map<Blog>(blogCreateDto);
             
             string folderName = Path.Combine("images", "blog");

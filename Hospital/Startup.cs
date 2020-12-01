@@ -53,6 +53,7 @@ namespace Hospital
              services.AddScoped<IAuthRepository, AuthRepository>();
              services.AddScoped<IDoctorRepository, DoctorRepository>();
              services.AddScoped<IBlogRepository, BlogRepository>();
+             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
              services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
                  AddJwtBearer(opt =>
                      opt.TokenValidationParameters = new TokenValidationParameters

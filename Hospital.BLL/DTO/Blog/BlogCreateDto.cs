@@ -22,5 +22,10 @@ namespace Hospital.BLL.DTO.Blog
         [Required]
         public DateTime PublishTime { get; set; }
 
+        public BlogCreateDto()
+        {
+            PublishTime=DateTime.Now;
+        }
+
     }
 }

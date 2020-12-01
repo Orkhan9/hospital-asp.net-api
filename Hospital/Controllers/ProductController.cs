@@ -71,10 +71,14 @@ namespace Hospital.Controllers
         [HttpPost]
         public async Task<ActionResult> Create([FromForm] ProductCreateDto productCreateDto)
         {
-            var product = _mapper.Map<Product>(productCreateDto);
+            var mapperProduct = _mapper.Map<Product>(productCreateDto);
+            
             string folderName = Path.Combine("images", "shop");
-            await _productRepository.CreateProductAsync(product);
-            return Ok(product);
+            string fileName = await productCreateDto.Photo.SaveImg(_env.WebRootPath, folderName);
+            mapperProduct.PictureUrl = fileName;
+            
+            await _productRepository.CreateProductAsync(mapperProduct);
+            return Ok(mapperProduct);
         }
         
         /// <summary>

@@ -18,7 +18,9 @@
           <e p="CommentController.cs" t="Include" />
           <e p="DepartmentController.cs" t="Include" />
           <e p="DoctorController.cs" t="Include" />
+          <e p="ProductBrandController.cs" t="Include" />
           <e p="ProductController.cs" t="Include" />
+          <e p="ProductTypeController.cs" t="Include" />
           <e p="RoleController.cs" t="Include" />
           <e p="SearchController.cs" t="Include" />
           <e p="ServiceController.cs" t="Include" />
@@ -51,7 +53,6 @@
               <e p="01_blog.jpg" t="Include" />
               <e p="02_blog.jpg" t="Include" />
               <e p="03_blog.jpg" t="Include" />
-              <e p="1bc062eb-0af0-4392-a136-150c330f3f6701_doctors.jpg" t="Include" />
             </e>
             <e p="breadcrumb-header" t="Include">
               <e p="01_breadcrumb-header.jpg" t="Include" />
@@ -62,18 +63,10 @@
               <e p="01_departments-details.jpg" t="Include" />
             </e>
             <e p="doctors" t="Include">
+              <e p="01_doctors.jpg" t="Include" />
               <e p="02_doctors.jpg" t="Include" />
               <e p="03_doctors.jpg" t="Include" />
-              <e p="3f3fa323-cf13-4511-909c-30ccc760dc2d02_doctors.jpg" t="Include" />
-              <e p="4c1767e2-bf2e-4f25-82d7-51d0dca431c102_doctors.jpg" t="Include" />
-              <e p="64b9401b-7fea-41ea-b743-d29488eb039402_shop.jpg" t="Include" />
-              <e p="7ea80a3c-da5b-4f5b-aa63-dc37def7087f01_doctors.jpg" t="Include" />
-              <e p="9396b01f-9df8-4602-ba50-fe32206d253001_doctors.jpg" t="Include" />
-              <e p="a48ee516-f223-4140-8348-6a11cc3b924702_doctors.jpg" t="Include" />
-              <e p="a637ca57-073e-43ae-a9ea-b4491e22090101_doctors.jpg" t="Include" />
-              <e p="bb0a3205-3756-410c-8dc8-0541682cf62302_doctors.jpg" t="Include" />
-              <e p="e1f770be-cae1-462d-a924-e07ee5742f7101_doctors.jpg" t="Include" />
-              <e p="edaf0349-364d-4140-8a04-2a4bc759cba103_doctors.jpg" t="Include" />
+              <e p="4c782de3-2fb1-46d8-b497-2bec2924effe02_doctors.jpg" t="Include" />
             </e>
             <e p="faqs" t="Include">
               <e p="01_faqs.jpg" t="Include" />
@@ -109,6 +102,8 @@
             <e p="shop" t="Include">
               <e p="01_shop.jpg" t="Include" />
               <e p="02_shop.jpg" t="Include" />
+              <e p="03_shop.jpg" t="Include" />
+              <e p="d9354c28-3cf3-49e0-b031-c78b3dadc3ab03_shop.jpg" t="Include" />
             </e>
             <e p="statistic" t="Include">
               <e p="01_statistic.jpg" t="Include" />
@@ -194,11 +189,16 @@
         </e>
         <e p="Repo" t="Include">
           <e p="BlogRepository.cs" t="Include" />
+          <e p="DepartmentRepository.cs" t="Include" />
           <e p="DoctorRepository.cs" t="Include" />
           <e p="IBlogRepository.cs" t="Include" />
+          <e p="IDepartmentRepository.cs" t="Include" />
           <e p="IDoctorRepository.cs" t="Include" />
           <e p="IProductRepository.cs" t="Include" />
           <e p="ProductRepository.cs" t="Include" />
+        </e>
+        <e p="Service" t="Include">
+          <e p="DoctorService.cs" t="Include" />
         </e>
       </e>
       <e p="Hospital.DAL" t="IncludeRecursive">

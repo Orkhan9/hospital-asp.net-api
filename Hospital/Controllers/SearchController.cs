@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Hospital.BLL.DTO;
 using Hospital.DAL;
-using Hospital.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Hospital.Controllers
 {
@@ -53,11 +50,6 @@ namespace Hospital.Controllers
             }
             
             return Ok(searchList);
-        }
-        
-        
-        
-        
-        
+        } 
     }
 }

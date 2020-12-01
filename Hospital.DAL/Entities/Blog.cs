@@ -17,10 +17,5 @@ namespace Hospital.DAL.Entities
         public DateTime PublishTime { get; set; }
         public ICollection<Comment> Comments { get; set; }
         
-        public Blog()
-        {
-            PublishTime=DateTime.Now;
-        }
-        
     }
 }

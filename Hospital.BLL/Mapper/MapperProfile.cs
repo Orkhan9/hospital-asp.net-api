@@ -79,10 +79,15 @@ namespace Hospital.BLL.Mapper
             
             CreateMap<ProductCreateDto, Product>();
             CreateMap<ProductUpdateDto, Product>();
+            
             CreateMap<DoctorCreateDto, Doctor>();
             CreateMap<DoctorUpdateDto, Doctor>();
+            
             CreateMap<BlogCreateDto,Blog>();
             CreateMap<BlogUpdateDto, Blog>();
+            
+            CreateMap<DepartmentCreateDto, Department>();
+            CreateMap<DepartmentUpdateDto,Department>();
         }
     }
 }

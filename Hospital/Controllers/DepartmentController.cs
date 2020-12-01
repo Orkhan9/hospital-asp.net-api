@@ -14,12 +14,12 @@ namespace Hospital.Controllers
     [ApiController]
     public class DepartmentController : ControllerBase
     {
-        private readonly DataContext _context;
         private readonly IMapper _mapper;
-        public DepartmentController(DataContext context,IMapper mapper)
+        private readonly IDepartmentRepository _departmentRepository;
+        public DepartmentController(IMapper mapper,IDepartmentRepository departmentRepository)
         {
-            _context=context;
             _mapper = mapper;
+            _departmentRepository = departmentRepository;
         }
         
         
@@ -29,10 +29,10 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET: api/<DepartmentController>
         [HttpGet]
-        public ActionResult<IEnumerable<DepartmentReturnDto>> Get()
+        public async Task<IActionResult> Get()
         {
-            var departments = _context.Departments.Include(x => x.Doctors).ToList();
-            var mapperDepartments = _mapper.Map<IEnumerable<Department>, IEnumerable<DepartmentReturnDto>>(departments);
+            var departments =await _departmentRepository.GetDepartmentsAsync();
+            var mapperDepartments = _mapper.Map<IEnumerable<DepartmentReturnDto>>(departments);
             return Ok(mapperDepartments);
         }
         
@@ -43,11 +43,11 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET api/<DepartmentController>/5
         [HttpGet("{id}")]
-        public ActionResult<DepartmentReturnDto> Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            Department department = _context.Departments.Include(x=>x.Doctors).FirstOrDefault(p => p.Id == id);
+            Department department = await _departmentRepository.GetDepartmentByIdAsync(id);
             if (department == null) return NotFound();
-            var mapperDepartment = _mapper.Map<Department, DepartmentReturnDto>(department);
+            var mapperDepartment = _mapper.Map<DepartmentReturnDto>(department);
             
             return Ok(mapperDepartment);
         }
@@ -61,14 +61,9 @@ namespace Hospital.Controllers
         [HttpPost]
         public async Task<ActionResult> Create([FromBody] DepartmentCreateDto departmentCreateDto)
         {
-            Department department = new Department
-            {
-                Name = departmentCreateDto.Name,
-                Description = departmentCreateDto.Description
-            };
-            await _context.AddAsync(department);
-            await _context.SaveChangesAsync();
-            return Ok(department);
+            var mapperDepartment = _mapper.Map<Department>(departmentCreateDto);
+            await _departmentRepository.CreateDepartmentAsync(mapperDepartment);
+            return Ok(mapperDepartment);
         }
         
         /// <summary>
@@ -82,13 +77,11 @@ namespace Hospital.Controllers
         public async Task<ActionResult<Department>> Update(int id, [FromBody] DepartmentUpdateDto departmentUpdateDto)
         {
             if (id != departmentUpdateDto.Id) return BadRequest();
-            Department dbDepartment = _context.Departments.FirstOrDefault(p => p.Id == id);
-            if (dbDepartment == null) return NotFound();
-
-            dbDepartment.Name = departmentUpdateDto.Name;
-            dbDepartment.Description = departmentUpdateDto.Description;
-            await _context.SaveChangesAsync();
-            return Ok(dbDepartment);
+            var mapperDepartment = _mapper.Map<Department>(departmentUpdateDto);
+            var department= await _departmentRepository.UpdateDepartmentAsync(mapperDepartment);
+            if (department == null) return BadRequest();
+           
+            return Ok(department);
         }
         
         /// <summary>
@@ -100,10 +93,8 @@ namespace Hospital.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            Department dbDepartment = _context.Departments.FirstOrDefault(p => p.Id == id);
-            if (dbDepartment == null) return NotFound();
-            _context.Departments.Remove(dbDepartment);
-            await _context.SaveChangesAsync();
+            Department department = await _departmentRepository.DeleteDepartmentAsync(id);
+            if (department == null) return NotFound();
             return Ok();
         }
         
