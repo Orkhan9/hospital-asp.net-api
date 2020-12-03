@@ -44,7 +44,7 @@ namespace Hospital.DAL.Migrations
                         {
                             Id = 1,
                             Description = "Susa-Hospital are a professional medical & health care services provider institutions. Suitable for Hospitals Dentists Gynecologists Physiatrists Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                            PhotoUrl = "01_about.png",
+                            PhotoUrl = "01_about.jpg",
                             Title = "Welcome To Our Susa-Hospital"
                         });
                 });
@@ -151,8 +151,8 @@ namespace Hospital.DAL.Migrations
                             Id = 1,
                             Description = "Susa Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum....... ",
                             PhotoUrl = "01_blog.jpg",
-                            PublishTime = new DateTime(2020, 11, 27, 12, 4, 49, 312, DateTimeKind.Local).AddTicks(9982),
-                            Title = "Medical & Dental Support ICU & CCU for Emergancy Services",
+                            PublishTime = new DateTime(2020, 12, 4, 2, 22, 34, 311, DateTimeKind.Local).AddTicks(1303),
+                            Title = "Medical & Dental Support ICU & CCU for Emergency Services",
                             Topic = "COVID -19 , Tips"
                         },
                         new
@@ -160,7 +160,7 @@ namespace Hospital.DAL.Migrations
                             Id = 2,
                             Description = "Xankendi Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.......",
                             PhotoUrl = "02_blog.jpg",
-                            PublishTime = new DateTime(2020, 11, 27, 12, 4, 49, 313, DateTimeKind.Local).AddTicks(187),
+                            PublishTime = new DateTime(2020, 12, 4, 2, 22, 34, 311, DateTimeKind.Local).AddTicks(8549),
                             Title = "Patien Forum School patient Experience",
                             Topic = "Treatment , Tips"
                         },
@@ -169,7 +169,7 @@ namespace Hospital.DAL.Migrations
                             Id = 3,
                             Description = "Xocali Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.......",
                             PhotoUrl = "03_blog.jpg",
-                            PublishTime = new DateTime(2020, 11, 27, 12, 4, 49, 313, DateTimeKind.Local).AddTicks(195),
+                            PublishTime = new DateTime(2020, 12, 4, 2, 22, 34, 311, DateTimeKind.Local).AddTicks(8583),
                             Title = "How to protect myself & the spread of disease!",
                             Topic = "Medical , Tips"
                         });
@@ -213,6 +213,9 @@ namespace Hospital.DAL.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("IconClass")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -225,48 +228,56 @@ namespace Hospital.DAL.Migrations
                         {
                             Id = 1,
                             Description = "Şuşa — Azərbaycan Respublikasının Dağlıq Qarabağ bölgəsində, Şuşa şəhər inzibati ərazi dairəsində şəhər.[2]. Şəhərin təməli 1752-ci ildə Qarabağ hökmdarı Pənahəli xan tərəfindən qoyulub və ilk çağlarda şəhəri Şuşa adı ilə yanaşı xanın şərəfinə Pənahabad adlandırırdılar",
+                            IconClass = "item-icon flaticon-microscope",
                             Name = "Laboratory Test Department"
                         },
                         new
                         {
                             Id = 2,
                             Description = "Qubadlı şəhəri — Azərbaycanın Qubadlı rayonunun inzibati mərkəzi, Qubadlı şəhər inzibati ərazi dairəsində şəhər 1993-cü ilin 31 avqust tarixində Ermənistan Silahlı Qüvvələri tərəfindən işğal edilmişdir. 2020-ci il 25 oktyabr tarixində Azərbaycan Silahlı Qüvvələri tərəfindən işğaldan azad edilmişdir",
+                            IconClass = "item-icon flaticon-atomic",
                             Name = "Dental Treat Department"
                         },
                         new
                         {
                             Id = 3,
                             Description = "Xankəndi — Azərbaycan Respublikasındakı şəhər, 1991-ci il dekabrın 26-da Ermənistan silahlı qüvvələri və Qarabağdakı erməni separatçıları tərəfindən işğalından sonra yaradılan qondarma quruma paytaxtlıq edir.[2] İnzibati cəhətdən Xankəndi şəhər əhatə dairəsinə Xankəndi şəhəri və Kərkicahan şəhər tipli qəsəbəsi daxildir. ",
+                            IconClass = "item-icon flaticon-joint",
                             Name = "Neurology Department"
                         },
                         new
                         {
                             Id = 4,
                             Description = "Şuşa — Azərbaycan Respublikasının Dağlıq Qarabağ bölgəsində, Şuşa şəhər inzibati ərazi dairəsində şəhər.[2]. Şəhərin təməli 1752-ci ildə Qarabağ hökmdarı Pənahəli xan tərəfindən qoyulub və ilk çağlarda şəhəri Şuşa adı ilə yanaşı xanın şərəfinə Pənahabad adlandırırdılar",
+                            IconClass = "item-icon flaticon-microscope",
                             Name = "Orthopedic Department"
                         },
                         new
                         {
                             Id = 5,
                             Description = "Qubadlı şəhəri — Azərbaycanın Qubadlı rayonunun inzibati mərkəzi, Qubadlı şəhər inzibati ərazi dairəsində şəhər 1993-cü ilin 31 avqust tarixində Ermənistan Silahlı Qüvvələri tərəfindən işğal edilmişdir. 2020-ci il 25 oktyabr tarixində Azərbaycan Silahlı Qüvvələri tərəfindən işğaldan azad edilmişdir",
+                            IconClass = "item-icon flaticon-cardiogram-2",
                             Name = "Cardiology Department"
                         },
                         new
                         {
                             Id = 6,
                             Description = "Xankəndi — Azərbaycan Respublikasındakı şəhər, 1991-ci il dekabrın 26-da Ermənistan silahlı qüvvələri və Qarabağdakı erməni separatçıları tərəfindən işğalından sonra yaradılan qondarma quruma paytaxtlıq edir.[2] İnzibati cəhətdən Xankəndi şəhər əhatə dairəsinə Xankəndi şəhəri və Kərkicahan şəhər tipli qəsəbəsi daxildir. ",
+                            IconClass = "item-icon flaticon-pill",
                             Name = "Gynecology Department"
                         },
                         new
                         {
                             Id = 7,
                             Description = "Şuşa — Azərbaycan Respublikasının Dağlıq Qarabağ bölgəsində, Şuşa şəhər inzibati ərazi dairəsində şəhər.[2]. Şəhərin təməli 1752-ci ildə Qarabağ hökmdarı Pənahəli xan tərəfindən qoyulub və ilk çağlarda şəhəri Şuşa adı ilə yanaşı xanın şərəfinə Pənahabad adlandırırdılar",
+                            IconClass = "item-icon flaticon-lung",
                             Name = "Pulmonology Department"
                         },
                         new
                         {
                             Id = 8,
                             Description = "Qubadlı şəhəri — Azərbaycanın Qubadlı rayonunun inzibati mərkəzi, Qubadlı şəhər inzibati ərazi dairəsində şəhər 1993-cü ilin 31 avqust tarixində Ermənistan Silahlı Qüvvələri tərəfindən işğal edilmişdir. 2020-ci il 25 oktyabr tarixində Azərbaycan Silahlı Qüvvələri tərəfindən işğaldan azad edilmişdir",
+                            IconClass = "item-icon flaticon-glasses",
                             Name = "Eye Treat Department"
                         });
                 });
@@ -319,7 +330,7 @@ namespace Hospital.DAL.Migrations
                             DepartmentId = 1,
                             Description = "Xankendi Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                             Facebook = "www.facebook.com",
-                            Name = "Dr. Misir Esgerov",
+                            Name = "Dr. Jeyhun Huseynov",
                             PhotoUrl = "02_doctors.jpg",
                             Profession = "Dental"
                         },
@@ -329,7 +340,7 @@ namespace Hospital.DAL.Migrations
                             DepartmentId = 2,
                             Description = "Agdam Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                             Facebook = "www.facebook.com",
-                            Name = "Dr. Hasan Hasanbayli",
+                            Name = "Dr. Kamil Hasanov",
                             PhotoUrl = "03_doctors.jpg",
                             Profession = "Neurology"
                         },
@@ -379,7 +390,7 @@ namespace Hospital.DAL.Migrations
                             DepartmentId = 4,
                             Description = "Kelbecer Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                             Facebook = "www.facebook.com",
-                            Name = "Dr.  Orkhan Mammadli",
+                            Name = "Dr. Orkhan Mammadli",
                             PhotoUrl = "02_doctors.jpg",
                             Profession = "Eye Treat"
                         },
@@ -389,7 +400,7 @@ namespace Hospital.DAL.Migrations
                             DepartmentId = 5,
                             Description = "Susa Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                             Facebook = "www.facebook.com",
-                            Name = "Dr. Javid Dadashov",
+                            Name = "Dr. Hasan Hasanbayli",
                             PhotoUrl = "01_doctors.jpg",
                             Profession = "Lab Test"
                         },
@@ -409,7 +420,7 @@ namespace Hospital.DAL.Migrations
                             DepartmentId = 6,
                             Description = "Agdam Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                             Facebook = "www.facebook.com",
-                            Name = "Dr. Hasan Hasanbayli",
+                            Name = "Dr. Akshin Musazade",
                             PhotoUrl = "03_doctors.jpg",
                             Profession = "Neurology"
                         },
@@ -419,7 +430,7 @@ namespace Hospital.DAL.Migrations
                             DepartmentId = 6,
                             Description = "Qubadli Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                             Facebook = "www.facebook.com",
-                            Name = "Dr.  Zahid Gasimli",
+                            Name = "Dr. Khagani Abbasov",
                             PhotoUrl = "01_doctors.jpg",
                             Profession = "Orthopedics"
                         },
@@ -429,7 +440,7 @@ namespace Hospital.DAL.Migrations
                             DepartmentId = 7,
                             Description = "Zengilan Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                             Facebook = "www.facebook.com",
-                            Name = "Dr.  Hasan Hasanli",
+                            Name = "Dr.  Abbas Muradzada",
                             PhotoUrl = "02_doctors.jpg",
                             Profession = "Cardiology"
                         },
@@ -439,7 +450,7 @@ namespace Hospital.DAL.Migrations
                             DepartmentId = 7,
                             Description = "Fizuli Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                             Facebook = "www.facebook.com",
-                            Name = "Dr. Kamil Mammadov",
+                            Name = "Dr. Shukufa Abdullayeva",
                             PhotoUrl = "03_doctors.jpg",
                             Profession = "Gynecology"
                         },
@@ -449,7 +460,7 @@ namespace Hospital.DAL.Migrations
                             DepartmentId = 8,
                             Description = "Xocali Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                             Facebook = "www.facebook.com",
-                            Name = "Dr. Ulvi Majidov",
+                            Name = "Dr. Narmin Aliyeva",
                             PhotoUrl = "01_doctors.jpg",
                             Profession = "Pulmonology"
                         },
@@ -459,7 +470,7 @@ namespace Hospital.DAL.Migrations
                             DepartmentId = 8,
                             Description = "Kelbecer Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                             Facebook = "www.facebook.com",
-                            Name = "Dr.  Orkhan Mammadli",
+                            Name = "Dr.  Ulkar Hasanova",
                             PhotoUrl = "02_doctors.jpg",
                             Profession = "Eye Treat"
                         });

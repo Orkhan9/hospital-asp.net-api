@@ -37,9 +37,9 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET: api/<ProductController>
         [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] ProductParams productParams)
+        public async Task<IActionResult> Get([FromQuery] PaginationParams paginationParams)
         {
-            var dbproducts = await _productRepository.GetProductAsync(productParams);
+            var dbproducts = await _productRepository.GetProductAsync(paginationParams);
             var mapperProducts = _mapper.Map<IEnumerable<ProductReturnDto>>(dbproducts);
             Response.AddPagination(dbproducts.CurrentPage,dbproducts.PageSize
                 ,dbproducts.TotalCount,dbproducts.TotalPage);

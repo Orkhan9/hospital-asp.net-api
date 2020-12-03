@@ -26,6 +26,7 @@
           <e p="ServiceController.cs" t="Include" />
         </e>
         <e p="Hospital.csproj" t="IncludeRecursive" />
+        <e p="Hospital.xml" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -162,6 +163,7 @@
           </e>
           <e p="Service" t="Include">
             <e p="ServiceCreateDto.cs" t="Include" />
+            <e p="ServiceReturnDto.cs" t="Include" />
             <e p="ServiceUpdateDto.cs" t="Include" />
           </e>
           <e p="user" t="Include">
@@ -174,7 +176,7 @@
           <e p="ImageExtension.cs" t="Include" />
           <e p="PagedList.cs" t="Include" />
           <e p="PaginationHeader.cs" t="Include" />
-          <e p="ProductParams.cs" t="Include" />
+          <e p="PaginationParams.cs" t="Include" />
         </e>
         <e p="Hospital.BLL.csproj" t="IncludeRecursive" />
         <e p="Mapper" t="Include">
@@ -228,45 +230,12 @@
           <e p="Role.cs" t="Include" />
           <e p="Service.cs" t="Include" />
           <e p="User.cs" t="Include" />
+          <e p="WorkTime.cs" t="Include" />
         </e>
         <e p="Hospital.DAL.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
-          <e p="20201021130554_AddDoctorsandDepartmentTables.cs" t="Include" />
-          <e p="20201021130554_AddDoctorsandDepartmentTables.Designer.cs" t="Include" />
-          <e p="20201021143959_AddService.cs" t="Include" />
-          <e p="20201021143959_AddService.Designer.cs" t="Include" />
-          <e p="20201022085410_AddBlogandCommentTables.cs" t="Include" />
-          <e p="20201022085410_AddBlogandCommentTables.Designer.cs" t="Include" />
-          <e p="20201022104448_AddProductTabele.cs" t="Include" />
-          <e p="20201022104448_AddProductTabele.Designer.cs" t="Include" />
-          <e p="20201022123912_Bio.cs" t="Include" />
-          <e p="20201022123912_Bio.Designer.cs" t="Include" />
-          <e p="20201031125636_addRoleTable.cs" t="Include" />
-          <e p="20201031125636_addRoleTable.Designer.cs" t="Include" />
-          <e p="20201103081818_AddUserTableEmailColumn.cs" t="Include" />
-          <e p="20201103081818_AddUserTableEmailColumn.Designer.cs" t="Include" />
-          <e p="20201105144358_AddDoctorTablePhotoUrlColumn.cs" t="Include" />
-          <e p="20201105144358_AddDoctorTablePhotoUrlColumn.Designer.cs" t="Include" />
-          <e p="20201107142426_AboutTable.cs" t="Include" />
-          <e p="20201107142426_AboutTable.Designer.cs" t="Include" />
-          <e p="20201111173409_AddAllProductTables.cs" t="Include" />
-          <e p="20201111173409_AddAllProductTables.Designer.cs" t="Include" />
-          <e p="20201113073512_AddrelationUserAndCommentTable.cs" t="Include" />
-          <e p="20201113073512_AddrelationUserAndCommentTable.Designer.cs" t="Include" />
-          <e p="20201124172002_AddColumnPhotoUrlToAboutAndBioTable.cs" t="Include" />
-          <e p="20201124172002_AddColumnPhotoUrlToAboutAndBioTable.Designer.cs" t="Include" />
-          <e p="20201126141931_TakeProjectFromGithub.cs" t="Include" />
-          <e p="20201126141931_TakeProjectFromGithub.Designer.cs" t="Include" />
-          <e p="20201126142524_AddedCeed.cs" t="Include" />
-          <e p="20201126142524_AddedCeed.Designer.cs" t="Include" />
-          <e p="20201126142707_AddBlogCeed.cs" t="Include" />
-          <e p="20201126142707_AddBlogCeed.Designer.cs" t="Include" />
-          <e p="20201126144305_AddedCeedd.cs" t="Include" />
-          <e p="20201126144305_AddedCeedd.Designer.cs" t="Include" />
-          <e p="20201126145157_AddTablesCeed.cs" t="Include" />
-          <e p="20201126145157_AddTablesCeed.Designer.cs" t="Include" />
-          <e p="20201127080449_AddCeedProduct.cs" t="Include" />
-          <e p="20201127080449_AddCeedProduct.Designer.cs" t="Include" />
+          <e p="20201203222234_AddedTables.cs" t="Include" />
+          <e p="20201203222234_AddedTables.Designer.cs" t="Include" />
           <e p="DataContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

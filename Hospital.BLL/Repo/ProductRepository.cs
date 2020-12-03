@@ -14,11 +14,11 @@ namespace Hospital.DAL
         {
             _context = context;
         }
-        public async Task<PagedList<Product>> GetProductAsync(ProductParams productParams)
+        public async Task<PagedList<Product>> GetProductAsync(PaginationParams paginationParams)
         {
             var products =  _context.Products.Include(x => x.ProductType)
                 .Include(x => x.ProductBrand);
-            return await PagedList<Product>.CreateAsync(products,productParams.PageNumber,productParams.PageSize);
+            return await PagedList<Product>.CreateAsync(products,paginationParams.PageNumber,paginationParams.PageSize);
         }
 
         public async Task<Product> GetProductByIdAsync(int id)

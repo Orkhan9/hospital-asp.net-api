@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Hospital.BLL.DTO.Service;
 using Hospital.DAL;
 using Hospital.DAL.Entities;
@@ -13,9 +15,11 @@ namespace Hospital.Controllers
     public class ServiceController : ControllerBase
     {
         private readonly DataContext _context;
-        public ServiceController(DataContext context)
+        private readonly IMapper _mapper;
+        public ServiceController(DataContext context,IMapper mapper)
         {
             _context=context;
+            _mapper = mapper;
         }
         
         
@@ -25,7 +29,7 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET: api/<ServiceController>
         [HttpGet]
-        public ActionResult<IEnumerable<Service>> Get()
+        public ActionResult<IEnumerable<ServiceReturnDto>> Get()
         {
             return Ok(_context.Services.ToList());
         }

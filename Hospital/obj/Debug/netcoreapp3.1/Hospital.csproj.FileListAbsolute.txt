@@ -244,3 +244,4 @@ C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital\obj\Debug\netcore
 C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital\obj\Debug\netcoreapp3.1\Hospital.dll
 C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital\obj\Debug\netcoreapp3.1\Hospital.pdb
 C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital\obj\Debug\netcoreapp3.1\Hospital.genruntimeconfig.cache
+C:\Users\User\Desktop\RiderProjects\finalproject-back\Hospital\bin\Debug\netcoreapp3.1\Hospital.xml

@@ -16,10 +16,10 @@ namespace Hospital.DAL
         {
             _context = context;
         }
-        public async Task<List<Doctor>> GetDoctorsAsync()
+        public async Task<PagedList<Doctor>> GetDoctorsAsync(PaginationParams paginationParams)
         {
-            var doctors = await _context.Doctors.Include(d => d.Department).ToListAsync();
-            return doctors;
+            var doctors = _context.Doctors.Include(d => d.Department);
+            return await PagedList<Doctor>.CreateAsync(doctors,paginationParams.PageNumber,paginationParams.PageSize);
         }
 
         public async Task<List<Doctor>> GetDoctorByDepartmentIdAsync(int id)

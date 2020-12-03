@@ -7,7 +7,7 @@ namespace Hospital.DAL
 {
     public interface IProductRepository
     {
-        Task<PagedList<Product>> GetProductAsync(ProductParams productParams);
+        Task<PagedList<Product>> GetProductAsync(PaginationParams paginationParams);
         Task<Product> GetProductByIdAsync(int id);
         Task<Product> CreateProductAsync(Product product);
         Task<Product> UpdateProductAsync(Product product,string webRoot);

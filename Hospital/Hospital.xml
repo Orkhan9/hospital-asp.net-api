@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hospital</name>
+    </assembly>
+    <members>
+        <member name="M:Hospital.Controllers.AboutController.Get">
+            <summary>
+            Get About
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.AboutController.Update(System.Int32,Hospital.BLL.DTO.About.AboutUpdateDto)">
+            <summary>
+            Update About
+            </summary>
+            <param name="id"></param>
+            <param name="about"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.AppointmentController.Get">
+            <summary>
+            Get All Appointments
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.AppointmentController.Get(System.Int32)">
+            <summary>
+            Get Appointment from Id
+            </summary>
+            <param name="id">for appointment</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.AppointmentController.Create(Hospital.BLL.DTO.Appointment.AppointmentCreateDto)">
+            <summary>
+            Create new Appointment
+            </summary>
+            <param name="appointment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.AppointmentController.Update(System.Int32,Hospital.BLL.DTO.Appointment.AppointmentUpdateDto)">
+            <summary>
+            Update Appointment
+            </summary>
+            <param name="id"></param>
+            <param name="appointment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.AppointmentController.Delete(System.Int32)">
+            <summary>
+            Delete Appointment
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.BioController.Get">
+            <summary>
+            Get Bio
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.BioController.Update(System.Int32,Hospital.BLL.DTO.Bio.BioUpdateDto)">
+            <summary>
+            Update Bio
+            </summary>
+            <param name="id"></param>
+            <param name="bio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.BlogController.Get">
+            <summary>
+            Get All Blogs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.BlogController.Get(System.Int32)">
+            <summary>
+            Get Blog from Id
+            </summary>
+            <param name="id">for blog</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.BlogController.Create(Hospital.BLL.DTO.Blog.BlogCreateDto)">
+            <summary>
+            Create new Blog
+            </summary>
+            <param name="blog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.BlogController.Update(System.Int32,Hospital.BLL.DTO.Blog.BlogUpdateDto)">
+            <summary>
+            Update Blog
+            </summary>
+            <param name="id"></param>
+            <param name="blog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.BlogController.Delete(System.Int32)">
+            <summary>
+            Delete Blog
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.CommentController.Get">
+            <summary>
+            Get All Comments
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.CommentController.Get(System.Int32)">
+            <summary>
+            Get Comment from Id
+            </summary>
+            <param name="id">for comment</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.CommentController.GetCommentsByBlog(System.Int32)">
+            <summary>
+            Get Comments by Blog
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.CommentController.Create(Hospital.BLL.DTO.Comment.CommentCreateDto)">
+            <summary>
+            Create new Comment
+            </summary>
+            <param name="comment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.CommentController.Delete(System.Int32)">
+            <summary>
+            Delete Comment
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.DepartmentController.Get">
+            <summary>
+            Get All Departments
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.DepartmentController.Get(System.Int32)">
+            <summary>
+            Get Department from Id
+            </summary>
+            <param name="id">for department</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.DepartmentController.Create(Hospital.BLL.DTO.Department.DepartmentCreateDto)">
+            <summary>
+            Create new Department
+            </summary>
+            <param name="department"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.DepartmentController.Update(System.Int32,Hospital.BLL.DTO.Department.DepartmentUpdateDto)">
+            <summary>
+            Update Department
+            </summary>
+            <param name="id"></param>
+            <param name="department"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.DepartmentController.Delete(System.Int32)">
+            <summary>
+            Delete Department
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.DoctorController.Get(Hospital.BLL.Helpers.PaginationParams)">
+            <summary>
+            Get All Doctors
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.DoctorController.GetDoctorByDepartment(System.Int32)">
+            <summary>
+            Get Doctors by Department
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.DoctorController.Get(System.Int32)">
+            <summary>
+            Get Doctor from Id
+            </summary>
+            <param name="id">for doctor</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.DoctorController.Create(Hospital.BLL.DTO.Doctor.DoctorCreateDto)">
+            <summary>
+            Create new Doctor
+            </summary>
+            <param name="doctor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.DoctorController.Update(System.Int32,Hospital.BLL.DTO.Doctor.DoctorUpdateDto)">
+            <summary>
+            Update Doctor
+            </summary>
+            <param name="id"></param>
+            <param name="doctor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.DoctorController.Delete(System.Int32)">
+            <summary>
+            Delete Doctor
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ProductBrandController.Get">
+            <summary>
+            Get All ProductBrands
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ProductController.Get(Hospital.BLL.Helpers.PaginationParams)">
+            <summary>
+            Get All Products
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ProductController.Get(System.Int32)">
+            <summary>
+            Get Product from Id
+            </summary>
+            <param name="id">for product</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ProductController.Create(Hospital.BLL.DTO.Product.ProductCreateDto)">
+            <summary>
+            Create new Product
+            </summary>
+            <param name="product"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ProductController.Update(System.Int32,Hospital.BLL.DTO.Product.ProductUpdateDto)">
+            <summary>
+            Update Product
+            </summary>
+            <param name="id"></param>
+            <param name="product"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ProductController.Delete(System.Int32)">
+            <summary>
+            Delete Product
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ProductTypeController.Get">
+            <summary>
+            Get All ProductTypes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.SearchController.Get(System.String,System.String)">
+            <summary>
+            Get All Search
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ServiceController.Get">
+            <summary>
+            Get All Services
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ServiceController.Get(System.Int32)">
+            <summary>
+            Get Service from Id
+            </summary>
+            <param name="id">for Service </param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ServiceController.Create(Hospital.BLL.DTO.Service.ServiceCreateDto)">
+            <summary>
+            Create new Service
+            </summary>
+            <param name="service"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ServiceController.Update(System.Int32,Hospital.BLL.DTO.Service.ServiceUpdateDto)">
+            <summary>
+            Update Service
+            </summary>
+            <param name="id"></param>
+            <param name="service"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ServiceController.Delete(System.Int32)">
+            <summary>
+            Delete Service
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

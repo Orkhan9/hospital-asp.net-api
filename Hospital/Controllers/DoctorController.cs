@@ -34,10 +34,12 @@ namespace Hospital.Controllers
         /// <returns></returns>
         // GET: api/<DoctorController>
         [HttpGet]
-        public async Task<ActionResult> Get()
+        public async Task<ActionResult> Get([FromQuery] PaginationParams paginationParams)
         {
-            var doctors = await _doctorRepository.GetDoctorsAsync();
+            var doctors = await _doctorRepository.GetDoctorsAsync(paginationParams);
             var mapperDoctors = _mapper.Map<IEnumerable<DoctorReturnDto>>(doctors);
+            Response.AddPagination(doctors.CurrentPage,doctors.PageSize
+                ,doctors.TotalCount,doctors.TotalPage);
             return Ok(mapperDoctors);
         }
         

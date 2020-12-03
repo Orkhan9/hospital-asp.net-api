@@ -48,7 +48,7 @@ namespace Hospital.DAL
             modelBuilder.Entity<About>().HasData(
                 new About
                 {
-                    Id = 1, Title = "Welcome To Our Susa-Hospital",PhotoUrl = "01_about.png",
+                    Id = 1, Title = "Welcome To Our Susa-Hospital",PhotoUrl = "01_about.jpg",
                     Description = "Susa-Hospital are a professional medical & health care services " +
                                   "provider institutions. Suitable for Hospitals Dentists Gynecologists Physiatrists " +
                                   "Lorem Ipsum is simply dummy text of the printing and typesetting " +
@@ -71,7 +71,7 @@ namespace Hospital.DAL
             modelBuilder.Entity<Blog>().HasData(
                 new Blog
                 {
-                    Id = 1, Title = "Medical & Dental Support ICU & CCU for Emergancy Services",
+                    Id = 1, Title = "Medical & Dental Support ICU & CCU for Emergency Services",
                     PhotoUrl = "01_blog.jpg",Topic = "COVID -19 , Tips",
                     PublishTime = DateTime.Now,
                     Description = "Susa Ipsum is simply dummy text of the printing " +
@@ -102,7 +102,7 @@ namespace Hospital.DAL
                  new Department
                  {
                      Id = 1,
-                     Name = "Laboratory Test Department",
+                     Name = "Laboratory Test Department",IconClass = "item-icon flaticon-microscope",
                      Description = "Şuşa — Azərbaycan Respublikasının Dağlıq Qarabağ bölgəsində," +
                                    " Şuşa şəhər inzibati ərazi dairəsində şəhər.[2]. Şəhərin təməli " +
                                    "1752-ci ildə Qarabağ hökmdarı Pənahəli xan tərəfindən qoyulub və ilk çağlarda şəhəri Şuşa adı ilə yanaşı xanın şərəfinə Pənahabad adlandırırdılar"
@@ -111,7 +111,7 @@ namespace Hospital.DAL
                  new Department
                  {
                      Id = 2,
-                     Name = "Dental Treat Department",
+                     Name = "Dental Treat Department",IconClass = "item-icon flaticon-atomic",
                      Description = "Qubadlı şəhəri — Azərbaycanın Qubadlı rayonunun inzibati mərkəzi," +
                                    " Qubadlı şəhər inzibati ərazi dairəsində şəhər 1993-cü ilin 31 avqust " +
                                    "tarixində Ermənistan Silahlı Qüvvələri tərəfindən işğal edilmişdir. 2020-ci il 25 oktyabr tarixində Azərbaycan Silahlı Qüvvələri tərəfindən işğaldan azad edilmişdir"
@@ -119,7 +119,7 @@ namespace Hospital.DAL
                  new Department
                  {
                      Id = 3,
-                     Name = "Neurology Department",
+                     Name = "Neurology Department",IconClass = "item-icon flaticon-joint",
                      Description = "Xankəndi — Azərbaycan Respublikasındakı şəhər, 1991-ci il " +
                                    "dekabrın 26-da Ermənistan silahlı qüvvələri və Qarabağdakı " +
                                    "erməni separatçıları tərəfindən işğalından sonra yaradılan qondarma " +
@@ -128,7 +128,7 @@ namespace Hospital.DAL
                  new Department
                  {
                      Id = 4,
-                     Name = "Orthopedic Department",
+                     Name = "Orthopedic Department",IconClass = "item-icon flaticon-microscope",
                      Description = "Şuşa — Azərbaycan Respublikasının Dağlıq Qarabağ bölgəsində," +
                                    " Şuşa şəhər inzibati ərazi dairəsində şəhər.[2]. Şəhərin təməli " +
                                    "1752-ci ildə Qarabağ hökmdarı Pənahəli xan tərəfindən qoyulub və ilk çağlarda şəhəri Şuşa adı ilə yanaşı xanın şərəfinə Pənahabad adlandırırdılar"
@@ -137,7 +137,7 @@ namespace Hospital.DAL
                  new Department
                  {
                      Id = 5,
-                     Name = "Cardiology Department",
+                     Name = "Cardiology Department",IconClass = "item-icon flaticon-cardiogram-2",
                      Description = "Qubadlı şəhəri — Azərbaycanın Qubadlı rayonunun inzibati " +
                                    "mərkəzi, Qubadlı şəhər inzibati ərazi dairəsində şəhər 1993-cü" +
                                    " ilin 31 avqust tarixində Ermənistan Silahlı Qüvvələri tərəfindən işğal edilmişdir. 2020-ci il 25 oktyabr tarixində Azərbaycan Silahlı Qüvvələri tərəfindən işğaldan azad edilmişdir"
@@ -146,7 +146,7 @@ namespace Hospital.DAL
                  new Department
                  {
                      Id = 6,
-                     Name = "Gynecology Department",
+                     Name = "Gynecology Department",IconClass = "item-icon flaticon-pill",
                      Description = "Xankəndi — Azərbaycan Respublikasındakı şəhər, 1991-ci il dekabrın" +
                                    " 26-da Ermənistan silahlı qüvvələri və Qarabağdakı erməni separatçıları " +
                                    "tərəfindən işğalından sonra yaradılan qondarma quruma paytaxtlıq edir.[2] İnzibati cəhətdən Xankəndi şəhər əhatə dairəsinə Xankəndi şəhəri və Kərkicahan şəhər tipli qəsəbəsi daxildir. "
@@ -155,7 +155,7 @@ namespace Hospital.DAL
                  new Department
                  {
                      Id = 7,
-                     Name = "Pulmonology Department",
+                     Name = "Pulmonology Department",IconClass = "item-icon flaticon-lung",
                      Description = "Şuşa — Azərbaycan Respublikasının Dağlıq Qarabağ bölgəsində," +
                                    " Şuşa şəhər inzibati ərazi dairəsində şəhər.[2]. Şəhərin təməli " +
                                    "1752-ci ildə Qarabağ hökmdarı Pənahəli xan tərəfindən qoyulub və ilk çağlarda şəhəri Şuşa adı ilə yanaşı xanın şərəfinə Pənahabad adlandırırdılar"
@@ -164,7 +164,7 @@ namespace Hospital.DAL
                  new Department
                  {
                      Id = 8,
-                     Name = "Eye Treat Department",
+                     Name = "Eye Treat Department",IconClass = "item-icon flaticon-glasses",
                      Description = "Qubadlı şəhəri — Azərbaycanın Qubadlı rayonunun inzibati mərkəzi," +
                                    " Qubadlı şəhər inzibati ərazi dairəsində şəhər 1993-cü ilin 31 avqust " +
                                    "tarixində Ermənistan Silahlı Qüvvələri tərəfindən işğal edilmişdir. 2020-ci il 25 oktyabr tarixində Azərbaycan Silahlı Qüvvələri tərəfindən işğaldan azad edilmişdir"
@@ -308,11 +308,11 @@ namespace Hospital.DAL
                     Description = "Susa Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 1, PhotoUrl = "01_doctors.jpg"
                 },
-                new Doctor() {Id = 2,Name = "Dr. Misir Esgerov", Profession = "Dental",Facebook = "www.facebook.com",
+                new Doctor() {Id = 2,Name = "Dr. Jeyhun Huseynov", Profession = "Dental",Facebook = "www.facebook.com",
                     Description = "Xankendi Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 1, PhotoUrl = "02_doctors.jpg"
                 },
-                new Doctor() {Id = 3,Name = "Dr. Hasan Hasanbayli", Profession = "Neurology",Facebook = "www.facebook.com",
+                new Doctor() {Id = 3,Name = "Dr. Kamil Hasanov", Profession = "Neurology",Facebook = "www.facebook.com",
                     Description = "Agdam Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 2, PhotoUrl = "03_doctors.jpg"
                 },
@@ -332,11 +332,11 @@ namespace Hospital.DAL
                     Description = "Xocali Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 4, PhotoUrl = "01_doctors.jpg"
                 },
-                new Doctor() {Id = 8,Name = "Dr.  Orkhan Mammadli", Profession = "Eye Treat",Facebook = "www.facebook.com",
+                new Doctor() {Id = 8,Name = "Dr. Orkhan Mammadli", Profession = "Eye Treat",Facebook = "www.facebook.com",
                     Description = "Kelbecer Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 4, PhotoUrl = "02_doctors.jpg"
                 },
-                new Doctor() {Id = 9,Name = "Dr. Javid Dadashov", Profession = "Lab Test",Facebook = "www.facebook.com",
+                new Doctor() {Id = 9,Name = "Dr. Hasan Hasanbayli", Profession = "Lab Test",Facebook = "www.facebook.com",
                     Description = "Susa Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 5, PhotoUrl = "01_doctors.jpg"
                 },
@@ -344,144 +344,144 @@ namespace Hospital.DAL
                     Description = "Xankendi Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 5, PhotoUrl = "02_doctors.jpg"
                 },
-                new Doctor() {Id = 11,Name = "Dr. Hasan Hasanbayli", Profession = "Neurology",Facebook = "www.facebook.com",
+                new Doctor() {Id = 11,Name = "Dr. Akshin Musazade", Profession = "Neurology",Facebook = "www.facebook.com",
                     Description = "Agdam Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 6, PhotoUrl = "03_doctors.jpg"
                 },
-                new Doctor() {Id = 12,Name = "Dr.  Zahid Gasimli", Profession = "Orthopedics",Facebook = "www.facebook.com",
+                new Doctor() {Id = 12,Name = "Dr. Khagani Abbasov", Profession = "Orthopedics",Facebook = "www.facebook.com",
                     Description = "Qubadli Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 6, PhotoUrl = "01_doctors.jpg"
                 },
-                new Doctor() {Id = 13,Name = "Dr.  Hasan Hasanli", Profession = "Cardiology",Facebook = "www.facebook.com",
+                new Doctor() {Id = 13,Name = "Dr.  Abbas Muradzada", Profession = "Cardiology",Facebook = "www.facebook.com",
                     Description = "Zengilan Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 7, PhotoUrl = "02_doctors.jpg"
                 },
-                new Doctor() {Id = 14,Name = "Dr. Kamil Mammadov", Profession = "Gynecology",Facebook = "www.facebook.com",
+                new Doctor() {Id = 14,Name = "Dr. Shukufa Abdullayeva", Profession = "Gynecology",Facebook = "www.facebook.com",
                     Description = "Fizuli Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 7, PhotoUrl = "03_doctors.jpg"
                 },
-                new Doctor() {Id = 15,Name = "Dr. Ulvi Majidov", Profession = "Pulmonology",Facebook = "www.facebook.com",
+                new Doctor() {Id = 15,Name = "Dr. Narmin Aliyeva", Profession = "Pulmonology",Facebook = "www.facebook.com",
                     Description = "Xocali Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 8, PhotoUrl = "01_doctors.jpg"
                 },
-                new Doctor() {Id = 16,Name = "Dr.  Orkhan Mammadli", Profession = "Eye Treat",Facebook = "www.facebook.com",
+                new Doctor() {Id = 16,Name = "Dr.  Ulkar Hasanova", Profession = "Eye Treat",Facebook = "www.facebook.com",
                     Description = "Kelbecer Dovlet Tibb Universiteti mezunudur.Hal-hazirda orda professor vezifesinde calisir.",
                     DepartmentId = 8, PhotoUrl = "02_doctors.jpg"
                 }
             );
             
             //service
-            modelBuilder.Entity<Service>().HasData(
-                new Service
-                {
-                    Id = 1,
-                    Name = "Qulified Doctors",
-                    IconClass = "item-icon flaticon-doctor",
-                    ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                    Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
-
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
-
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
-
-                    "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
-                },
-                new Service
-                {
-                    Id = 2,
-                    Name = "24 Hours Services",
-                    IconClass = "item-icon flaticon-emergency-call-1",
-                    ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                    Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
-
-                                  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
-                },
-                new Service
-                {
-                    Id = 3,
-                    Name = "Blood Test",
-                    IconClass = "item-icon flaticon-blood-donation-1",
-                    ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                    Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
-
-                                  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
-                },
-                new Service
-                {
-                    Id = 4,
-                    Name = "24/7 Ambulance",
-                    IconClass = "item-icon flaticon-ambulance-3",
-                    ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                    Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
-
-                                  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
-                },
-                new Service
-                {
-                    Id = 5,
-                    Name = "Medical Counselling",
-                    IconClass = "item-icon flaticon-medical",
-                    ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                    Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
-
-                                  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
-                },
-                new Service
-                {
-                    Id = 6,
-                    Name = "Transplant Services",
-                    IconClass = "item-icon flaticon-treatment",
-                    ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                    Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
-
-                                  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
-                },
-                new Service
-                {
-                    Id = 7,
-                    Name = "Rehabilitation",
-                    IconClass = "item-icon flaticon-bed",
-                    ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                    Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
-
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
-
-                                  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
-                },
-                new Service
-                {
-                    Id = 8,
-                    Name = "Outdoor Checkup",
-                    IconClass = "item-icon flaticon-list",
-                    ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-                    Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
-                                  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
-                }
-            );
+             modelBuilder.Entity<Service>().HasData(
+                 new Service
+                 {
+                     Id = 1,
+                     Name = "Qulified Doctors",
+                     IconClass = "item-icon flaticon-doctor",
+                     ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                     Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
+            
+                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
+            
+                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
+            
+                     "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
+                 },
+                 new Service
+                 {
+                     Id = 2,
+                     Name = "24 Hours Services",
+                     IconClass = "item-icon flaticon-emergency-call-1",
+                     ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                     Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
+            
+                                   "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
+                 },
+                 new Service
+                 {
+                     Id = 3,
+                     Name = "Blood Test",
+                     IconClass = "item-icon flaticon-blood-donation-1",
+                     ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                     Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
+            
+                                   "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
+                 },
+                 new Service
+                 {
+                     Id = 4,
+                     Name = "24/7 Ambulance",
+                     IconClass = "item-icon flaticon-ambulance-3",
+                     ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                     Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
+            
+                                   "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
+                 },
+                 new Service
+                 {
+                     Id = 5,
+                     Name = "Medical Counselling",
+                     IconClass = "item-icon flaticon-medical",
+                     ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                     Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
+            
+                                   "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
+                 },
+                 new Service
+                 {
+                     Id = 6,
+                     Name = "Transplant Services",
+                     IconClass = "item-icon flaticon-treatment",
+                     ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                     Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
+            
+                                   "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
+                 },
+                 new Service
+                 {
+                     Id = 7,
+                     Name = "Rehabilitation",
+                     IconClass = "item-icon flaticon-bed",
+                     ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                     Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
+            
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
+            
+                                   "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
+                 },
+                 new Service
+                 {
+                     Id = 8,
+                     Name = "Outdoor Checkup",
+                     IconClass = "item-icon flaticon-list",
+                     ShortDesc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                     Description = "Al-Anwar Are A Professional Medical & Health Care Services Provider Institutions. Suitable For Hospitals, Dentists, Gynecologists, Physiatrists."+
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
+                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."+
+                                   "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur."
+                 }
+             );
         }
     }
 }

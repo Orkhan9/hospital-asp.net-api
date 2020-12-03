@@ -8,5 +8,6 @@ namespace Hospital.BLL.DTO.Department
         public string Name { get; set; }
         public string Description { get; set; }
         public ICollection<string> Doctors { get; set; }
+        public string IconClass { get; set; }
     }
 }

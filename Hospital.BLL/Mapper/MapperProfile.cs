@@ -8,6 +8,7 @@ using Hospital.BLL.DTO.Comment;
 using Hospital.BLL.DTO.Department;
 using Hospital.BLL.DTO.Doctor;
 using Hospital.BLL.DTO.Product;
+using Hospital.BLL.DTO.Service;
 using Hospital.DAL.Entities;
 
 namespace Hospital.BLL.Mapper
@@ -88,6 +89,7 @@ namespace Hospital.BLL.Mapper
             
             CreateMap<DepartmentCreateDto, Department>();
             CreateMap<DepartmentUpdateDto,Department>();
+            
         }
     }
 }
