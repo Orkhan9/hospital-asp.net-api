@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using AutoMapper;
+using Hospital.BLL.DTO;
 using Hospital.BLL.DTO.About;
 using Hospital.BLL.DTO.Appointment;
 using Hospital.BLL.DTO.Bio;
@@ -89,6 +90,8 @@ namespace Hospital.BLL.Mapper
             
             CreateMap<DepartmentCreateDto, Department>();
             CreateMap<DepartmentUpdateDto,Department>();
+            
+            CreateMap<ContactCreateDto, Contact>();
             
         }
     }

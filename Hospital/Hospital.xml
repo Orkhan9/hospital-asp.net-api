@@ -135,6 +135,33 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:Hospital.Controllers.ContactController.Get">
+            <summary>
+            Get All Contacts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ContactController.Get(System.Int32)">
+            <summary>
+            Get Contact from Id
+            </summary>
+            <param name="id">for contact</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ContactController.Create(Hospital.BLL.DTO.ContactCreateDto)">
+            <summary>
+            Create new Contact
+            </summary>
+            <param name="appointment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital.Controllers.ContactController.Delete(System.Int32)">
+            <summary>
+            Delete Contact
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:Hospital.Controllers.DepartmentController.Get">
             <summary>
             Get All Departments

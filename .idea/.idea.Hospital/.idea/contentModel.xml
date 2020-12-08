@@ -16,6 +16,7 @@
           <e p="BioController.cs" t="Include" />
           <e p="BlogController.cs" t="Include" />
           <e p="CommentController.cs" t="Include" />
+          <e p="ContactController.cs" t="Include" />
           <e p="DepartmentController.cs" t="Include" />
           <e p="DoctorController.cs" t="Include" />
           <e p="ProductBrandController.cs" t="Include" />
@@ -146,6 +147,9 @@
             <e p="CommentCreateDto.cs" t="Include" />
             <e p="CommentReturnDto.cs" t="Include" />
           </e>
+          <e p="Contact" t="Include">
+            <e p="ContactCreateDto.cs" t="Include" />
+          </e>
           <e p="Department" t="Include">
             <e p="DepartmentCreateDto.cs" t="Include" />
             <e p="DepartmentReturnDto.cs" t="Include" />
@@ -220,6 +224,7 @@
           <e p="Bio.cs" t="Include" />
           <e p="Blog.cs" t="Include" />
           <e p="Comment.cs" t="Include" />
+          <e p="Contact.cs" t="Include" />
           <e p="CustomerBasket.cs" t="Include" />
           <e p="Department.cs" t="Include" />
           <e p="Doctor.cs" t="Include" />
@@ -236,6 +241,8 @@
         <e p="Migrations" t="Include">
           <e p="20201203222234_AddedTables.cs" t="Include" />
           <e p="20201203222234_AddedTables.Designer.cs" t="Include" />
+          <e p="20201204105811_addedContactTable.cs" t="Include" />
+          <e p="20201204105811_addedContactTable.Designer.cs" t="Include" />
           <e p="DataContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

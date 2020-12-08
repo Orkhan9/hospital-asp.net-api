@@ -25,7 +25,7 @@ namespace Hospital.DAL
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
-        
+        public DbSet<Contact> Contacts { get; set; }
         
         
         
@@ -60,13 +60,14 @@ namespace Hospital.DAL
             modelBuilder.Entity<Role>().HasData(
                 new Role
                 {
-                    Id = 1, Name = "Admin"
+                    Id = 1, Name = "admin"
                 },
                 new Role
                 {
-                    Id = 2, Name = "Member"
+                    Id = 2, Name = "member"
                 }
             );
+            
             //blog
             modelBuilder.Entity<Blog>().HasData(
                 new Blog

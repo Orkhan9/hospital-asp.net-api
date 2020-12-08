@@ -23,23 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f001115d-a84b-4d24-b273-1eea334fe726" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.vs/Hospital/config/applicationhost.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital.BLL/DTO/Service/ServiceReturnDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital.DAL/Entities/WorkTime.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201203222234_AddedTables.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital/Hospital.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital.BLL/DTO/Contact/ContactCreateDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital.DAL/Entities/Contact.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201204105811_addedContactTable.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201204105811_addedContactTable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital/Controllers/ContactController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hospital/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Hospital/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Hospital/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Hospital/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Hospital/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.BLL/DTO/Department/DepartmentReturnDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/DTO/Department/DepartmentReturnDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.BLL/Helpers/ProductParams.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/Helpers/PaginationParams.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital.BLL/Helpers/PaginationParams.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/Helpers/PaginationParams.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital.BLL/Mapper/MapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/Mapper/MapperProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.BLL/Repo/DoctorRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/Repo/DoctorRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.BLL/Repo/IDoctorRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/Repo/IDoctorRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.BLL/Repo/IProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/Repo/IProductRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.BLL/Repo/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/Repo/ProductRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital.BLL/bin/Debug/netcoreapp3.1/Hospital.BLL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/bin/Debug/netcoreapp3.1/Hospital.BLL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital.BLL/bin/Debug/netcoreapp3.1/Hospital.BLL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/bin/Debug/netcoreapp3.1/Hospital.BLL.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital.BLL/bin/Debug/netcoreapp3.1/Hospital.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/bin/Debug/netcoreapp3.1/Hospital.DAL.dll" afterDir="false" />
@@ -50,43 +42,6 @@
       <change beforePath="$PROJECT_DIR$/Hospital.BLL/obj/Debug/netcoreapp3.1/Hospital.BLL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/obj/Debug/netcoreapp3.1/Hospital.BLL.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital.BLL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.BLL/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital.DAL/Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.DAL/Data/DataContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Entities/Department.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.DAL/Entities/Department.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201021130554_AddDoctorsandDepartmentTables.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201021130554_AddDoctorsandDepartmentTables.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201021143959_AddService.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201021143959_AddService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201022085410_AddBlogandCommentTables.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201022085410_AddBlogandCommentTables.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201022104448_AddProductTabele.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201022104448_AddProductTabele.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201022123912_Bio.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201022123912_Bio.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201031125636_addRoleTable.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201031125636_addRoleTable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201103081818_AddUserTableEmailColumn.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201103081818_AddUserTableEmailColumn.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201105144358_AddDoctorTablePhotoUrlColumn.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201105144358_AddDoctorTablePhotoUrlColumn.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201107142426_AboutTable.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201107142426_AboutTable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201111173409_AddAllProductTables.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201111173409_AddAllProductTables.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201113073512_AddrelationUserAndCommentTable.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201113073512_AddrelationUserAndCommentTable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201124172002_AddColumnPhotoUrlToAboutAndBioTable.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201124172002_AddColumnPhotoUrlToAboutAndBioTable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201126141931_TakeProjectFromGithub.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201126141931_TakeProjectFromGithub.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201126142524_AddedCeed.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201126142524_AddedCeed.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201126142707_AddBlogCeed.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201126142707_AddBlogCeed.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201126144305_AddedCeedd.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201126144305_AddedCeedd.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201126145157_AddTablesCeed.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201203222234_AddedTables.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201126145157_AddTablesCeed.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201127080449_AddCeedProduct.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/20201127080449_AddCeedProduct.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital.DAL/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.DAL/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital.DAL/bin/Debug/netcoreapp3.1/Hospital.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.DAL/bin/Debug/netcoreapp3.1/Hospital.DAL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital.DAL/bin/Debug/netcoreapp3.1/Hospital.DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.DAL/bin/Debug/netcoreapp3.1/Hospital.DAL.pdb" afterDir="false" />
@@ -95,18 +50,15 @@
       <change beforePath="$PROJECT_DIR$/Hospital.DAL/obj/Debug/netcoreapp3.1/Hospital.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.DAL/obj/Debug/netcoreapp3.1/Hospital.DAL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital.DAL/obj/Debug/netcoreapp3.1/Hospital.DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.DAL/obj/Debug/netcoreapp3.1/Hospital.DAL.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.DAL/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/Controllers/DoctorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/Controllers/DoctorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/Controllers/ProductController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/Controllers/ServiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/Controllers/ServiceController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/Hospital.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/Hospital.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital/Hospital.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/Hospital.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.BLL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.BLL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.BLL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.BLL.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.DAL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.DAL.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/bin/Debug/netcoreapp3.1/Hospital.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital/obj/Debug/netcoreapp3.1/Hospital.pdb" afterDir="false" />
@@ -145,9 +97,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Hospital.DAL/Data/AuthRepository.cs" />
-        <option value="$PROJECT_DIR$/Hospital.BLL/Pagination/ProductRepository.cs" />
-        <option value="$PROJECT_DIR$/Hospital.DAL/Entities/Bio.cs" />
         <option value="$PROJECT_DIR$/Hospital.BLL/DTO/Doctor/DoctorUpdateDto.cs" />
         <option value="$PROJECT_DIR$/Hospital.BLL/DTO/Bio/BioUpdateDto.cs" />
         <option value="$PROJECT_DIR$/Hospital.BLL/DTO/Blog/BlogReturnDto.cs" />
@@ -189,13 +138,16 @@
         <option value="$PROJECT_DIR$/Hospital.BLL/Repo/DoctorRepository.cs" />
         <option value="$PROJECT_DIR$/Hospital.BLL/Repo/IDoctorRepository.cs" />
         <option value="$PROJECT_DIR$/Hospital/Controllers/DoctorController.cs" />
-        <option value="$PROJECT_DIR$/Hospital.BLL/Helpers/PaginationParams.cs" />
         <option value="$PROJECT_DIR$/Hospital.DAL/Entities/Department.cs" />
         <option value="$PROJECT_DIR$/Hospital.BLL/DTO/Department/DepartmentReturnDto.cs" />
         <option value="$PROJECT_DIR$/Hospital.BLL/DTO/Service/ServiceReturnDto.cs" />
-        <option value="$PROJECT_DIR$/Hospital.BLL/Mapper/MapperProfile.cs" />
-        <option value="$PROJECT_DIR$/Hospital.DAL/Data/DataContext.cs" />
         <option value="$PROJECT_DIR$/Hospital/Controllers/ServiceController.cs" />
+        <option value="$PROJECT_DIR$/Hospital.BLL/Helpers/PaginationParams.cs" />
+        <option value="$PROJECT_DIR$/Hospital.DAL/Entities/Contact.cs" />
+        <option value="$PROJECT_DIR$/Hospital.BLL/DTO/ContactCreateDto.cs" />
+        <option value="$PROJECT_DIR$/Hospital.BLL/Mapper/MapperProfile.cs" />
+        <option value="$PROJECT_DIR$/Hospital/Controllers/ContactController.cs" />
+        <option value="$PROJECT_DIR$/Hospital.DAL/Data/DataContext.cs" />
       </list>
     </option>
   </component>
@@ -377,7 +329,14 @@
       <workItem from="1606985256357" duration="601000" />
       <workItem from="1607001008109" duration="554000" />
       <workItem from="1607028394178" duration="5372000" />
-      <workItem from="1607033846772" duration="766000" />
+      <workItem from="1607033846772" duration="958000" />
+      <workItem from="1607034913784" duration="266000" />
+      <workItem from="1607069809790" duration="656000" />
+      <workItem from="1607079103364" duration="5165000" />
+      <workItem from="1607093423763" duration="628000" />
+      <workItem from="1607189918352" duration="1346000" />
+      <workItem from="1607324924172" duration="1804000" />
+      <workItem from="1607336244551" duration="3943000" />
     </task>
     <task id="LOCAL-00001" summary="add service table">
       <created>1603306514228</created>
@@ -596,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606805806093</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Added IconClassService">
+      <created>1607034794388</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1607034794388</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,7 +585,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added Appointment" />
     <MESSAGE value="AddAuthentication" />
     <MESSAGE value="addAuthentication" />
     <MESSAGE value="Added AppointmentCreate" />
@@ -644,7 +609,8 @@
     <MESSAGE value="Added BlogandDoctorRepoo" />
     <MESSAGE value="Added BlogandDoctorRepo2" />
     <MESSAGE value="Added Pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Pagination" />
+    <MESSAGE value="Added IconClassService" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
     <state x="544" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604151368948">
@@ -655,26 +621,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="530" height="464" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1606570095335" />
-    <state width="1493" height="29" key="GridCell.Tab.0.bottom" timestamp="1607034318140">
+    <state width="1493" height="29" key="GridCell.Tab.0.bottom" timestamp="1607351698616">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="250" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604040442173" />
-    <state width="1493" height="29" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607034318140" />
-    <state width="1493" height="29" key="GridCell.Tab.0.center" timestamp="1607034318140">
+    <state width="1493" height="29" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607351698616" />
+    <state width="1493" height="29" key="GridCell.Tab.0.center" timestamp="1607351698616">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="250" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604040442173" />
-    <state width="1493" height="29" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607034318140" />
-    <state width="1493" height="29" key="GridCell.Tab.0.left" timestamp="1607034318140">
+    <state width="1493" height="29" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607351698616" />
+    <state width="1493" height="29" key="GridCell.Tab.0.left" timestamp="1607351698616">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="250" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604040442173" />
-    <state width="1493" height="29" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607034318140" />
-    <state width="1493" height="29" key="GridCell.Tab.0.right" timestamp="1607034318140">
+    <state width="1493" height="29" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607351698616" />
+    <state width="1493" height="29" key="GridCell.Tab.0.right" timestamp="1607351698616">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="250" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604040442173" />
-    <state width="1493" height="29" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607034318140" />
+    <state width="1493" height="29" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607351698616" />
     <state width="1493" height="210" key="GridCell.Tab.1.bottom" timestamp="1606571832308">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -768,11 +734,11 @@
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1603873456834" />
     <state x="207" y="10" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606160580247" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606805812922">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607034799555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="321" y="128" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1603904537457" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606805812922" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607034799555" />
     <state width="775" height="414" key="XDebugger.FullValuePopup" timestamp="1605983662291">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
