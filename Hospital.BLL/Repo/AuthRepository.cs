@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Hospital.BLL.DTO.User;
 using Hospital.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,11 +34,11 @@ namespace Hospital.DAL
              }
          }
         
-        public async Task<User> Login(string userName, string password,string role)
+        public async Task<User> Login(UserForLoginDto userForLoginDto)
         {
-            var user = await _dataContext.Users.Include(u=>u.Role).FirstOrDefaultAsync(u => u.Name == userName);
+            var user = await _dataContext.Users.Include(u=>u.Role).FirstOrDefaultAsync(u => u.Name == userForLoginDto.Username.ToLower());
             if (user == null) return null;
-            if (!VerifyPasswordHash(password,user.PasswordHash,user.PasswordSalt))
+            if (!VerifyPasswordHash(userForLoginDto.Password,user.PasswordHash,user.PasswordSalt))
             {
                 return null;
             }

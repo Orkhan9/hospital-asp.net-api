@@ -68,6 +68,7 @@
               <e p="01_doctors.jpg" t="Include" />
               <e p="02_doctors.jpg" t="Include" />
               <e p="03_doctors.jpg" t="Include" />
+              <e p="3e25d580-4798-4ed1-90e8-175104946c0c02_doctors.jpg" t="Include" />
               <e p="4c782de3-2fb1-46d8-b497-2bec2924effe02_doctors.jpg" t="Include" />
             </e>
             <e p="faqs" t="Include">
@@ -194,9 +195,13 @@
           </e>
         </e>
         <e p="Repo" t="Include">
+          <e p="AuthRepository.cs" t="Include" />
+          <e p="BasketService.cs" t="Include" />
           <e p="BlogRepository.cs" t="Include" />
           <e p="DepartmentRepository.cs" t="Include" />
           <e p="DoctorRepository.cs" t="Include" />
+          <e p="IAuthRepository.cs" t="Include" />
+          <e p="IBasketService.cs" t="Include" />
           <e p="IBlogRepository.cs" t="Include" />
           <e p="IDepartmentRepository.cs" t="Include" />
           <e p="IDoctorRepository.cs" t="Include" />
@@ -210,11 +215,7 @@
       <e p="Hospital.DAL" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Data" t="Include">
-          <e p="AuthRepository.cs" t="Include" />
-          <e p="BasketService.cs" t="Include" />
           <e p="DataContext.cs" t="Include" />
-          <e p="IAuthRepository.cs" t="Include" />
-          <e p="IBasketService.cs" t="Include" />
         </e>
         <e p="Entities" t="Include">
           <e p="About.cs" t="Include" />

@@ -44,10 +44,11 @@ namespace Hospital.Controllers
             return StatusCode(201);
         }
         
+        
         [HttpPost("login")]
         public async Task<IActionResult>Login(UserForLoginDto userForLoginDto)
         {
-            var userFromRepo =await _authRepository.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password,userForLoginDto.Role);
+            var userFromRepo =await _authRepository.Login(userForLoginDto);
             if (userFromRepo == null)
                 return Unauthorized();
             var claims = new[]
